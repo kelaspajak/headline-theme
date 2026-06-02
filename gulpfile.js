@@ -14,7 +14,7 @@ const zip = require('gulp-zip');
 
 // postcss plugins
 const easyimport = require('postcss-easy-import');
-const autoprefixer = require('autoprefixer');
+const tailwindcss = require('@tailwindcss/postcss');
 const cssnano = require('cssnano');
 
 // translations support
@@ -47,7 +47,7 @@ function css(done) {
         src('assets/css/screen.css', {sourcemaps: true}),
         postcss([
             easyimport,
-            autoprefixer(),
+            tailwindcss(),
             cssnano()
         ]),
         dest('assets/built/', {sourcemaps: '.'}),

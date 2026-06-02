@@ -1,7 +1,7 @@
 {
-    "name": "headline",
+    "name": "headline-ghost",
     "description": "A Ghost theme",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -92,6 +92,15 @@
             },
             "enter_tag_slugs_for_secondary_sections": {
                 "type": "text",
+                "group": "homepage"
+            },
+            "show_featured_post_class": {
+                "type": "select",
+                "options": [
+                    "featured",
+                    "default"
+                ],
+                "default": "featured",
                 "group": "homepage"
             }
         }

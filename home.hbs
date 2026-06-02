@@ -33,7 +33,7 @@
 }
 .cf-body p {
     font-family: var(--font-serif);
-    font-size: 1.7rem;
+    font-size: 2rem;
     line-height: 1.7;
     color: var(--color-darkgrey);
     margin: 0 0 18px;
@@ -42,19 +42,11 @@
     margin-bottom: 0;
 }
 @media (min-width: 768px) {
-    .cf-body {
-        columns: 2;
-        column-gap: 36px;
-    }
-    .cf-body p {
-        break-inside: avoid;
-    }
+    .cf-body { columns: 2; column-gap: 36px; }
+    .cf-body p { break-inside: avoid; }
 }
 @media (min-width: 1024px) {
-    .cf-body {
-        columns: 3;
-        column-gap: 32px;
-    }
+    .cf-body { columns: 3; column-gap: 32px; }
 }
 .cf-signoff {
     margin-top: 28px;
@@ -76,6 +68,100 @@
     color: var(--color-darkgrey);
     font-style: normal;
     margin-top: 12px;
+}
+
+/* ── Objection ── */
+.cf-objection {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 24px 6vmin;
+}
+.cf-objection-inner {
+    background: var(--color-lighter-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 40px 48px;
+}
+@media (max-width: 600px) {
+    .cf-objection-inner { padding: 28px 24px; }
+}
+.cf-objection-heading {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    margin: 0 0 16px;
+    line-height: 1.25;
+}
+.cf-objection-body p {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: var(--color-secondary-text);
+    margin: 0 0 14px;
+}
+.cf-objection-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── It fits in a lot of places ── */
+.cf-places {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 6vmin;
+}
+.cf-places-heading {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    margin: 0 0 24px;
+    text-align: center;
+}
+.cf-places-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+@media (min-width: 600px) {
+    .cf-places-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+    .cf-places-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.cf-places-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 28px 24px;
+}
+.cf-places-card-label {
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+.cf-places-card p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    margin: 0;
+}
+.cf-places-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-darkgrey);
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+.cf-places-card a:hover {
+    gap: 8px;
+    color: var(--color-primary-text);
 }
 
 /* ── Subscribe ── */
@@ -218,7 +304,6 @@
                     <p>{{t "Kami tentu tidak punya semua jawaban. Namun kami berharap Diskusi Pajak bisa menjadi tempat untuk belajar, berbagi pengalaman, dan menemukan solusi bersama."}}</p>
 
                     <p>{{t "Terima kasih sudah berkunjung. Semoga informasi yang Anda temukan di sini bermanfaat."}}</p>
-                    
                 </div>
 
                 <div class="cf-signoff">
@@ -227,6 +312,84 @@
                 </div>
             </div>
         </section>
+
+        {{!-- ── "Tapi kan sudah ada Google/Telegram?" ── --}}
+        <section class="cf-objection">
+            <div class="cf-objection-inner">
+                <h2 class="cf-objection-heading">{{t "Tapi kan sudah ada Google atau Telegram?"}}</h2>
+                <div class="cf-objection-body">
+                    <p>{{t "Benar. Di Google banyak sekali artikel pajak. Di grup Telegram juga banyak diskusi. Tapi masalahnya: informasi di Google kadang tidak update, sumbernya tidak jelas, atau bahasanya terlalu teknis. Di Telegram? Ribut, tidak terstruktur, dan harus scroll panjang untuk mencari jawaban."}}</p>
+                    <p>{{t "Di Diskusi Pajak, setiap artikel ditulis dengan bahasa yang mudah dipahami, langkah-langkah konkret yang bisa langsung dipraktikkan, dan selalu mengacu pada aturan yang berlaku. Semua terorganisir rapi dalam satu tempat."}}</p>
+                </div>
+            </div>
+        </section>
+
+        {{!-- ── "It fits in a lot of places" ── --}}
+        <section class="cf-places">
+            <h2 class="cf-places-heading">{{t "Cocok untuk siapa?"}}</h2>
+            <div class="cf-places-grid">
+                <div class="cf-places-card">
+                    <div class="cf-places-card-label">{{t "Pemilik UMKM"}}</div>
+                    <p>{{t "Urus pajak bisnis sendiri tanpa harus bayar konsultan. Panduan lapor omzet, hitung PPh Final, dan SPT Tahunan untuk usaha kecil."}}</p>
+                    <a href="{{@site.url}}/tag/pajak-umkm/">{{t "Lihat artikel UMKM"}} &rarr;</a>
+                </div>
+                <div class="cf-places-card">
+                    <div class="cf-places-card-label">{{t "Karyawan"}}</div>
+                    <p>{{t "Pahami perhitungan PPh 21 Anda, tahu cara lapor SPT Tahunan, dan tidak perlu bingung saat ada perubahan aturan pajak penghasilan."}}</p>
+                    <a href="{{@site.url}}/tag/pph-21/">{{t "Panduan PPh 21"}} &rarr;</a>
+                </div>
+                <div class="cf-places-card">
+                    <div class="cf-places-card-label">{{t "Akuntan & Praktisi"}}</div>
+                    <p>{{t "Update aturan terbaru, solusi kasus e-Faktur dan e-Bupot yang sering muncul di lapangan, serta referensi teknis untuk pekerjaan sehari-hari."}}</p>
+                    <a href="{{@site.url}}/resources/coretaxpedia/">{{t "TKB Coretax"}} &rarr;</a>
+                </div>
+                <div class="cf-places-card">
+                    <div class="cf-places-card-label">{{t "Mahasiswa"}}</div>
+                    <p>{{t "Belajar dasar-dasar perpajakan dengan bahasa yang lebih ringan. Cocok untuk tugas kuliah, skripsi, atau sekedar menambah wawasan perpajakan."}}</p>
+                    <a href="{{@site.url}}/resources/">{{t "Jelajahi artikel"}} &rarr;</a>
+                </div>
+                <div class="cf-places-card">
+                    <div class="cf-places-card-label">{{t "Konsultan Pajak"}}</div>
+                    <p>{{t "Referensi cepat untuk menjawab pertanyaan klien. Kumpulan artikel yang terstruktur memudahkan Anda mencari solusi tanpa perlu repeat research."}}</p>
+                    <a href="{{@site.url}}/faq/">{{t "Cek Tanya Jawab"}} &rarr;</a>
+                </div>
+                <div class="cf-places-card">
+                    <div class="cf-places-card-label">{{t "Bendahara"}}</div>
+                    <p>{{t "Kelola PPh dan PPN organisasi atau instansi. Panduan pemotongan, penyetoran, dan pelaporan yang sesuai ketentuan terbaru."}}</p>
+                    <a href="{{@site.url}}/resources/">{{t "Panduan bendahara"}} &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        {{!-- ── SUBSCRIBE ── --}}
+        <section class="cf-subscribe">
+            <div class="cf-subscribe-inner">
+                <p>{{t "Ikuti pembaruan dan bergabung dalam diskusi kami. Ketik email Anda di bawah ini:"}}</p>
+                <form class="cf-subscribe-form" data-members-form>
+                    <input data-members-email type="email" placeholder="email@anda.com" required />
+                    <button type="submit">{{t "Langganan"}}</button>
+                </form>
+            </div>
+        </section>
+
+        {{!-- ── RECENT POSTS ── --}}
+        {{#get "posts" limit="8"}}
+        {{#if posts}}
+        <section class="cf-posts">
+            <p class="cf-posts-title">{{t "Artikel terbaru"}}</p>
+            <div class="cf-posts-list">
+                {{#foreach posts}}
+                <article class="cf-posts-item">
+                    <a class="cf-posts-link" href="{{url}}">
+                        <time class="cf-posts-date">{{date published_at format="DD MMM YYYY"}}</time>
+                        <h3>{{title}}</h3>
+                    </a>
+                </article>
+                {{/foreach}}
+            </div>
+        </section>
+        {{/if}}
+        {{/get}}
 
     </div>
 </main>

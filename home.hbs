@@ -1,67 +1,217 @@
+{{!-- ── tidak ada menampilkan postingan di halaman ini  ── --}}
+
 {{!< default}}
+<style>
+/* ── Campfire-style letter inside default.hbs ── */
+.cf-letter {
+    margin: 0 auto;
+    padding: 8vmin 24px;
+}
+.cf-letter-inner {
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 48px 52px;
+}
+@media (max-width: 600px) {
+    .cf-letter-inner { padding: 28px 24px; }
+}
+.cf-date {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-secondary-text);
+    margin: 0 0 24px;
+}
+.cf-greeting {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    margin: 0 0 20px;
+    line-height: 1.2;
+}
+.cf-body p {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    line-height: 1.7;
+    color: var(--color-darkgrey);
+    margin: 0 0 18px;
+}
+.cf-body p:last-child {
+    margin-bottom: 0;
+}
+.cf-signoff {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-light-gray);
+}
+.cf-signoff p {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--color-darkgrey);
+    margin: 0 0 4px;
+}
+.cf-signoff strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    font-style: normal;
+    margin-top: 12px;
+}
 
-<main class="gh-main gh-outer">
-    <div class="gh-inner">
-        <section class="gh-topic gh-topic-grid">
-            <h2 class="gh-topic-name">
-                {{#match pagination.pages ">" 1}}
-                    <a href="{{@site.url}}/page/2">{{t "Latest"}}</a>
-                {{else}}
-                    {{t "Latest"}}
-                {{/match}}
-            </h2>
+/* ── Subscribe ── */
+.cf-subscribe {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 24px 6vmin;
+}
+.cf-subscribe-inner {
+    background: var(--color-lighter-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 36px 40px;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .cf-subscribe-inner { padding: 28px 24px; }
+}
+.cf-subscribe p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    margin: 0 0 20px;
+}
+.cf-subscribe-form {
+    display: flex;
+    gap: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+@media (max-width: 480px) {
+    .cf-subscribe-form { flex-direction: column; }
+}
+.cf-subscribe-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 6px;
+    font-size: 1.4rem;
+    color: var(--color-darkgrey);
+    background: var(--color-white);
+    outline: none;
+    font-family: var(--font-sans);
+}
+.cf-subscribe-form input:focus {
+    border-color: var(--color-primary-text);
+}
+.cf-subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: var(--color-darkgrey);
+    color: var(--color-white);
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s ease;
+    font-family: var(--font-sans);
+}
+.cf-subscribe-form button:hover {
+    opacity: 0.85;
+}
 
-            <div class="gh-topic-content">
-                {{#foreach posts limit="7"}}
-                    {{> "loop-grid"}}
-                {{/foreach}}
+/* ── Recent posts ── */
+.cf-posts {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 24px 8vmin;
+}
+.cf-posts-title {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-secondary-text);
+    margin: 0 0 16px;
+    text-align: center;
+}
+.cf-posts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cf-posts-item {
+    border-bottom: 1px solid var(--color-light-gray);
+}
+.cf-posts-item:last-child {
+    border-bottom: none;
+}
+.cf-posts-link {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s ease;
+}
+.cf-posts-link:hover {
+    opacity: 0.7;
+}
+.cf-posts-date {
+    flex-shrink: 0;
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--color-secondary-text);
+    min-width: 70px;
+}
+.cf-posts-link h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-darkgrey);
+    margin: 0;
+    line-height: 1.35;
+}
+</style>
+
+<main class="gh-main">
+    <div class="gh-container">
+
+        {{!-- ── THE LETTER ── --}}
+        <section class="cf-letter">
+            <div class="cf-letter-inner">
+                <p class="cf-date">{{t "Dari Tim Diskusi Pajak"}}</p>
+
+                <p class="cf-greeting">{{t "Halo,"}}</p>
+
+                <div class="cf-body">
+                    <p>{{t "Kalau Anda pernah merasa pusing saat membaca aturan pajak, tenang, Anda tidak sendirian."}}</p>
+
+                    <p>{{t "Banyak aturan perpajakan ditulis dengan bahasa yang formal dan cukup teknis. Belum lagi regulasinya yang terus berubah. Kadang kita cuma ingin tahu jawaban sederhana untuk masalah yang sedang dihadapi, tetapi harus membaca puluhan halaman aturan terlebih dahulu."}}</p>
+
+                    <p>{{t "Karena itulah kami membuat Diskusi Pajak."}}</p>
+
+                    <p>{{t "Tempat ini kami bangun untuk membantu menjelaskan berbagai topik perpajakan dengan bahasa yang lebih mudah dipahami. Bukan sekadar mengutip aturan, tetapi mencoba menjelaskan bagaimana aturan tersebut berlaku dalam situasi nyata yang sering ditemui pelaku usaha, karyawan, maupun praktisi pajak."}}</p>
+
+                    <p>{{t "Mulai dari urusan e-Faktur, PPN, PPh, sampai berbagai pertanyaan yang muncul dalam aktivitas sehari-hari, kami berusaha menyajikannya dengan cara yang lebih ringan dan mudah diikuti."}}</p>
+
+                    <p>{{t "Kami tentu tidak punya semua jawaban. Namun kami berharap Diskusi Pajak bisa menjadi tempat untuk belajar, berbagi pengalaman, dan menemukan solusi bersama."}}</p>
+
+                    <p>{{t "Terima kasih sudah berkunjung. Semoga informasi yang Anda temukan di sini bermanfaat."}}</p>
+                    
+                </div>
+
+                <div class="cf-signoff">
+                    <p>{{t "Salam hangat,"}}</p>
+                    <strong>{{t "Tim {siteTitle}" siteTitle=@site.title}}</strong>
+                </div>
             </div>
-
-            <footer class="gh-topic-footer">
-                {{#match pagination.pages ">" 1}}
-                    <a class="gh-topic-link" href="{{@site.url}}/page/2">{{t "Show more"}} {{> "icons/arrow"}}</a>
-                {{/match}}
-            </footer>
         </section>
 
-        {{#if @custom.enter_tag_slugs_for_primary_sections}}
-            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
-                {{#foreach tags}}
-                    {{> "topic-grid"}}
-                {{/foreach}}
-            {{/get}}
-        {{else}}
-            {{#match posts.length ">" 1}}
-                {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
-                    {{#foreach tags}}
-                        {{> "topic-grid"}}
-                    {{/foreach}}
-                {{/get}}
-            {{/match}}
-        {{/if}}
-
-        {{#if @custom.enter_tag_slugs_for_secondary_sections}}
-            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
-                {{#if tags}}
-                    <div class="gh-topic-list">
-                        {{#foreach tags}}
-                            {{> "topic-minimal"}}
-                        {{/foreach}}
-                    </div>
-                {{/if}}
-            {{/get}}
-        {{else}}
-            {{#match posts.length ">" 1}}
-                {{#get "tags" include="count.posts" order="count.posts desc"}}
-                    {{#if tags.[3]}}
-                        <div class="gh-topic-list">
-                            {{#foreach tags from="4" limit="3"}}
-                                {{> "topic-minimal"}}
-                            {{/foreach}}
-                        </div>
-                    {{/if}}
-                {{/get}}
-            {{/match}}
-        {{/if}}
     </div>
 </main>

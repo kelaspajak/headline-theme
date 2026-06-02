@@ -219,13 +219,10 @@
 }
 .gh-canvas {
     display: grid;
-    grid-template-columns: [full-start] minmax(4vw, auto) [wide-start] minmax(
-            auto,
-            290px
-        ) [main-start] min(720px, calc(100% - 8vw)) [main-end] minmax(
-            auto,
-            290px
-        ) [wide-end] minmax(4vw, auto) [full-end];
+    grid-template-columns:
+        [full-start] minmax(4vw, auto) [wide-start] minmax(auto, 290px)
+        [main-start] min(720px, calc(100% - 8vw)) [main-end] minmax(auto, 290px)
+        [wide-end] minmax(4vw, auto) [full-end];
 }
 .gh-canvas > * {
     grid-column: main-start/main-end;
@@ -1493,34 +1490,11 @@ html {
 .gh-outer {
     padding: 0 4vmin;
 }
-.gh-btn {
-    -webkit-font-smoothing: subpixel-antialiased;
-    background: #15171a;
-    border-radius: 0.5rem;
-    color: #fff !important;
-    display: inline-block;
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1em;
-    outline: none;
-    padding: 1.4rem 1.7rem;
-    text-align: center;
-    text-decoration: none !important;
-    transition: all 0.4s ease;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    vertical-align: middle;
-}
-.gh-btn em {
-    font-style: normal;
-    font-weight: 400;
-}
 .hidden {
     display: none;
 }
 .super {
-    padding: 18vmin 0;
+    padding: 16vmin 0;
 }
 .superhero {
     font-size: 14vmin;

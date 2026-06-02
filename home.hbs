@@ -12,9 +12,14 @@
     border: 1px solid var(--color-light-gray);
     border-radius: 8px;
     padding: 48px 52px;
+    transform: rotate(-0.5deg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
 @media (max-width: 600px) {
-    .cf-letter-inner { padding: 28px 24px; }
+    .cf-letter-inner {
+        padding: 28px 24px;
+        transform: none;
+    }
 }
 .cf-date {
     font-family: var(--font-serif);
@@ -25,8 +30,8 @@
 }
 .cf-greeting {
     font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.4rem;
+    font-weight: 800;
     color: var(--color-darkgrey);
     margin: 0 0 20px;
     line-height: 1.2;
@@ -52,15 +57,26 @@
     margin-top: 28px;
     padding-top: 24px;
     border-top: 1px solid var(--color-light-gray);
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
-.cf-signoff p {
+.cf-signoff-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--color-light-gray);
+}
+.cf-signoff-text p {
     font-family: var(--font-serif);
     font-size: 1.6rem;
     font-style: italic;
     color: var(--color-darkgrey);
     margin: 0 0 4px;
 }
-.cf-signoff strong {
+.cf-signoff-text strong {
     display: block;
     font-family: var(--font-serif);
     font-size: 1.5rem;
@@ -295,7 +311,7 @@
 
                     <p>{{t "Banyak aturan perpajakan ditulis dengan bahasa yang formal dan cukup teknis. Belum lagi regulasinya yang terus berubah. Kadang kita cuma ingin tahu jawaban sederhana untuk masalah yang sedang dihadapi, tetapi harus membaca puluhan halaman aturan terlebih dahulu."}}</p>
 
-                    <p>{{t "Karena itulah kami membuat Diskusi Pajak."}}</p>
+                    <p><strong>{{t "Karena itulah kami membuat Diskusi Pajak."}}</strong></p>
 
                     <p>{{t "Tempat ini kami bangun untuk membantu menjelaskan berbagai topik perpajakan dengan bahasa yang lebih mudah dipahami. Bukan sekadar mengutip aturan, tetapi mencoba menjelaskan bagaimana aturan tersebut berlaku dalam situasi nyata yang sering ditemui pelaku usaha, karyawan, maupun praktisi pajak."}}</p>
 
@@ -307,8 +323,17 @@
                 </div>
 
                 <div class="cf-signoff">
-                    <p>{{t "Salam hangat,"}}</p>
-                    <strong>{{t "Tim {siteTitle}" siteTitle=@site.title}}</strong>
+                    {{#get "authors" filter="slug:tim-redaksi"}}
+                    {{#if authors}}
+                    {{#foreach authors}}
+                    <img class="cf-signoff-avatar" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
+                    {{/foreach}}
+                    {{/if}}
+                    {{/get}}
+                    <div class="cf-signoff-text">
+                        <p>{{t "Salam hangat,"}}</p>
+                        <strong>{{t "Tim {siteTitle}" siteTitle=@site.title}}</strong>
+                    </div>
                 </div>
             </div>
         </section>

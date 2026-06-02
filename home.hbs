@@ -18,7 +18,7 @@
 }
 .cf-date {
     font-family: var(--font-serif);
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-style: italic;
     color: var(--color-secondary-text);
     margin: 0 0 24px;
@@ -33,13 +33,28 @@
 }
 .cf-body p {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     line-height: 1.7;
     color: var(--color-darkgrey);
     margin: 0 0 18px;
 }
 .cf-body p:last-child {
     margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .cf-body {
+        columns: 2;
+        column-gap: 36px;
+    }
+    .cf-body p {
+        break-inside: avoid;
+    }
+}
+@media (min-width: 1024px) {
+    .cf-body {
+        columns: 3;
+        column-gap: 32px;
+    }
 }
 .cf-signoff {
     margin-top: 28px;

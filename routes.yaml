@@ -31,11 +31,14 @@ collections:
     /:
         permalink: '/{slug}/'
         template: index
-        filter: primary_tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia, hash-pemeriksaan]   
+        # Exclude posts assigned to dedicated collections
+        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia,hash-pemeriksaan]
 
     /resources/:
         permalink: /resources/{slug}/
-        filter: primary_tag:[hash-coretaxpedia, hash-pemeriksaan]
+        # Posts with internal-only tags (#hash-xxx) have primary_tag=null,
+        # so we use tag: instead of primary_tag:
+        filter: tag:[hash-coretaxpedia, hash-pemeriksaan]
         template: resources
 
 taxonomies:

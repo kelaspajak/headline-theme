@@ -74,47 +74,68 @@
         padding: 0 24px 6vmin;
     }
 
-    /* ── Post grid ── */
-    .gh-category-feed {
+    /* ── Post feed (infinity scroll) ── */
+    .gh-feed {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
     }
-
-    /* ── Pagination ── */
-    .gh-category-pagination {
+    .gh-feed .gh-card {
+        border-bottom: 1px solid var(--color-whitegrey);
+        padding: 25px 0;
+    }
+    .gh-feed .gh-card:first-of-type {
+        border-top: 1px solid var(--color-whitegrey);
+    }
+    .gh-feed .gh-card:hover {
+        background: #f9fafa;
+        margin: 0 -4vmin;
+        padding: 25px 4vmin;
+    }
+    .gh-feed .gh-card-link {
         display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 40px;
-    }
-    .gh-category-pagination a,
-    .gh-category-pagination span {
-        padding: 8px 16px;
-        font-size: 1.4rem;
-        font-weight: 500;
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
+        justify-content: space-between;
+        align-items: center;
         text-decoration: none;
-        color: #15171a;
-        transition: all 0.15s ease;
+        color: var(--color-base);
     }
-    .gh-category-pagination a:hover {
-        background: #f9fafb;
-        border-color: #d1d5db;
+    .gh-feed .gh-card-wrapper {
+        flex: 1;
     }
-    .gh-category-pagination span {
-        color: #9ca3af;
-        cursor: default;
+    .gh-feed .gh-card-title {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.15em;
+        margin: 0;
+    }
+    .gh-feed .gh-card-footer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 4px;
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        opacity: 0.5;
+    }
+    .gh-feed .gh-card-image {
+        display: none;
+    }
+
+    /* ── Pagination (hidden visually — infinity scroll via IntersectionObserver) ── */
+    .gh-category-pagination {
+        visibility: hidden;
+        height: 1px;
+        overflow: hidden;
     }
 
     @media (max-width: 1200px) {
-        .gh-category-feed {
+        .gh-feed {
             grid-template-columns: repeat(2, 1fr);
         }
     }
     @media (max-width: 767px) {
-        .gh-category-feed {
+        .gh-feed {
             grid-template-columns: 1fr;
             gap: 24px;
         }
@@ -143,7 +164,7 @@
     {{!-- Posts from the channel --}}
     <div class="gh-category-body">
         {{#if posts}}
-        <div class="gh-category-feed">
+        <div class="gh-feed">
             {{#foreach posts}}
                 {{> "loop-grid"}}
             {{/foreach}}

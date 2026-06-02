@@ -104,7 +104,7 @@
 
 /* ── Objection ── */
 .cf-objection {
-    max-width: 660px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 24px 6vmin;
 }
@@ -119,20 +119,194 @@
 }
 .cf-objection-heading {
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--color-darkgrey);
     margin: 0 0 16px;
     line-height: 1.25;
 }
 .cf-objection-body p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.6;
-    color: var(--color-secondary-text);
+    color: var(--color-primary-text);
     margin: 0 0 14px;
 }
 .cf-objection-body p:last-child {
     margin-bottom: 0;
+}
+
+/* ── All these questions have the same answer: Yes! ── */
+.cf-answers {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px 6vmin;
+}
+.cf-answers-inner {
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 40px 44px;
+}
+@media (max-width: 600px) {
+    .cf-answers-inner { padding: 28px 24px; }
+}
+.cf-answers-heading {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-primary-text);
+    margin: 0 0 20px;
+    text-align: center;
+    line-height: 1.25;
+}
+.cf-answers-heading strong {
+    font-weight: 800;
+    color: var(--color-darkgrey);
+    font-size: 2.4rem;
+}
+.cf-answers-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 36px;
+}
+@media (max-width: 640px) {
+    .cf-answers-list { grid-template-columns: 1fr; }
+}
+.cf-answers-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-lighter-gray);
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--color-primary-text);
+    position: relative;
+    padding-right: 48px;
+}
+.cf-answers-list li:after {
+    content: "Ada!";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    background: #d1fae5;
+    color: #065f46;
+    font-size: 75%;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    padding: 0.25em 0.45em 0.3em;
+    border-radius: 4px;
+}
+.cf-answers-list li:nth-child(odd):after {
+    transform: translateY(-50%) rotate(-2deg);
+}
+.cf-answers-list li:nth-child(even):after {
+    transform: translateY(-50%) rotate(1deg);
+}
+.cf-answers-list li:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+@media (max-width: 640px) {
+    .cf-answers-list li:nth-last-child(-n+1) {
+        border-bottom: none;
+    }
+}
+.cf-answers-cta {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-light-gray);
+}
+.cf-answers-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-darkgrey);
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+.cf-answers-cta a:hover {
+    gap: 10px;
+}
+
+/* ── Little things, big difference ── */
+.cf-tiny {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6vmin 24px;
+}
+.cf-tiny-inner {
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--color-lighter-gray),
+        var(--color-lighter-gray) 1px,
+        transparent 1px,
+        transparent 12px
+    );
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 48px 40px;
+}
+@media (max-width: 600px) {
+    .cf-tiny-inner { padding: 32px 20px; }
+}
+.cf-tiny-heading {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    margin: 0 0 24px;
+    text-align: center;
+}
+.cf-tiny-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+@media (min-width: 600px) {
+    .cf-tiny-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+    .cf-tiny-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.cf-tiny-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 6px;
+    padding: 18px 20px;
+}
+.cf-tiny-card p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    margin: 0;
+}
+.cf-tiny-cta {
+    text-align: center;
+    margin-top: 24px;
+}
+.cf-tiny-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 24px;
+    background: var(--color-darkgrey);
+    color: var(--color-white);
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+    font-family: var(--font-sans);
+}
+.cf-tiny-cta a:hover {
+    opacity: 0.85;
 }
 
 /* ── It fits in a lot of places ── */
@@ -366,72 +540,31 @@
             </div>
         </section>
 
-        {{!-- ── "It fits in a lot of places" ── --}}
-        <section class="cf-places">
-            <h2 class="cf-places-heading">{{t "Cocok untuk siapa?"}}</h2>
-            <div class="cf-places-grid">
-                <div class="cf-places-card">
-                    <div class="cf-places-card-label">{{t "Pemilik UMKM"}}</div>
-                    <p>{{t "Urus pajak bisnis sendiri tanpa harus bayar konsultan. Panduan lapor omzet, hitung PPh Final, dan SPT Tahunan untuk usaha kecil."}}</p>
-                    <a href="{{@site.url}}/tag/pajak-umkm/">{{t "Lihat artikel UMKM"}} &rarr;</a>
-                </div>
-                <div class="cf-places-card">
-                    <div class="cf-places-card-label">{{t "Karyawan"}}</div>
-                    <p>{{t "Pahami perhitungan PPh 21 Anda, tahu cara lapor SPT Tahunan, dan tidak perlu bingung saat ada perubahan aturan pajak penghasilan."}}</p>
-                    <a href="{{@site.url}}/tag/pph-21/">{{t "Panduan PPh 21"}} &rarr;</a>
-                </div>
-                <div class="cf-places-card">
-                    <div class="cf-places-card-label">{{t "Akuntan & Praktisi"}}</div>
-                    <p>{{t "Update aturan terbaru, solusi kasus e-Faktur dan e-Bupot yang sering muncul di lapangan, serta referensi teknis untuk pekerjaan sehari-hari."}}</p>
-                    <a href="{{@site.url}}/resources/coretaxpedia/">{{t "TKB Coretax"}} &rarr;</a>
-                </div>
-                <div class="cf-places-card">
-                    <div class="cf-places-card-label">{{t "Mahasiswa"}}</div>
-                    <p>{{t "Belajar dasar-dasar perpajakan dengan bahasa yang lebih ringan. Cocok untuk tugas kuliah, skripsi, atau sekedar menambah wawasan perpajakan."}}</p>
-                    <a href="{{@site.url}}/resources/">{{t "Jelajahi artikel"}} &rarr;</a>
-                </div>
-                <div class="cf-places-card">
-                    <div class="cf-places-card-label">{{t "Konsultan Pajak"}}</div>
-                    <p>{{t "Referensi cepat untuk menjawab pertanyaan klien. Kumpulan artikel yang terstruktur memudahkan Anda mencari solusi tanpa perlu repeat research."}}</p>
-                    <a href="{{@site.url}}/faq/">{{t "Cek Tanya Jawab"}} &rarr;</a>
-                </div>
-                <div class="cf-places-card">
-                    <div class="cf-places-card-label">{{t "Bendahara"}}</div>
-                    <p>{{t "Kelola PPh dan PPN organisasi atau instansi. Panduan pemotongan, penyetoran, dan pelaporan yang sesuai ketentuan terbaru."}}</p>
-                    <a href="{{@site.url}}/resources/">{{t "Panduan bendahara"}} &rarr;</a>
+        {{!-- ── "All these questions have the same answer: Yes!" ── --}}
+        <section class="cf-answers">
+            <div class="cf-answers-inner">
+                <h2 class="cf-answers-heading">{{t "Semua pertanyaan ini jawabannya:"}} <strong>{{t "Ada!"}}</strong></h2>
+                <ul class="cf-answers-list">
+                    <li>{{t "Ada panduan cara lapor SPT Tahunan di Coretax?"}}</li>
+                    <li>{{t "Bisa buat faktur pajak sendiri tanpa bantuan konsultan?"}}</li>
+                    <li>{{t "Ada solusi kalau e-Faktur error pas mau upload?"}}</li>
+                    <li>{{t "Cara bikin bukti potong PPh 21/26 yang benar?"}}</li>
+                    <li>{{t "Bagaimana cara kompensasi lebih bayar PPN?"}}</li>
+                    <li>{{t "Update terbaru aturan perpajakan 2026?"}}</li>
+                    <li>{{t "Cara daftar NPWP online lewat Coretax?"}}</li>
+                    <li>{{t "Panduan pembuatan e-Bupot PPh 23?"}}</li>
+                    <li>{{t "Bagaimana cara menghitung PPh 21 karyawan?"}}</li>
+                    <li>{{t "Apakah UMKM wajib lapor SPT Tahun lalu?"}}</li>
+                    <li>{{t "Bagaimana cara mengkreditkan pajak masukan?"}}</li>
+                    <li>{{t "Ada contoh pengisian SPT PPN?"}}</li>
+                </ul>
+                <div class="cf-answers-cta">
+                    <a href="{{@site.url}}/resources/">{{t "Lihat daftar lengkap artikel"}} &rarr;</a>
                 </div>
             </div>
         </section>
 
-        {{!-- ── SUBSCRIBE ── --}}
-        <section class="cf-subscribe">
-            <div class="cf-subscribe-inner">
-                <p>{{t "Ikuti pembaruan dan bergabung dalam diskusi kami. Ketik email Anda di bawah ini:"}}</p>
-                <form class="cf-subscribe-form" data-members-form>
-                    <input data-members-email type="email" placeholder="email@anda.com" required />
-                    <button type="submit">{{t "Langganan"}}</button>
-                </form>
-            </div>
-        </section>
 
-        {{!-- ── RECENT POSTS ── --}}
-        {{#get "posts" limit="8"}}
-        {{#if posts}}
-        <section class="cf-posts">
-            <p class="cf-posts-title">{{t "Artikel terbaru"}}</p>
-            <div class="cf-posts-list">
-                {{#foreach posts}}
-                <article class="cf-posts-item">
-                    <a class="cf-posts-link" href="{{url}}">
-                        <time class="cf-posts-date">{{date published_at format="DD MMM YYYY"}}</time>
-                        <h3>{{title}}</h3>
-                    </a>
-                </article>
-                {{/foreach}}
-            </div>
-        </section>
-        {{/if}}
-        {{/get}}
 
     </div>
 </main>

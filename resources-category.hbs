@@ -1,203 +1,191 @@
 {{!< default}}
 
 {{#contentFor "head"}}
-<link rel="stylesheet" type="text/css" href="{{asset "css/ghost-resources.css"}}" />
+<link rel="stylesheet" type="text/css" href="https://ghost.org/resources/assets/built/screen.css?v=55a7242196" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-    .gh-resources-page {
-        --max-width: 1300px;
+    :root {
+        --color-tag: #15171a;
+        --color-base: #15171a;
+        --color-blue: #3eb0ef;
+        --color-whitegrey: #e5eff5;
+        --color-wash: #f1f2f3;
     }
 
-    /* ── Category hero ── */
-    .gh-category-hero {
-        text-align: center;
-        padding: 6vmin 24px 2vmin;
-        max-width: var(--max-width);
-        margin: 0 auto;
-    }
-    .gh-category-hero h1 {
-        font-size: clamp(3rem, 5vw, 5rem);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin: 0;
-    }
-    .gh-category-hero p {
-        font-family: var(--font-serif);
-        font-size: 1.8rem;
-        color: #6b7280;
-        margin-top: 12px;
-        max-width: 560px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* ── Category navigation tabs ── */
-    .gh-category-nav {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        padding: 2vmin 24px 4vmin;
-        max-width: var(--max-width);
-        margin: 0 auto;
-        flex-wrap: wrap;
-    }
-    .gh-category-nav a {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 20px;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #6b7280;
-        background: transparent;
-        border: 1px solid #e5e7eb;
-        border-radius: 100px;
-        text-decoration: none;
-        transition: all 0.15s ease;
-    }
-    .gh-category-nav a:hover {
-        color: #15171a;
-        border-color: #d1d5db;
-        background: #f9fafb;
-    }
-    .gh-category-nav a.gh-category-current,
-    .gh-category-nav a.active {
-        color: #fff;
-        background: #15171a;
-        border-color: #15171a;
-    }
-
-    /* ── Content area ── */
-    .gh-category-body {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: 0 24px 6vmin;
-    }
-
-    /* ── Post feed (infinity scroll) ── */
-    .gh-feed {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-    }
-    .gh-feed .gh-card {
-        border-bottom: 1px solid var(--color-whitegrey);
-        padding: 25px 0;
-    }
-    .gh-feed .gh-card:first-of-type {
-        border-top: 1px solid var(--color-whitegrey);
-    }
-    .gh-feed .gh-card:hover {
-        background: #f9fafa;
-        margin: 0 -4vmin;
-        padding: 25px 4vmin;
-    }
-    .gh-feed .gh-card-link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-decoration: none;
-        color: var(--color-base);
-    }
-    .gh-feed .gh-card-wrapper {
-        flex: 1;
-    }
-    .gh-feed .gh-card-title {
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 1.15em;
-        margin: 0;
-    }
-    .gh-feed .gh-card-footer {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-top: 4px;
-        font-size: 1.2rem;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        opacity: 0.5;
-    }
-    .gh-feed .gh-card-image {
-        display: none;
-    }
-
-    /* ── Pagination (hidden visually — infinity scroll via IntersectionObserver) ── */
     .gh-category-pagination {
         visibility: hidden;
         height: 1px;
         overflow: hidden;
     }
 
-    @media (max-width: 1200px) {
-        .gh-feed {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media (max-width: 767px) {
-        .gh-feed {
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-        .gh-category-hero {
-            padding: 4vmin 16px 1vmin;
-        }
-        .gh-category-hero h1 {
-            font-size: 2.8rem;
-        }
-    }
+    /* ── Resource tag colors ── */
+    .tag-hash-coretaxpedia { --color-tag: #3b82f6; }
+    .tag-hash-pemeriksaan  { --color-tag: #f59e0b; }
 </style>
 {{/contentFor}}
 
-<main class="gh-main gh-resources-page">
-    <div class="gh-category-hero">
-        <h1>{{t "Resources"}}</h1>
-        <p>{{t "Browse articles by topic."}}</p>
-    </div>
+<main class="gh-main">
 
-    <nav class="gh-category-nav">
-        <a href="{{@site.url}}/resources/" class="gh-category-link">{{t "All Resources"}}</a>
-        <a href="{{@site.url}}/resources/coretaxpedia/" class="gh-category-link">Coretax Pedia</a>
-        <a href="{{@site.url}}/resources/pemeriksaan/" class="gh-category-link">Pemeriksaan</a>
-    </nav>
-
-    {{!-- Posts from the channel --}}
-    <div class="gh-category-body">
-        {{#if posts}}
-        <div class="gh-feed">
-            {{#foreach posts}}
-                {{> "loop-grid"}}
-            {{/foreach}}
+    {{!-- ── HERO — populated by JS from ghTagData lookup ── --}}
+    <header id="gh-tag-head" class="gh-tag-head" style="background-size: cover;">
+        <div class="gh-container">
+            <div class="gh-tag-head-content">
+                <img id="gh-tag-img" class="gh-tag-head-img" src="" alt="" loading="lazy" onerror="this.style.display='none'" />
+                <div>
+                    <h1 id="gh-tag-name">{{t "Resources"}}</h1>
+                    <p id="gh-tag-desc"></p>
+                    <span>
+                        <span id="gh-tag-count">{{pagination.total}} {{t "posts"}}</span>
+                        <a href="{{@site.url}}/resources/">{{t "More resources"}} &rarr;</a>
+                    </span>
+                </div>
+            </div>
         </div>
-        {{else}}
-            <p style="text-align:center;color:#9ca3af;padding:4vmin 0;">{{t "No posts found in this category."}}</p>
-        {{/if}}
+    </header>
 
-        {{!-- Pagination --}}
-        {{#match pagination.pages ">" 1}}
-        <nav class="gh-category-pagination">
-            {{#if prev}}
-                <a href="{{page_url prev}}">&larr; {{t "Previous"}}</a>
-            {{/if}}
-            <span>{{t "Page"}} {{pagination.page}} {{t "of"}} {{pagination.pages}}</span>
-            {{#if next}}
-                <a href="{{page_url next}}">{{t "Next"}} &rarr;</a>
-            {{/if}}
-        </nav>
-        {{/match}}
+    {{!-- ── PAGE ── --}}
+    <div class="gh-page">
+        <div class="gh-container">
+
+            {{!-- ── FEATURED POSTS — rendered from channel posts, featured ones get card layout --}}
+            {{#foreach posts}}
+                {{#if @first}}
+                    {{#if featured}}
+                    <div class="gh-featuredposts" id="gh-featured">
+                    {{/if}}
+                {{/if}}
+            {{/foreach}}
+
+            {{#foreach posts}}
+                {{#if featured}}
+                <article class="gh-card post featured">
+                    <a class="gh-card-link" href="{{url}}">
+                        {{#if feature_image}}
+                        <img class="gh-card-image"
+                            srcset="{{img_url feature_image size="s"}} 300w,
+                                    {{img_url feature_image size="m"}} 720w,
+                                    {{img_url feature_image size="l"}} 960w"
+                            sizes="(max-width: 1000px) 400px, 700px"
+                            src="{{img_url feature_image size="m"}}"
+                            alt="{{title}}"
+                        />
+                        {{/if}}
+                        <div class="gh-card-content">
+                            <span class="gh-card-meta"><span class="js-tag-name">#coretaxpedia</span> <span class="bull">⁃</span> {{reading_time}}</span>
+                            <h2 class="gh-card-title">{{title}}</h2>
+                            <p>{{excerpt}}</p>
+                            <strong>{{t "Read more"}}</strong>
+                        </div>
+                    </a>
+                </article>
+                {{/if}}
+            {{/foreach}}
+
+            {{#foreach posts}}
+                {{#if @last}}
+                    {{#if featured}}
+                    </div>
+                    {{/if}}
+                {{/if}}
+            {{/foreach}}
+
+            {{!-- ── POST FEED (list style) — non-featured posts --}}
+            <div class="gh-postfeed">
+                <div class="gh-feed">
+                    {{#foreach posts}}
+                    {{#unless featured}}
+                    <a class="resource-list-item" href="{{url}}">
+                        <div class="resource-list-item-content">
+                            <strong>{{title}}</strong>
+                            {{#if excerpt}}
+                            <p>{{excerpt}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="resource-list-item-right">
+                            <span>{{reading_time}}</span>
+                            <svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </a>
+                    {{/unless}}
+                    {{else}}
+                    <p style="text-align:center;color:#9ca3af;padding:4vmin 0;">{{t "No posts found in this category."}}</p>
+                    {{/foreach}}
+                </div>
+            </div>
+
+            {{!-- ── PAGINATION (hidden, for IntersectionObserver) --}}
+            {{#match pagination.pages ">" 1}}
+            <nav class="gh-category-pagination">
+                {{#if prev}}
+                    <a href="{{page_url prev}}">&larr; {{t "Previous"}}</a>
+                {{/if}}
+                <span>{{t "Page"}} {{pagination.page}} {{t "of"}} {{pagination.pages}}</span>
+                {{#if next}}
+                    <a href="{{page_url next}}">{{t "Next"}} &rarr;</a>
+                {{/if}}
+            </nav>
+            {{/match}}
+
+        </div>
     </div>
 
 </main>
 
 <script>
+    // ── Tag data lookup — tambah entry disini untuk tag resources baru ──
+    var ghTagData = {
+        'coretaxpedia': {
+            name: '#coretaxpedia',
+            desc: 'Tag ini difungsikan untuk Postingan TKB Coretax',
+            color: '#3b82f6',
+            img: '{{asset "images/coretaxpedia-cover.jpg"}}',
+            bg: '{{asset "images/coretaxpedia-bg.jpg"}}'
+        },
+        'pemeriksaan': {
+            name: '#pemeriksaan',
+            desc: 'Artikel tentang pemeriksaan pajak, audit, dan prosedur terkait.',
+            color: '#f59e0b',
+            img: '{{asset "images/pemeriksaan-cover.jpg"}}',
+            bg: '{{asset "images/pemeriksaan-bg.jpg"}}'
+        }
+    };
+
     document.addEventListener('DOMContentLoaded', function () {
-        var path = window.location.pathname.replace(/\/$/, '');
+        // ── 1. Detect which tag from URL ──
+        var path = window.location.pathname.replace(/\/$/, '').split('/');
+        var slug = path[path.length - 1];
+        var data = ghTagData[slug];
+
+        // ── 2. Active nav tab ──
         document.querySelectorAll('.gh-category-link').forEach(function (link) {
             var href = link.getAttribute('href').replace(/\/$/, '');
-            if (href === path) {
+            if (href === window.location.pathname.replace(/\/$/, '')) {
                 link.classList.add('gh-category-current');
             }
         });
+
+        // ── 3. Populate hero ──
+        var head = document.getElementById('gh-tag-head');
+        var img = document.getElementById('gh-tag-img');
+        var name = document.getElementById('gh-tag-name');
+        var desc = document.getElementById('gh-tag-desc');
+
+        if (data && head) {
+            head.style.backgroundColor = data.color;
+            if (data.bg) head.style.backgroundImage = "url('" + data.bg + "')";
+            if (img && data.img) { img.src = data.img; img.alt = data.name; }
+            if (name) name.textContent = data.name;
+            if (desc) desc.textContent = data.desc;
+            document.documentElement.style.setProperty('--color-tag', data.color);
+        }
+
+        // ── 4. Update tag name in featured card meta ──
+        var tagNames = document.querySelectorAll('.js-tag-name');
+        if (data) {
+            tagNames.forEach(function (el) { el.textContent = data.name; });
+        }
     });
 </script>
 

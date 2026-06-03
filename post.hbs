@@ -1,35 +1,285 @@
 {{!< default}}
 
-<main class="gh-main">
-    {{#post}}
-        <article class="gh-article {{post_class}}">
+{{#contentFor "head"}}
+<link rel="stylesheet" type="text/css" href="{{asset "css/ghost-resources.css"}}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+<style>
+    .tag-building { --color-tag: #64D30D }
+    .tag-publishing { --color-tag: #7CB7FC }
+    .tag-growth { --color-tag: #FE01B2 }
+    .tag-business { --color-tag: #FD9735 }
 
-            <header class="gh-article-header gh-canvas">
-                {{#if primary_tag}}
-                    <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-                {{/if}}
+    .gh-resources-page {
+        --max-width: 1300px;
+    }
+    .gh-resources-hero {
+        text-align: center;
+        padding: 8vmin 24px 6vmin;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+    .gh-resources-hero h1 {
+        font-size: clamp(3.6rem, 6vw, 6rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin: 0;
+    }
+    .gh-resources-hero p {
+        font-family: var(--font-serif);
+        font-size: 2rem;
+        color: #6b7280;
+        margin-top: 16px;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .gh-resources-search {
+        margin-top: 32px;
+    }
+    .gh-resources-search input {
+        width: 100%;
+        max-width: 480px;
+        padding: 12px 20px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1.6rem;
+        outline: none;
+        transition: border-color 0.15s ease;
+    }
+    .gh-resources-search input:focus {
+        border-color: #15171a;
+    }
+    .gh-resources-body {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+    .gh-resources-section {
+        padding: 6vmin 0;
+        border-top: 1px solid #e5e7eb;
+    }
+    .gh-resources-section:first-of-type {
+        border-top: none;
+    }
+    .gh-resources-section-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .gh-resources-section-header img {
+        width: 100%;
+        border-radius: 12px;
+    }
+    .gh-resources-section-header h2 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin: 0;
+    }
+    .gh-resources-section-header p {
+        color: #6b7280;
+        margin-top: 8px;
+        font-size: 1.6rem;
+    }
+    .gh-resources-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .gh-resources-post {
+        padding: 16px 0;
+        border-bottom: 1px solid #f3f4f6;
+    }
+    .gh-resources-post:last-child {
+        border-bottom: none;
+    }
+    .gh-resources-post a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+    }
+    .gh-resources-post a:hover .gh-resources-post-title {
+        opacity: 0.7;
+    }
+    .gh-resources-post-title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        transition: opacity 0.15s ease;
+    }
+    .gh-resources-post-meta {
+        font-size: 1.4rem;
+        color: #9ca3af;
+        white-space: nowrap;
+        margin-left: 16px;
+        flex-shrink: 0;
+    }
+    .gh-resources-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 24px;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: var(--color-tag, var(--ghost-accent-color));
+        text-decoration: none;
+        transition: opacity 0.15s ease;
+    }
+    .gh-resources-link:hover {
+        opacity: 0.8;
+    }
+    .gh-resources-subscribe {
+        text-align: center;
+        padding: 8vmin 24px;
+        background: #f9fafb;
+        margin-top: 40px;
+    }
+    .gh-resources-subscribe h2 {
+        font-size: 3.6rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+    .gh-resources-subscribe p {
+        color: #6b7280;
+        margin-top: 12px;
+        font-size: 1.6rem;
+    }
+    .gh-resources-subscribe .gh-btn {
+        margin-top: 24px;
+    }
 
-                <h1 class="gh-article-title">{{title}}</h1>
+    /* ── Table of Contents (Tocbot) ── */
+    .gh-content {
+        position: relative;
+    }
+    .gh-sidebar {
+        grid-column: main-start / main-end;
+    }
+    .gh-toc > .toc-list {
+        position: relative;
+    }
+    .toc-list {
+        list-style: none;
+        overflow: hidden;
+    }
+    .gh-toc .is-active-link::before {
+        background-color: var(--ghost-accent-color);
+    }
+    @media (min-width: 1300px) {
+        .gh-sidebar {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin-top: 4vmin;
+            grid-column: wide-start / main-start;
+        }
+        .gh-toc {
+            position: sticky;
+            top: 4vmin;
+        }
+    }
 
-                {{#if custom_excerpt}}
-                    <p class="gh-article-excerpt">{{custom_excerpt}}</p>
-                {{/if}}
+    @media (max-width: 767px) {
+        .gh-resources-hero {
+            padding: 6vmin 16px 4vmin;
+        }
+        .gh-resources-section-header {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        .gh-resources-post a {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .gh-resources-post-title {
+            font-size: 1.6rem;
+        }
+        .gh-resources-post-meta {
+            margin-left: 0;
+        }
+        .gh-resources-subscribe h2 {
+            font-size: 2.8rem;
+        }
+    }
+</style>
+{{/contentFor}}
 
-                {{> "post-meta"}}
+{{#post}}
+<main class="gh-main gh-resources-page">
+    <div class="gh-resources-hero">
+        <h1>{{title}}</h1>
+        {{#if custom_excerpt}}
+            <p>{{custom_excerpt}}</p>
+        {{/if}}
+    </div>
 
-                {{> "feature-image"}}
-            </header>
+    <div class="gh-content gh-canvas">
+            <aside class="gh-sidebar"><div class="gh-toc"></div></aside>
+            {{content}}
+    </div>
 
-            <section class="gh-content gh-canvas">
-                {{content}}
+    <div class="gh-resources-body">
+        {{#get "tags" filter="slug:[building,publishing,growth,business]" include="count.posts"}}
+            {{#foreach tags}}
+            <section class="gh-resources-section tag-{{slug}}">
+                <div class="gh-resources-section-header">
+                    {{#if feature_image}}
+                    <div>
+                        <img
+                            srcset="{{img_url feature_image size="s"}} 300w,
+                                    {{img_url feature_image size="m"}} 720w,
+                                    {{img_url feature_image size="l"}} 960w"
+                            sizes="(max-width: 767px) 100vw, 50vw"
+                            src="{{img_url feature_image size="l"}}"
+                            alt="{{name}}"
+                            loading="lazy"
+                        />
+                    </div>
+                    {{/if}}
+                    <div>
+                        <h2>{{name}}</h2>
+                        {{#if description}}<p>{{description}}</p>{{/if}}
+                    </div>
+                </div>
+
+                {{#get "posts" filter="tag:{{slug}}" limit="5"}}
+                <div class="gh-resources-posts">
+                    {{#foreach posts}}
+                    <article class="gh-resources-post">
+                        <a href="{{url}}">
+                            <span class="gh-resources-post-title">{{title}}</span>
+                            <span class="gh-resources-post-meta">{{reading_time}}</span>
+                        </a>
+                    </article>
+                    {{/foreach}}
+                </div>
+                {{/get}}
+
+                <a class="gh-resources-link" href="{{url}}">
+                    {{t "Explore the full series"}} →
+                </a>
             </section>
-
-        </article>
-    {{/post}}
-
-    {{> "related-posts"}}
-
-    {{#post}}
-        {{> "comments"}}
-    {{/post}}
+            {{/foreach}}
+        {{/get}}
+    </div>
 </main>
+{{/post}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        tocSelector: '.gh-toc',
+        contentSelector: '.gh-content',
+        headingSelector: 'h1, h2, h3, h4',
+        hasInnerContainers: true,
+    });
+</script>
+
+{{#contentFor "body_class"}}resources-template{{/contentFor}}

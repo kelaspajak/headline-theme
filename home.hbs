@@ -4,7 +4,8 @@
 <style>
 /* ── Campfire-style letter inside default.hbs ── */
 .cf-letter {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 8vmin 24px;
 }
@@ -15,11 +16,15 @@
     color: var(--color-darkgrey);
     text-align: center;
     margin: 0 0 28px;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.02em;
 }
 @media (min-width: 768px) {
     .cf-letter-title { font-size: 5rem; }
+}
+@media (max-width: 480px) {
+    .cf-letter-title br { display: none; }
+    .cf-letter-title { font-size: 3.2rem; }
 }
 .cf-letter-inner {
     background: var(--color-lighter-gray);
@@ -76,6 +81,12 @@
     display: flex;
     align-items: center;
     gap: 16px;
+}
+@media (max-width: 480px) {
+    .cf-signoff {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 .cf-signoff-avatar {
     width: 48px;

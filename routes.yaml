@@ -9,7 +9,7 @@ collections:
         permalink: "/{slug}/"
         template: index
         # Exclude posts assigned to dedicated collections
-        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia,hash-pemeriksaan]
+        filter: tag:-[hash-wilayah,hash-tentang-pic]
 
     /resources/:
         permalink: /resources/{slug}/

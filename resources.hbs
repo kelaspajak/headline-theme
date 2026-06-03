@@ -55,7 +55,7 @@
             </section>
 
             {{!-- ── #coretaxpedia ── --}}
-            {{#get "posts" include="tags" filter="tag:hash-coretaxpedia" limit="5"}}
+            {{#get "posts" include="tags" filter="tag:hash-resources" limit="5"}}
             {{#if posts}}
             <section class="resource-section tag-hash-coretaxpedia">
                 {{#foreach posts}}
@@ -74,13 +74,10 @@
                 {{/foreach}}
 
                 {{#foreach posts}}
-                <a class="resource-list-item" href="{{url}}">
-                    <span>{{title}}</span>
-                    <div><span>{{reading_time}}</span><svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                </a>
+                {{> "loop-zebra"}}
                 {{/foreach}}
 
-                <a class="resource-section-morelink" href="{{@site.url}}/resources/coretaxpedia/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
+                <a class="resource-section-morelink" href="{{@site.url}}/coretaxpedia/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
                 </div>
             </section>
             {{/if}}
@@ -106,10 +103,7 @@
                 {{/foreach}}
 
                 {{#foreach posts}}
-                <a class="resource-list-item" href="{{url}}">
-                    <span>{{title}}</span>
-                    <div><span>{{reading_time}}</span><svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                </a>
+                {{> "loop-zebra"}}
                 {{/foreach}}
 
                 <a class="resource-section-morelink" href="{{@site.url}}/resources/pemeriksaan/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>

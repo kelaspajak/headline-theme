@@ -1,51 +1,142 @@
 {{!< default}}
 
-{{#tag}}
-    {{#if feature_image}}
-        <section class="gh-cover gh-outer">
-            <img
-                class="gh-cover-image"
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 720w,
-                        {{img_url feature_image size="l"}} 960w,
-                        {{img_url feature_image size="xl"}} 1200w,
-                        {{img_url feature_image size="xxl"}} 2000w"
-                sizes="100vw"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{name}}"
-            >
+{{#contentFor "head"}}
+<link rel="stylesheet" type="text/css" href="https://ghost.org/resources/assets/built/screen.css?v=55a7242196" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --color-base: #15171a;
+        --color-blue: #3eb0ef;
+        --color-whitegrey: #e5eff5;
+        --color-wash: #f1f2f3;
+    }
+    .resource-section { display: grid !important; }
+    .resource-section-coverlink img {
+        width: 280px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+    @media (max-width: 1024px) {
+        .resource-section { grid-template-columns: 1fr !important; }
+        .resource-section-coverlink img {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+</style>
+{{/contentFor}}
 
-            <div class="gh-cover-content">
-                <h1 class="gh-cover-title">{{name}}</h1>
+<main class="gh-main">
+    <div class="gh-page">
+        <div class="gh-container">
 
+            {{#tag}}
+            <header class="super">
+                <h1 class="superhero">{{name}}</h1>
                 {{#if description}}
-                    <p class="gh-cover-description">{{description}}</p>
+                <p class="supersub">{{description}}</p>
                 {{/if}}
+            </header>
+            {{/tag}}
+
+            <div class="gh-postfeed">
+                <div class="gh-feed">
+                    {{#foreach posts}}
+                    <a class="resource-list-item" href="{{url}}">
+                        <div class="resource-list-item-content">
+                            <strong>{{title}}</strong>
+                            <p>{{excerpt}}</p>
+                        </div>
+                        <div class="resource-list-item-right">
+                            <span>{{reading_time}}</span>
+                            <svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </a>
+                    {{/foreach}}
+                </div>
             </div>
-        </section>
-    {{/if}}
-{{/tag}}
 
-<main class="gh-main gh-outer">
-    <div class="gh-inner">
-        {{#tag}}
-            {{#unless feature_image}}
-                <section class="gh-pagehead">
-                    <h1 class="gh-pagehead-title">{{name}}</h1>
+            {{#match pagination.pages ">" 1}}
+            <nav class="pagination">
+                {{#if prev}}<a href="{{page_url prev}}">&larr; Sebelumnya</a>{{/if}}
+                {{#if next}}<a href="{{page_url next}}">Berikutnya &rarr;</a>{{/if}}
+            </nav>
+            {{/match}}
 
-                    {{#if description}}
-                        <div class="gh-pagehead-description">{{description}}</div>
-                    {{/if}}
-                </section>
-            {{/unless}}
-        {{/tag}}
-
-        <div class="gh-topic gh-topic-grid">
-            <div class="gh-topic-content gh-feed">
-                {{#foreach posts}}
-                    {{> "loop-grid"}}
-                {{/foreach}}
-            </div>
         </div>
     </div>
 </main>
+
+<style>
+    .super {
+        text-align: center;
+        padding: 6vmin 0 4vmin;
+    }
+    .superhero {
+        font-size: 4rem;
+        font-weight: 800;
+        color: var(--color-darkgrey);
+        margin: 0 0 16px;
+        letter-spacing: -0.02em;
+    }
+    .supersub {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: var(--color-secondary-text);
+        max-width: 640px;
+        margin: 0 auto;
+        font-family: var(--font-serif);
+    }
+    .resource-list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--color-lighter-gray);
+        text-decoration: none;
+        color: inherit;
+        transition: opacity .2s ease;
+    }
+    .resource-list-item:hover {
+        opacity: 0.7;
+    }
+    .resource-list-item-content strong {
+        font-size: 1.6rem;
+        color: var(--color-darkgrey);
+        display: block;
+    }
+    .resource-list-item-content p {
+        font-size: 1.4rem;
+        color: var(--color-secondary-text);
+        margin: 4px 0 0;
+        line-height: 1.5;
+    }
+    .resource-list-item-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.3rem;
+        color: var(--color-secondary-text);
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-left: 24px;
+    }
+    .resource-list-item-right svg {
+        width: 14px;
+        height: 14px;
+    }
+    .pagination {
+        visibility: hidden;
+        height: 1px;
+        overflow: hidden;
+    }
+    @media (max-width: 640px) {
+        .superhero { font-size: 2.8rem; }
+        .supersub { font-size: 1.5rem; }
+        .resource-list-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+        .resource-list-item-right { margin-left: 0; }
+    }
+</style>

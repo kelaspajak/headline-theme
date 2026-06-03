@@ -1,9 +1,6 @@
 {{!< default}}
 
 {{#contentFor "head"}}
-{{!-- ── <link rel="stylesheet" type="text/css" href="https://ghost.org/resources/assets/built/screen.css?v=55a7242196" /> ── --}}
-
-<link rel="stylesheet" type="text/css" href="https://ghost.org/resources/assets/built/screen.css?v=55a7242196" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,21 +11,9 @@
         --color-whitegrey: #e5eff5;
         --color-wash: #f1f2f3;
     }
-    .search { display: none; }
-    .resource-section { display: grid !important; }
-    .resource-section-coverlink img {
-        width: 280px;
-        height: auto;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-    @media (max-width: 1024px) {
-        .resource-section { grid-template-columns: 1fr !important; }
-        .resource-section-coverlink img {
-            width: 100%;
-            max-width: 400px;
-        }
-    }
+  .super {
+    padding: 18vmin 0;
+}
     #hits { display: none; }
     .tag-hash-coretaxpedia { --color-tag: #f91a1a; }
     .tag-hash-pemeriksaan  { --color-tag: #f59e0b; }

@@ -15,43 +15,39 @@
         <div class="tw-directory-right">
             <div class="tw-filters" id="partnerFilters">
                 <button type="button" class="tw-filter active" data-filter="all">Semua Lokasi</button>
-                {{#get "authors" limit="50"}}
+                {{#get "authors" limit="50" include="count.posts"}}
                     {{#foreach authors}}
                         {{#if location}}
-                            <button type="button" class="tw-filter" data-filter="{{location}}">{{location}}</button>
+                            <button type="button" class="tw-filter" data-filter="{{slug}}">{{location}}</button>
                         {{/if}}
                     {{/foreach}}
                 {{/get}}
             </div>
             <div class="tw-table">
                 <ul class="tw-list">
-                    {{#get "authors" limit="50"}}
+                    {{#get "authors" limit="50" include="count.posts"}}
                         {{#foreach authors}}
-                            {{#if location}}
-                                <li class="tw-item" data-location="{{location}}">
-                                    <a href="{{#if website}}{{website}}{{else}}{{url}}{{/if}}" target="_blank" rel="noopener sponsored" class="tw-link">
-                                        <div class="tw-card">
-                                            <div class="tw-cell-name">
-                                                {{#if profile_image}}
-                                                    <img class="tw-avatar" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
-                                                {{else}}
-                                                    <span class="tw-badge">{{name}}</span>
-                                                {{/if}}
-                                                <span class="tw-name">{{name}}</span>
-                                            </div>
-                                            <div class="tw-cell-meta">
-                                                <span class="tw-loc">{{location}}</span>
-                                            </div>
+                            {{#if profile_image}}
+                            <li class="tw-item" data-location="{{slug}}">
+                                <a href="{{#if website}}{{website}}{{else}}{{url}}{{/if}}" target="_blank" rel="noopener sponsored" class="tw-link">
+                                    <div class="tw-card">
+                                        <div class="tw-cell-name">
+                                            <img class="tw-avatar" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
+                                            <span class="tw-name">{{name}}</span>
                                         </div>
-                                        <span class="tw-visit">Kunjungi
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tw-icon-arrow" aria-hidden="true">
-                                                <path d="M7 17L17 7"/>
-                                                <path d="M7 7h10v10"/>
-                                            </svg>
+                                        <div class="tw-cell-meta">
+                                            <span class="tw-loc">{{location}}</span>
+                                        </div>
+                                    </div>
+                                    <span class="tw-visit">Kunjungi
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tw-icon-arrow" aria-hidden="true">
+                                            <path d="M7 17L17 7"/>
+                                            <path d="M7 7h10v10"/>
+                                        </svg>
 
-                                        </span>
-                                    </a>
-                                </li>
+                                    </span>
+                                </a>
+                            </li>
                             {{/if}}
                         {{/foreach}}
                     {{/get}}
@@ -241,19 +237,8 @@
 </style>
 <script>
 (function () {
-  var root = document.getElementById('partnerFilters');
-  if (!root) return;
-  var buttons = root.querySelectorAll('.tw-filter');
+  var buttons = document.querySelectorAll('#partnerFilters .tw-filter');
   var items = document.querySelectorAll('.tw-item');
-  var seen = new Set();
-  buttons.forEach(function (btn) {
-    var f = btn.getAttribute('data-filter');
-    if (seen.has(f)) {
-      btn.parentNode.removeChild(btn);
-    } else {
-      seen.add(f);
-    }
-  });
   function setActive(btn) {
     buttons.forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');

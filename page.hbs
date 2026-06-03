@@ -3,28 +3,9 @@
 {{#post}}
 
 {{#match slug "=" "partners"}}
-<section class="tw-like-directory">
-    <div class="tw-directory-wrap">
-        <div class="tw-directory-left">
-            <h2 class="tw-directory-heading"><span aria-hidden="true">01 / </span>Partner directory</h2>
-            <p class="tw-directory-desc">
-                <strong>Tim &amp; mitra Diskusi Pajak.</strong>
-                <span>Orang dan organisasi yang bantu situs ini bisa berjalan.</span>
-            </p>
-        </div>
-        <div class="tw-directory-right">
-            <div class="tw-filters" id="partnerFilters">
-                <button type="button" class="tw-filter active" data-filter="all">Semua Lokasi</button>
-            </div>
-            <div class="tw-table">
-                <ul class="tw-list" id="partnerList"></ul>
-            </div>
-            <span class="tw-error" id="partnerListError" style="display:none">Gagal memuat daftar partner.</span>
-        </div>
-    </div>
-</section>
-
 <style>
+/* hide if somehow injected on other pages */
+body:not(.page-partners) .tw-like-directory{display:none}
 .tw-like-directory{max-width:1280px;margin:0 auto;padding:6vmin 24px;font-family:var(--font-sans);color:var(--color-darkgrey)}
 .tw-directory-wrap{display:grid;grid-template-columns:1fr;gap:24px}
 @media(min-width:900px){.tw-directory-wrap{grid-template-columns:3fr 7fr;gap:32px;align-items:start}}
@@ -52,81 +33,91 @@
 @media(hover:hover){.tw-link:hover{background:rgba(0,0,0,.05)}}
 @media(max-width:639px){.tw-link{grid-template-columns:1fr;gap:10px;padding:18px 14px}.tw-card{flex-wrap:wrap}}
 </style>
+
+<section class="tw-like-directory">
+    <div class="tw-directory-wrap">
+        <div class="tw-directory-left">
+            <h2 class="tw-directory-heading"><span aria-hidden="true">01 / </span>Partner directory</h2>
+            <p class="tw-directory-desc">
+                <strong>Tim &amp; mitra Diskusi Pajak.</strong>
+                <span>Orang dan organisasi yang bantu situs ini bisa berjalan.</span>
+            </p>
+        </div>
+        <div class="tw-directory-right">
+            <div class="tw-filters" id="partnerFilters">
+                <button type="button" class="tw-filter active" data-filter="all">Semua Lokasi</button>
+            </div>
+            <div class="tw-table">
+                <ul class="tw-list" id="partnerList">
+                    {{#get "authors"}}
+                        {{#foreach authors}}
+                            <li class="tw-item" data-location="{{location}}">
+                                    <a href="{{#if website}}{{website}}{{else}}{{url}}{{/if}}" target="_blank" rel="noopener sponsored" class="tw-link">
+                                        <div class="tw-card">
+                                            <div class="tw-cell-name">
+                                                {{#if profile_image}}
+                                                    <img class="tw-avatar" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
+                                                {{else}}
+                                                    <span class="tw-badge" data-name="{{name}}"></span>
+                                                {{/if}}
+                                                <span class="tw-name">{{name}}</span>
+                                            </div>
+                                            <div class="tw-cell-meta">
+                                                {{#if location}}<span class="tw-loc">{{location}}</span>{{/if}}
+                                            </div>
+                                        </div>
+                                        <span class="tw-visit">Kunjungi
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tw-icon-arrow" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+                                        </span>
+                                    </a>
+                            </li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+            </div>
+            <span class="tw-error" id="partnerListError" style="display:none">Gagal memuat daftar partner.</span>
+        </div>
+    </div>
+</section>
+
 <script>
 (function () {
-  var list = document.getElementById('partnerList');
   var filters = document.getElementById('partnerFilters');
-  var err = document.getElementById('partnerListError');
+  var items = document.querySelectorAll('#partnerList .tw-item');
+  if (!filters || !items.length) return;
 
-  if (!list || !filters) return;
+  // Fill initials for badges without profile_image
+  document.querySelectorAll('.tw-badge[data-name]').forEach(function (badge) {
+    badge.textContent = (badge.getAttribute('data-name') || '?').trim().charAt(0).toUpperCase();
+  });
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/ghost/api/content/authors/?limit=50&key=a64afe0a1b62cafff92e0fda46', true);
-  xhr.onload = function () {
-    var data = {};
-    try { data = JSON.parse(xhr.responseText || '{}'); } catch (e) {}
-
-    var authors = (data.authors || []);
-    var html = '';
-    var locs = [];
-    authors.forEach(function (a) {
-      var location = (a.location || '').trim();
-      if (!location) return;
-
-      if (locs.indexOf(location) === -1) locs.push(location);
-
-      var avatar = '';
-      if (a.profile_image) {
-        avatar = '<img class="tw-avatar" src="' + a.profile_image.replace(/"/g, '&quot;') + '" alt="' + (a.name || '').replace(/"/g, '&quot;') + '" loading="lazy" />';
-      } else {
-        var initial = (a.name || '').trim().charAt(0);
-        if (initial) avatar = '<span class="tw-badge">' + initial + '</span>';
-      }
-      if (!avatar) return;
-
-      var href = (a.website || a.url || '#').replace(/"/g, '&quot;');
-      html += '<li class="tw-item" data-location="' + location.replace(/"/g, '&quot;') + '">' +
-        '<a href="' + href + '" target="_blank" rel="noopener sponsored" class="tw-link">' +
-          '<div class="tw-card">' +
-            '<div class="tw-cell-name">' + avatar + '<span class="tw-name">' + (a.name || '').replace(/"/g, '&quot;') + '</span>' +
-            '</div>' +
-            '<div class="tw-cell-meta"><span class="tw-loc">' + location.replace(/"/g, '&quot;') + '</span></div>' +
-          '</div>' +
-          '<span class="tw-visit">Kunjungi' +
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tw-icon-arrow" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>' +
-          '</span>' +
-        '</a>' +
-      '</li>';
-    });
-
-    list.innerHTML = html;
-
-    locs.sort().forEach(function (loc) {
-      var b = document.createElement('button');
-      b.type = 'button'; b.className = 'tw-filter';
-      b.setAttribute('data-filter', loc); b.textContent = loc;
-      b.addEventListener('click', function () {
-        var buttons = document.querySelectorAll('#partnerFilters .tw-filter');
-        buttons.forEach(function (x) { x.classList.remove('active'); });
-        b.classList.add('active');
-        var itemLocs = document.querySelectorAll('#partnerList .tw-item');
-        itemLocs.forEach(function (item) {
-          var itemLoc = (item.getAttribute('data-location') || '').trim();
-          item.style.display = itemLoc === loc ? '' : 'none';
-        });
+  var locSet = {};
+  items.forEach(function (it) {
+    var loc = (it.getAttribute('data-location') || '').trim();
+    if (!loc || locSet[loc]) return;
+    locSet[loc] = true;
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'tw-filter';
+    btn.setAttribute('data-filter', loc); btn.textContent = loc;
+    btn.addEventListener('click', function () {
+      var all = filters.querySelectorAll('.tw-filter');
+      all.forEach(function (x) { x.classList.remove('active'); });
+      btn.classList.add('active');
+      items.forEach(function (item) {
+        item.style.display = (item.getAttribute('data-location') || '').trim() === loc ? '' : 'none';
       });
-      filters.appendChild(b);
     });
-
-    if (!list.children.length && err) err.style.display = '';
-  };
-  xhr.send();
+    filters.appendChild(btn);
+  });
 })();
 </script>
 {{/match}}
 
+{{!-- default page content if not partners --}}
 {{^match slug "=" "partners"}}
-{{!-- default page --}}
+    <div class="gh-container">
+        {{content}}
+    </div>
 {{/match}}
 
 {{/post}}

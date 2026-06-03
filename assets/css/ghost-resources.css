@@ -561,7 +561,7 @@ blockquote.kg-blockquote-alt {
     align-self: stretch;
     overflow-y: scroll;
     padding: 1px 0 6vmin;
-    height: 250px;
+    max-height: 250px;
 }
 .gh-toc strong {
     align-items: center;

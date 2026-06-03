@@ -37,82 +37,29 @@
                 <div id="hits"></div>
             </section>
 
-            {{!-- ── #infografis ── --}}
-            {{#get "posts" include="tags" filter="tag:infografis" limit="5"}}
-            {{#if posts}}
-            <section class="resource-section tag-infografis">
-                {{#foreach posts}}
-                {{#if @first}}
-                <a class="resource-section-coverlink" href="{{@site.url}}/tag/infografis/">
-                    {{#if feature_image}}
-                    <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                    {{/if}}
+            {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
+            {{#get "tags" filter="slug:[infografis,coretaxpedia,peraturan]" limit="3" include="count.posts"}}
+            {{#foreach tags}}
+            <section class="resource-section tag-{{slug}}">
+                {{#if feature_image}}
+                <a class="resource-section-coverlink" href="{{url}}">
+                    <img src="{{feature_image}}" alt="{{name}}" loading="lazy" />
                 </a>
-                <div class="resource-list">
-                    <h2>Infografis</h2>
                 {{/if}}
-                {{/foreach}}
+                <div class="resource-list">
+                    <h2>{{name}}</h2>
+                    {{#if description}}<p>{{description}}</p>{{/if}}
 
-                {{#foreach posts}}
-                {{> "loop-zebra"}}
-                {{/foreach}}
+                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags"}}
+                    {{#foreach posts}}
+                    {{> "loop-zebra"}}
+                    {{/foreach}}
+                    {{/get}}
 
-                <a class="resource-section-morelink" href="{{@site.url}}/tag/infografis/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
+                    <a class="resource-section-morelink" href="{{url}}">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
                 </div>
             </section>
-            {{/if}}
-            {{/get}}
-
-            {{!-- ── #coretaxpedia ── --}}
-            {{#get "posts" include="tags" filter="tag:coretaxpedia" limit="5"}}
-            {{#if posts}}
-            <section class="resource-section tag-coretaxpedia">
-                {{#foreach posts}}
-                {{#if @first}}
-                <a class="resource-section-coverlink" href="{{@site.url}}/tag/coretaxpedia/">
-                    {{#if feature_image}}
-                    <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                    {{/if}}
-                </a>
-                <div class="resource-list">
-                    <h2>Coretaxpedia</h2>
-                {{/if}}
-                {{/foreach}}
-
-                {{#foreach posts}}
-                {{> "loop-zebra"}}
-                {{/foreach}}
-
-                <a class="resource-section-morelink" href="{{@site.url}}/tag/coretaxpedia/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
-                </div>
-            </section>
-            {{/if}}
-            {{/get}}
-
-            {{!-- ── #peraturan ── --}}
-            {{#get "posts" include="tags" filter="tag:peraturan" limit="5"}}
-            {{#if posts}}
-            <section class="resource-section tag-peraturan">
-                {{#foreach posts}}
-                {{#if @first}}
-                <a class="resource-section-coverlink" href="{{@site.url}}/tag/peraturan/">
-                    {{#if feature_image}}
-                    <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                    {{/if}}
-                </a>
-                <div class="resource-list">
-                    <h2>Peraturan</h2>
-                {{/if}}
-                {{/foreach}}
-
-                {{#foreach posts}}
-                {{> "loop-zebra"}}
-                {{/foreach}}
-
-                <a class="resource-section-morelink" href="{{@site.url}}/tag/peraturan/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
-                </div>
-            </section>
-            {{/if}}
+            {{/foreach}}
             {{/get}}
 
         </div>

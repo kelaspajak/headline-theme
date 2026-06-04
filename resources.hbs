@@ -38,7 +38,7 @@
             </section>
 
             {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
-            {{#get "tags" filter="slug:[infografis,coretaxpedia,peraturan]" limit="3" include="count.posts"}}
+            {{#get "tags" filter="slug:[coretaxpedia,pph-final-umkm-pp20-2026,infografis,peraturan]" limit="5" include="count.posts"}}
             {{#foreach tags}}
             <section class="resource-section tag-{{slug}}">
                 {{#if feature_image}}

@@ -1,9 +1,6 @@
 {{!< default}}
 
 {{#contentFor "head"}}
-{{!-- ── <link rel="stylesheet" type="text/css" href="https://ghost.org/resources/assets/built/screen.css?v=55a7242196" /> ── --}}
-
-<link rel="stylesheet" type="text/css" href="https://ghost.org/resources/assets/built/screen.css?v=55a7242196" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,24 +11,10 @@
         --color-whitegrey: #e5eff5;
         --color-wash: #f1f2f3;
     }
-    .search { display: none; }
-    .resource-section { display: grid !important; }
-    .resource-section-coverlink img {
-        width: 280px;
-        height: auto;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-    @media (max-width: 1024px) {
-        .resource-section { grid-template-columns: 1fr !important; }
-        .resource-section-coverlink img {
-            width: 100%;
-            max-width: 400px;
-        }
-    }
     #hits { display: none; }
-    .tag-hash-coretaxpedia { --color-tag: #f91a1a; }
-    .tag-hash-pemeriksaan  { --color-tag: #f59e0b; }
+    .tag-infografis    { --color-tag: #3eb0ef; }
+    .tag-coretaxpedia  { --color-tag: #f91a1a; }
+    .tag-peraturan     { --color-tag: #10b981; }
 </style>
 {{/contentFor}}
 
@@ -54,92 +37,33 @@
                 <div id="hits"></div>
             </section>
 
-            {{!-- ── #coretaxpedia ── --}}
-            {{#get "posts" include="tags" filter="tag:hash-coretaxpedia" limit="5"}}
-            {{#if posts}}
-            <section class="resource-section tag-hash-coretaxpedia">
-                {{#foreach posts}}
-                {{#if @first}}
-                <a class="resource-section-coverlink" href="{{@site.url}}/resources/coretaxpedia/">
-                    {{#if tags.[0].feature_image}}
-                    <img src="{{tags.[0].feature_image}}" alt="{{tags.[0].name}}" loading="lazy" />
-                    {{else if feature_image}}
-                    <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                    {{/if}}
+            {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
+            {{#get "tags" filter="slug:[infografis,coretaxpedia,peraturan]" limit="3" include="count.posts"}}
+            {{#foreach tags}}
+            <section class="resource-section tag-{{slug}}">
+                {{#if feature_image}}
+                <a class="resource-section-coverlink" href="{{url}}">
+                    <img src="{{feature_image}}" alt="{{name}}" loading="lazy" />
                 </a>
-                <div class="resource-list">
-                    <h2>Coretaxpedia</h2>
-                    {{#if tags.[0].description}}<p>{{tags.[0].description}}</p>{{/if}}
                 {{/if}}
-                {{/foreach}}
+                <div class="resource-list">
+                    <h2>{{name}}</h2>
+                    {{#if description}}<p>{{description}}</p>{{/if}}
 
-                {{#foreach posts}}
-                <a class="resource-list-item" href="{{url}}">
-                    <span>{{title}}</span>
-                    <div><span>{{reading_time}}</span><svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                </a>
-                {{/foreach}}
+                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags"}}
+                    {{#foreach posts}}
+                    {{> "loop-zebra"}}
+                    {{/foreach}}
+                    {{/get}}
 
-                <a class="resource-section-morelink" href="{{@site.url}}/resources/coretaxpedia/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
+                    <a class="resource-section-morelink" href="{{url}}">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
                 </div>
             </section>
-            {{/if}}
-            {{/get}}
-
-            {{!-- ── #pemeriksaan ── --}}
-            {{#get "posts" include="tags" filter="tag:hash-pemeriksaan" limit="5"}}
-            {{#if posts}}
-            <section class="resource-section tag-hash-pemeriksaan">
-                {{#foreach posts}}
-                {{#if @first}}
-                <a class="resource-section-coverlink" href="{{@site.url}}/resources/pemeriksaan/">
-                    {{#if tags.[0].feature_image}}
-                    <img src="{{tags.[0].feature_image}}" alt="{{tags.[0].name}}" loading="lazy" />
-                    {{else if feature_image}}
-                    <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                    {{/if}}
-                </a>
-                <div class="resource-list">
-                    <h2>Pemeriksaan</h2>
-                    {{#if tags.[0].description}}<p>{{tags.[0].description}}</p>{{/if}}
-                {{/if}}
-                {{/foreach}}
-
-                {{#foreach posts}}
-                <a class="resource-list-item" href="{{url}}">
-                    <span>{{title}}</span>
-                    <div><span>{{reading_time}}</span><svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                </a>
-                {{/foreach}}
-
-                <a class="resource-section-morelink" href="{{@site.url}}/resources/pemeriksaan/">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
-                </div>
-            </section>
-            {{/if}}
+            {{/foreach}}
             {{/get}}
 
         </div>
     </div>
-
-    {{!--
-    {{#if @site.members_enabled}}
-    <section class="gh-sub">
-        <h2>{{t "Get trends & tips delivered to you."}}</h2>
-        <p>{{t "Subscribe to stay up to date with new guides and articles."}}</p>
-        <form class="gh-sub-form" data-members-form>
-            <input type="email" data-members-email placeholder="{{t "Your email address"}}" required="true" autocomplete="false">
-            <button class="form-button" type="submit" aria-label="{{t "Subscribe"}}">
-                <span class="default">{{t "Subscribe"}}</span>
-                <span class="loader"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path opacity="0.3" fill="currentColor" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/><path fill="currentColor" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"/></path></svg></span>
-                <span class="success">{{t "Email sent"}}</span>
-                <span class="error">{{t "Try again"}}</span>
-            </button>
-        </form>
-        <small>{{t "No spam. Unsubscribe any time."}}</small>
-    </section>
-    {{/if}}
-    --}}
-
 </main>
 
 {{#contentFor "body_class"}}resources-template{{/contentFor}}

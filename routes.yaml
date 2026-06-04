@@ -3,44 +3,20 @@ routes:
         template: sitemap
         content_type: text/xml
     /account/: members/account
-    /artikel/:
-        controller: channel
-        template: index
-        filter: primary_author:-[admin,tim-redaksi,pajak-resources]+tag:-[hash-about-wilayah,hash-tentang-pic,hash-wilayah]
-
-    # ── Resource category channels ──
-    /resources/coretaxpedia/:
-        controller: channel
-        template: resources-category
-        filter: tag:hash-coretaxpedia
-    /resources/pemeriksaan/:
-        controller: channel
-        template: resources-category
-        filter: tag:hash-pemeriksaan
 
 collections:
-    /tentang-pic/:
-        permalink: /tentang-pic/{slug}/
-        template: tentang-pic
-        filter: primary_tag:hash-tentang-pic
-    /wilayah/:
-        permalink: /wilayah/{slug}/
-        template: about-wilayah
-        filter: primary_tag:hash-wilayah
-    
     /:
-        permalink: '/{slug}/'
+        permalink: "/{slug}/"
         template: index
         # Exclude posts assigned to dedicated collections
-        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia,hash-pemeriksaan]
+        filter: tag:-[hash-wilayah,hash-tentang-pic]
 
     /resources/:
         permalink: /resources/{slug}/
         # Posts with internal-only tags (#hash-xxx) have primary_tag=null,
         # so we use tag: instead of primary_tag:
-        filter: tag:[hash-coretaxpedia, hash-pemeriksaan]
-        template: resources
+        filter: tag:[hash-resource]
 
 taxonomies:
-    tag: '/{slug}/'
-    author: '/{slug}/'
+    tag: "/{slug}/"
+    author: "/{slug}/"

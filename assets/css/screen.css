@@ -1,13 +1,13 @@
 /*@import "tailwindcss";*/
 @import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
 @import "fonts.css";
-
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
 :root {
     --font-sans:
         Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
         sans-serif; /* stylelint-disable-line value-keyword-case */
     --font-serif:
-        Lora, Georgia, Times, serif; /* stylelint-disable-line value-keyword-case */
+        "STIX Two Text", Lora, Georgia, Times, serif; /* stylelint-disable-line value-keyword-case */
     --head-nav-gap: 32px;
     --color-primary-text: var(--color-darker-gray);
     --h1-size: 4.4rem;

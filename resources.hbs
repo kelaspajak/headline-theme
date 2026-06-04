@@ -12,9 +12,6 @@
         --color-wash: #f1f2f3;
     }
     #hits { display: none; }
-    .tag-infografis    { --color-tag: #3eb0ef; }
-    .tag-coretaxpedia  { --color-tag: #f91a1a; }
-    .tag-peraturan     { --color-tag: #10b981; }
 </style>
 {{/contentFor}}
 
@@ -46,7 +43,7 @@
                     <img src="{{feature_image}}" alt="{{name}}" loading="lazy" />
                 </a>
                 {{/if}}
-                <div class="resource-list">
+                <div class="resource-list" style="--color-tag: {{accent_color}};">
                     <h2>{{name}}</h2>
                     {{#if description}}<p>{{description}}</p>{{/if}}
 

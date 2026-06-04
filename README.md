@@ -17,51 +17,35 @@ collections:
     /:
         permalink: '/{slug}/'
         template: index
-        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia,hash-pemeriksaan]
+        filter: tag:-[hash-wilayah,hash-tentang-pic]
 
     /resources/:
         permalink: /resources/{slug}/
-        filter: tag:[hash-coretaxpedia, hash-pemeriksaan]
+        filter: tag:[hash-resource]
         template: resources
 ```
 
 **How it works:**
-1. A post tagged with `#coretaxpedia` (internal tag) hits the `/` collection filter first — it's **excluded** by `tag:-[hash-coretaxpedia]`, so it falls through.
-2. It matches `/resources/` which includes `tag:[hash-coretaxpedia]` — assigned URL: `/resources/{slug}/`.
+1. A post tagged with the internal tag `#hash-resource` is **excluded** from `/` by `tag:-[hash-wilayah,hash-tentang-pic]`.
+2. It then matches `/resources/` by `tag:[hash-resource]` — assigned URL: `/resources/{slug}/`.
 3. A regular post (no internal tags) matches `/` — assigned URL: `/{slug}/`.
 
 **Critical:** Internal tags (`#hash-xxx`) make `primary_tag = null`, so use `tag:` not `primary_tag:` in filters.
 
-### Routes (Category Channels)
-
-```yaml
-routes:
-    /resources/coretaxpedia/:
-        controller: channel
-        template: resources-category
-        filter: tag:hash-coretaxpedia
-
-    /resources/pemeriksaan/:
-        controller: channel
-        template: resources-category
-        filter: tag:hash-pemeriksaan
-```
-
-Channel routes create **filtered views** without changing post URLs. Posts appear in both the `/resources/` collection (for their canonical URL) and the channel route (for filtered browsing).
-
 ### Adding a New Resource Category
 
-1. Create a new internal tag (e.g. `#ppn`) in Ghost Admin.
-2. Add a channel route in `routes.yaml`:
+1. Create a new internal tag (e.g. `#hash-ppn`, `#hash-pv`) in Ghost Admin.
+2. Update the `/resources/` collection filter in `routes.yaml` to include it:
    ```yaml
-   /resources/ppn/:
-       controller: channel
-       template: resources-category
-       filter: tag:hash-ppn
+   filter: tag:[hash-resource, hash-ppn, hash-pv]
    ```
-3. Add the tag to the `/resources/` collection filter:
+3. Add a channel route in `routes.yaml` if you want a dedicated listing page:
    ```yaml
-   filter: tag:[hash-coretaxpedia, hash-pemeriksaan, hash-ppn]
+   routes:
+       /resources/ppn/:
+           controller: channel
+           template: resources-category
+           filter: tag:hash-ppn
    ```
 4. Restart Ghost.
 5. Add a `ghTagData` entry in `resources-category.hbs` for the tag's hero section.

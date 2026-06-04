@@ -9,13 +9,13 @@ collections:
         permalink: "/{slug}/"
         template: index
         # Exclude posts assigned to dedicated collections
-        filter: tag:-[hash-wilayah,hash-tentang-pic]
+        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia,hash-pemeriksaan]
 
     /resources/:
         permalink: /resources/{slug}/
         # Posts with internal-only tags (#hash-xxx) have primary_tag=null,
         # so we use tag: instead of primary_tag:
-        filter: tag:[hash-resource]
+        filter: tag:[hash-resources]
 
 taxonomies:
     tag: "/{slug}/"

@@ -1252,3 +1252,68 @@ body:not(.home-template) .gh-topic-grid .gh-card {
         border-bottom: 1px solid var(--color-whitegrey);
     }
 }
+
+/* ── Featured Posts Grid ── */
+.gh-featuredposts {
+    display: grid;
+    grid-gap: 4vmin;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 6vmin auto 0;
+    max-width: 1000px;
+    padding-top: 60px;
+}
+.gh-card-link {
+    color: currentColor;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+.gh-card-image {
+    border-radius: 8px;
+    margin-bottom: 2vmin;
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+.gh-card-meta {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.2em;
+    margin: 0 0 0.8rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+.gh-card-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3em;
+}
+.gh-card-content p {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    margin: 1rem 0;
+    overflow: hidden;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    color: var(--color-midgrey, #738a94);
+}
+.gh-card-content > strong {
+    box-shadow: 0 -2px 0 0 inset var(--color-tag);
+    color: var(--color-tag);
+    display: inline-block;
+    font-weight: 500;
+    padding: 1px 0;
+    font-size: 1.4rem;
+}
+
+/* ── Post Feed (list) ── */
+.gh-postfeed {
+    padding: 6vmin 0;
+    margin: 0 auto;
+    max-width: 1000px;
+}

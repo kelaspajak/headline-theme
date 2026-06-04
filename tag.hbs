@@ -39,13 +39,14 @@
         max-width: 600px;
     }
     .gh-tag-head-content h1 {
-        color: #fff;
+        color: contrast-color(var(--color-tag));
         font-size: 4.2rem;
         font-weight: 800;
         margin: 0 0 .2em;
         letter-spacing: -0.02em;
     }
     .gh-tag-head-content p {
+    color: contrast-color(var(--color-tag));
         font-size: 1.8rem;
         line-height: 1.5em;
         opacity: 0.9;
@@ -278,24 +279,11 @@
 
     <div class="gh-page">
         <div class="gh-container">
-
             {{!-- Featured posts --}}
             <div class="gh-featuredposts">
-                {{#foreach posts}}
+                {{#foreach posts  limit="3"}}
                     {{#if featured}}
-                    <article class="gh-card post featured">
-                        <a class="gh-card-link" href="{{url}}">
-                            {{#if feature_image}}
-                            <img class="gh-card-image" src="{{feature_image}}" alt="{{title}}" loading="lazy" />
-                            {{/if}}
-                            <div class="gh-card-content">
-                                <span class="gh-card-meta">{{primary_tag.name}} <span class="bull">⁃</span> {{reading_time}}</span>
-                                <h2 class="gh-card-title">{{title}}</h2>
-                                <p>{{excerpt}}</p>
-                                <strong>{{t "Read more"}}</strong>
-                            </div>
-                        </a>
-                    </article>
+                    {{> featured-post }}
                     {{/if}}
                 {{/foreach}}
             </div>
@@ -305,16 +293,7 @@
                 <div class="gh-feed">
                     {{#foreach posts}}
                     {{#unless featured}}
-                    <a class="resource-list-item" href="{{url}}">
-                        <div class="resource-list-item-content">
-                            <strong>{{title}}</strong>
-                            <p>{{excerpt}}</p>
-                        </div>
-                        <div class="resource-list-item-right">
-                            <span>{{reading_time}}</span>
-                            <svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg"><path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </div>
-                    </a>
+                    {{> loop-zebra }}
                     {{/unless}}
                     {{/foreach}}
                 </div>

@@ -1,0 +1,95 @@
+{{!< default}}
+
+<style>
+    .error-state-centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 1rem;
+        min-height: calc(100vh - 40rem);
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .error-state-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .error-state-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-secondary-text, #6b7280);
+        margin-bottom: 0.5rem;
+    }
+
+    .error-state-title {
+        font-family: var(--font-serif, Georgia, serif);
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0;
+        color: var(--color-darkgrey, #1f2937);
+    }
+
+    .error-state-description {
+        font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: var(--color-secondary-text, #6b7280);
+        margin: 0;
+        max-width: 38rem;
+    }
+
+    .error-state-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 2.2rem;
+        font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--color-white, #fff);
+        background-color: var(--color-darkgrey, #1f2937);
+        border-radius: 0.6rem;
+        text-decoration: none;
+        transition: background-color 0.15s ease, transform 0.1s ease;
+        margin-top: 0.5rem;
+    }
+
+    .error-state-link:hover,
+    .error-state-link:focus {
+        background-color: var(--color-mid-gray, #4b5563);
+        outline: none;
+    }
+
+    .error-state-link:active {
+        transform: translateY(0.05rem);
+    }
+</style>
+
+<main class="main-wrap">
+    <div class="error-state-centered">
+        <div class="error-state-container">
+            <div class="error-state-icon">
+                {{> "icons/alert-octagon" size="48"}}
+            </div>
+            <h1 class="error-state-title">Ada yang salah di server (500)</h1>
+            <p class="error-state-description">
+                Kami sedang menangani masalah di belakang layar. Coba lagi dalam beberapa menit, atau kembali ke beranda sementara ini.
+            </p>
+            <a href="{{@site.url}}" class="error-state-link">
+                Kembali ke beranda
+            </a>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

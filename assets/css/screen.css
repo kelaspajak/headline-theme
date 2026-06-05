@@ -984,12 +984,32 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 /* ═══ User overrides ═══ */
 
 /* ── Resources page (inspired by resources-template on post.hbs) ── */
+.superhero {
+    font-size: clamp(1rem, -2.9375rem + 10.5vw, 6.25rem);
+}
 
-.gh-article-header p,
-.resource-section p,
 .supersub {
     font-family: var(--font-serif);
+    font-size: 3rem;
+    line-height: 1.4em;
+    margin: 1rem 0 0;
+    max-width: 880px;
+    opacity: .8;
+}
+.resource-section p {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
     line-height: 1.35em;
+    margin: 1rem 0 3rem;
+    max-width: 740px;
+    opacity: .7;
+}
+
+.gh-article-header p {
+    font-family: var(--font-serif);
+    line-height: 1.35em;
+    font-size: clamp(1.25rem, 0.6875rem + 1.5vw, 3rem);
+    max-width: 740px;
 }
 
 .resource-section {
@@ -1003,13 +1023,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 .resource-section img {
     width: 64vmin;
     max-width: 400px;
-}
-
-.resource-section p {
-    font-size: 2.2rem;
-    margin: 1rem 0 3rem;
-    max-width: 740px;
-    opacity: 0.7;
 }
 
 .resource-list-item {
@@ -1396,7 +1409,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 .gh-resources-hero p {
     font-family: var(--font-serif);
     font-size: 2rem;
-    color: var(--color-mid-gray);
+    color: var(--color-dark-gray);
     margin-top: 16px;
     max-width: 640px;
     margin-left: auto;

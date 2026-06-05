@@ -11,10 +11,14 @@
 
     <div class="gh-resources-hero">
     <span class="gh-post-meta">
-        <a class="gh-post-meta-crumb" href="/resources">Resources</a> 
+        {{#if tags.[0]}}
+        <a class="gh-post-meta-tag" href="/" style="--color-tag: {{#if tags.[0].accent_color}}{{tags.[0].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[0].name}}</a>
+        {{/if}}
+        {{#if tags.[1]}}
         <span class="bull">→</span> 
-        <a class="gh-post-meta-tag" href="/resources/{{slug}}">{{slug}}</a> 
-        <span class="bull">•</span> {{reading_time}}
+        <a class="gh-post-meta-tag" href="{{tags.[1].url}}" style="--color-tag: {{#if tags.[1].accent_color}}{{tags.[1].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[1].name}}</a> 
+        {{/if}}
+        <span class="bull">•</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
     </span>
         <h1>{{title}}</h1>
         {{#if custom_excerpt}}

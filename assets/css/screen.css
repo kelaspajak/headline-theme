@@ -994,7 +994,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     line-height: 1.4em;
     margin: 1rem 0 0;
     max-width: 880px;
-    opacity: .8;
+    opacity: 0.8;
 }
 .resource-section p {
     font-family: var(--font-serif);
@@ -1002,7 +1002,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     line-height: 1.35em;
     margin: 1rem 0 3rem;
     max-width: 740px;
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .gh-article-header p {
@@ -1623,4 +1623,9 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     padding: 6vmin 0;
     margin: 0 auto;
     max-width: 1000px;
+}
+
+/* pengaturan tag*/
+.gh-post-meta-tag {
+    color: var(--color-tag, #000) !important;
 }

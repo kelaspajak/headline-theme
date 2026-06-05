@@ -32,7 +32,7 @@
                     <h2>{{name}}</h2>
                     {{#if description}}<p>{{description}}</p>{{/if}}
 
-                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags"}}
+                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags" order="published_at ASC"}}}
                     {{#foreach posts}}
                     {{> "loop-zebra"}}
                     {{/foreach}}

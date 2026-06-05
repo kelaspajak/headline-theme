@@ -156,58 +156,6 @@
         margin: 0 auto;
         max-width: 1000px;
     }
-    .resource-list-item {
-        align-items: center;
-        border-bottom: 1px solid var(--color-whitegrey, #e5eff5);
-        color: var(--color-base);
-        display: flex;
-        font-size: 1.6rem;
-        justify-content: space-between;
-        line-height: 1.15em;
-        padding: 25px 0;
-        text-decoration: none;
-        transition: background 0.4s ease, padding 0.4s ease, color 0.4s ease;
-    }
-    .resource-list-item:first-of-type {
-        border-top: 1px solid var(--color-whitegrey, #e5eff5);
-    }
-    .resource-list-item:hover {
-        background: #f9fafa;
-        color: var(--color-tag, var(--color-blue));
-        padding: 25px 15px;
-        transition: background 0.2s ease, padding 0.2s ease, color 0.2s ease;
-    }
-    .resource-list-item-content strong {
-        font-size: 1.7rem;
-        font-weight: 700;
-    }
-    .resource-list-item-content p {
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-        color: var(--color-midgrey, #738a94);
-        display: -webkit-box;
-        flex: 0 0 auto;
-        margin: .5rem 0 0;
-        overflow: hidden;
-        transition: color 0.2s ease;
-    }
-    .resource-list-item:hover .resource-list-item-content p {
-        color: var(--color-base);
-    }
-    .resource-list-item-right {
-        flex-shrink: 0;
-        margin-left: 4vmin;
-        display: flex;
-        align-items: center;
-    }
-    .resource-list-item-right > span {
-        font-size: 1.2rem;
-        letter-spacing: .5px;
-        line-height: 1;
-        text-transform: uppercase;
-        color: var(--color-midgrey, #738a94);
-    }
-
     /* ── Responsive ── */
     @media (max-width: 900px) {
         .gh-featuredposts {
@@ -253,11 +201,11 @@
 </style>
 {{/contentFor}}
 
-<main class="gh-main" style="--accent-soft: {{color_to_rgba @tag.accent_color 0.9}};">
+<main class="gh-main">
 
     {{#tag}}
     <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{accent_color}};">
-        <div class="gh-container">
+        <div class="gh-container">gogogoggooooo
             <div class="gh-tag-head-content">
                 {{#if feature_image}}
                 <img class="gh-tag-head-img" src="{{feature_image}}" alt="{{name}}" />

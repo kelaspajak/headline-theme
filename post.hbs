@@ -1,12 +1,21 @@
 {{!< default}}
 
+{{#contentFor "body_class"}}resources-template{{/contentFor}}
+
 {{#contentFor "head"}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
 {{/contentFor}}
 
 {{#post}}
 <main class="gh-main gh-resources-page">
+
     <div class="gh-resources-hero">
+    <span class="gh-post-meta">
+        <a class="gh-post-meta-crumb" href="/resources">Resources</a> 
+        <span class="bull">→</span> 
+        <a class="gh-post-meta-tag" href="/resources/{{slug}}">{{slug}}</a> 
+        <span class="bull">•</span> {{reading_time}}
+    </span>
         <h1>{{title}}</h1>
         {{#if custom_excerpt}}
             <p>{{custom_excerpt}}</p>
@@ -18,6 +27,7 @@
             {{content}}
     </div>
 
+    {{!-- untuk sementara tidak tau gunanya
     <div class="gh-resources-body">
         {{#get "tags" filter="slug:[building,publishing,growth,business]" include="count.posts"}}
             {{#foreach tags}}
@@ -37,7 +47,7 @@
                     </div>
                     {{/if}}
                     <div>
-                        <h2>{{name}}</h2>
+                        <h2>{{name}} - </h2>
                         {{#if description}}<p>{{description}}</p>{{/if}}
                     </div>
                 </div>
@@ -62,6 +72,7 @@
             {{/foreach}}
         {{/get}}
     </div>
+    --}}
 </main>
 {{/post}}
 
@@ -74,5 +85,3 @@
         hasInnerContainers: true,
     });
 </script>
-
-{{#contentFor "body_class"}}resources-template{{/contentFor}}

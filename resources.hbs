@@ -20,7 +20,7 @@
             </section>
 
             {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
-            {{#get "tags" filter="slug:[coretaxpedia,pph-final-umkm-pp20-2026,infografis,peraturan]" limit="5" include="count.posts"}}
+            {{#get "tags" filter="slug:[coretaxpedia,pph-final-umkm-pp20-2026]" limit="5" include="count.posts"}}
             {{#foreach tags}}
             <section class="resource-section tag-{{slug}}">
                 {{#if feature_image}}
@@ -32,7 +32,7 @@
                     <h2>{{name}}</h2>
                     {{#if description}}<p>{{description}}</p>{{/if}}
 
-                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags" order="published_at ASC"}}}
+                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags"}}}
                     {{#foreach posts}}
                     {{> "loop-zebra"}}
                     {{/foreach}}

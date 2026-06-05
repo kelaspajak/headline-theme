@@ -1626,6 +1626,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 
 /* pengaturan tag*/
-.gh-post-meta-tag {
-    color: var(--color-tag, #000) !important;
+.gh-post-meta-tag:hover {
+    color: var(--color-tag, var(--color-darker-gray)) !important;
 }

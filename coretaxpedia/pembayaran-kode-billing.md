@@ -6,42 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Membatalkan kode billing
-
-Terakhir diupdate pada: 10 Dec 2025
-
-**Q: Apakah saya dapat membatalkan kode billing yang sudah terbit dari pembuatan SPT atau yang saya buat secara mandiri?**
-
-A:  Anda dapat melakukan pembatalan kode billing dengan cara mengakses menu **Pembayaran > Daftar Kode Billing Belum Dibayar**. Pada tabel daftar kode billing yang masih aktif, temukan kode billing yang ingin Anda batalkan, kemudian gulir (*scroll*) ke bagian kanan tabel sampai kolom “Aksi” dan klik tombol **Batal**.
-
-![](/files/view/64cf6e30-74ce-47b5-a206-d3ac2c04fc89.png)Kode billing yang sudah dibuat akan dibatalkan, dan dihapus dari tabel daftar kode billing aktif.
-
-⚠️*Harap berhati-hati apabila akan melakukan pembayaran kode billing. Pastikan Anda tidak melakukan pembayaran terhadap kode billing yang telah dibatalkan.*
-
-Apabila kode billing yang Anda batalkan adalah kode billing yang dihasilkan dari proses pelaporan SPT kurang bayar, maka pembatalan kode billing sekaligus mengubah kategori SPT tersebut dari SPT Menunggu Pembayaran kembali menjadi Konsep SPT.
-
-Artikel terkait:
-
-- [Edit SPT menunggu pembayaran](/edit-spt-menunggu-pembayaran)
-
----
-
-### Kode billing di DJP Online
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apakah saya masih dapat membuat kode billing melalui DJP Online?**
-
-A: Pembuatan kode billing melalui menu bayar di DJP Online masih berlaku atas masa dan tahun pajak 2024 dan sebelumnya. Contoh: Pembuatan kode billing untuk PPh pasal 25 masa pajak Desember 2024 tetap bisa menggunakan DJP Online.
-
-Pengecualian:
-
-- PPh final pengalihan tanah dan bangunan, meskipun transaksi atau masa/tahun pajaknya di tahun 2024 atau sebelumnya, pembuatan kode billing dilakukan **melalui Coretax DJP**. Contoh: Bayar PPh final atas penjualan tanah Desember 2024 harus lewat Coretax DJP.
-- Pembuatan kode billing untuk ketetapan pajak dilakukan melalui Coretax DJP termasuk untuk pembayaran atas masa/tahun pajak 2024 dan sebelumnya. Contoh: SKP/STP yang diterbitkan untuk tahun pajak 2023.
-- Pembayaran pajak bea meterai dilakukan melalui Coretax DJP termasuk untuk pembayaran atas masa/tahun pajak 2024 dan sebelumnya.
-
----
-
 ### Bayar kode billing
 
 Terakhir diupdate pada: 15 Oct 2025

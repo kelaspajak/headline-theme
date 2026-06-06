@@ -6,41 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Akses bagi bukan WP
-
-Terakhir diupdate pada: 27 Nov 2025
-
-**Q: Saya belum terdaftar sebagai wajib pajak. Bagaimana saya dapat mulai menggunakan Coretax DJP?**
-
-A: Apabila Anda sudah memenuhi persyaratan untuk terdaftar sebagai wajib pajak maka Anda perlu melakukan prosedur pendaftaran. Panduan detil untuk melakukan pendaftaran sebagai wajib pajak termasuk untuk orang pribadi, badan, instansi pemerintah, dan PMSE dapat [dilihat di sini](https://pajak.go.id/reformdjp/coretax/).
-
-Apabila Anda belum memiliki kewajiban untuk terdaftar sebagai wajib pajak tetapi memiliki kewajiban untuk melakukan pembayaran pajak tertentu seperti PPh final pengalihan hak atas tanah dan bangunan, atau Anda ditunjuk sebagai penanggung jawab wajib pajak, sehingga Anda membutuhkan akses terhadap Coretax DJP, maka Anda dapat menggunakan menu **Daftar Disini > Perorangan > Memiliki NIK > Hanya Registrasi **sesuai alur pada ilustrasi di bawah ini.
-
-![](/files/view/a3003637-8c22-4cfe-8575-78f7024d3cd4.png)
-
----
-
-### Akses Coretax DJP bagi subjek pajak luar negeri
-
-Terakhir diupdate pada: 27 Nov 2025
-
-**Q: Bagaimana cara mendapatkan akses Coretax DJP bagi subjek pajak luar negeri atau warga negara asing (WNA)?**
-
-A: Subjek pajak luar negeri yang membutuhkan akses Coretax DJP dapat menggunakan menu **Aktivasi Akun Wajib Pajak** untuk melakukan permintaan akses digital.
-
-![](/files/view/89cea3be-d759-4fb5-9cfb-edad26c7dc7b.png)Pada layar berikutnya ("Permintaan Akses Digital"), Anda dapat mengikuti langkah-langkah sebagai berikut:
-
-1. Pada bagian manajemen kasus, pilih jenis wajib pajak “Orang Pribadi atau Warisan Belum Terbagi.”
-2. Isi formulir dengan lengkap termasuk nomor paspor, negara asal, nomor telepon, dan alamat email.
-3. Pada bagian dokumen, unggah (*upload*) foto yang dipersyaratkan termasuk foto paspor.
-4. Baca dan centang pernyataan.
-5. Klik tombol **Simpan**.
-Periksa email untuk menerima tautan (*link*) yang dapat Anda gunakan untuk mengaktifkan akun pada Coretax DJP.
-
-![](/files/view/54e0d5c6-6c2e-4e7a-a8b0-885261767e33.jpeg)
-
----
-
 ### Atur ulang kata sandi
 
 Terakhir diupdate pada: 14 Apr 2026

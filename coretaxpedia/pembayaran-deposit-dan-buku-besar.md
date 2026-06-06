@@ -6,32 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Metode FIFO pada deposit
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apakah wajib pajak dapat memilih setoran deposit yang akan digunakan jika memiliki beberapa setoran deposit?**
-
-A: Apabila Anda melakukan pembayaran untuk SPT atau tagihan pajak dengan menggunakan deposit dan Anda memiliki beberapa setoran deposit yang belum digunakan dengan nilai yang lebih besar dari nilai pembayaran tersebut, maka sistem secara otomatis akan menggunakan saldo deposit yang disetor paling pertama untuk melakukan pembayaran.
-
-Untuk kasus-kasus tertentu dapat dilakukan Pbk deposit secara manual.
-
-**Artikel terkait:**
-
-- [Pemanfaatan deposit secara manual ](/pemanfaatan-deposit-secara-manual)
-
----
-
-### Deposit untuk tagihan sebelum 2025
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apakah deposit dapat digunakan untuk membayar tagihan pajak yang terbit pada tahun 2024 dan sebelumnya?**
-
-A: Ya. Deposit dapat digunakan untuk pembayaran tagihan pajak tahun 2024 dan sebelumnya selama data tagihan pajak tersebut sudah muncul di sistem Coretax DJP.
-
----
-
 ### Keterangan untuk deposit
 
 Terakhir diupdate pada: 17 Sep 2025

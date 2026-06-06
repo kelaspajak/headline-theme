@@ -6,22 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Kendala aktivasi – Belum aktif SPDN
-
-Terakhir diupdate pada: 16 Mar 2026
-
-Pop Up MessageSolusi**Bagaimana solusi jika saya mengalami kendala validasi email dan nomor HP saat mencoba aktivasi akun dengan status “Belum Aktif (SPDN)”?**Untuk mengatasi kendala aktivasi tersebut, hubungi Kring Pajak 1500200 atau kunjungi kantor pajak terdekat untuk memperbarui data kontak terlebih dahulu (nomor HP dan email) agar Anda bisa melanjutkan aktivasi akun Coretax DJP.
-
----
-
-### Kendala aktivasi – ukuran file foto
-
-Terakhir diupdate pada: 16 Mar 2026
-
-Pop Up MessageSolusi**Bagaimana mengatasi kendala “ukuran gambar lebih dari 300 KB” ketika saya mengunggah foto untuk aktivasi akun?**Kami mohon maaf atas ketidaknyamanan yang terjadi. Sistem Coretax DJP saat ini telah diperbarui agar secara otomatis menurunkan resolusi dan menyesuaikan ukuran gambar. Apabila Anda masih menjumpai kendala tersebut, kunjungi kantor pajak terdekat untuk mendapat asistensi dari petugas kami.
-
----
-
 ### Kode satker tidak ditemukan
 
 Terakhir diupdate pada: 16 Mar 2026

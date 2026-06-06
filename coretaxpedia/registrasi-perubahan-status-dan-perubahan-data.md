@@ -6,30 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Kewajiban pajak anggota keluarga
-
-Terakhir diupdate pada: 26 Sep 2025
-
-**Q: Setelah melakukan pengkinian data anggota keluarga yaitu menambah data anak pada Coretax DJP, saya menerima surat keterangan terdaftar untuk anak saya tersebut. Apakah ini berarti anak saya sudah menjadi wajib pajak?**
-
-A: Penerbitan surat keterangan terdaftar tersebut bersifat administratif untuk kepastian data bahwa anak tersebut sudah tercatat di dalam Coretax DJP sebagai bagian dari anggota keluarga, dan bukan untuk membebankan kewajiban pajak.
-
-Kewajiban perpajakan baru timbul apabila anak yang bersangkutan memenuhi syarat untuk terdaftar sebagai wajib pajak dan telah mengaktifkan NIK sebagai NPWP.
-
----
-
-### Perubahan data di DJP Online
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apakah perubahan data yang dilakukan DJP Online tidak mengubah data di sistem Coretax DJP?**
-
-A: Betul, perubahan data yang dilakukan DJP Online tidak mengubah data di sistem Coretax DJP. Namun pendaftaran NPWP dan perubahan profil wajib pajak yang dilakukan pada Coretax DJP dilakukan sinkronisasi data harian dengan data di sistem administrasi lama (*legacy*) seperti DJP Online.
-
-Contoh: Wajib pajak yang baru terdaftar di Coretax DJP pada 2 Juli 2025, baru dapat mengajukan permohonan yang diproses di sistem administrasi lama (*legacy*) pada 3 Juli 2025, setelah data wajib pajak terbaca di sistem administrasi lama.
-
----
-
 ### Pengajuan status nonaktif
 
 Terakhir diupdate pada: 17 Sep 2025

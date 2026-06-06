@@ -6,6 +6,57 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
+---
+### Cara pengajuan Pbk
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Bagaimana cara mengajukan permohonan pemindahbukuan (Pbk) secara mandiri di Coretax DJP?**
+
+A: Apabila terdapat sisa pembayaran atau saldo deposit yang belum digunakan, wajib pajak dapat mengajukan permohonan pemindahbukuan secara mandiri dengan mengikuti langkah-langkah sebagai berikut:
+
+1. *Login* ke Coretax DJP lalu buka menu **Pembayaran > Permohonan Pemindahbukuan**.
+2. Klik tombol **+Buat Permohonan Pemindahbukuan Baru**.
+3. Klik tombol **🔍︎** (kaca pembesar) untuk mencari data pembayaran yang akan dilakukan pemindahbukuan.
+4. Pilih kredit pajak yang akan dipindahbukukan.
+5. Lengkapi formulir pemindahbukuan.
+6. Unggah dokumen pendukung.
+7. Tandatangani permohonan.
+8. Klik tombol **Kirim Permohonan**.
+
+---
+### Siapa dapat mengajukan Pbk
+
+Terakhir diupdate pada: 11 Sep 2025
+
+**Q: Apakah pengajuan Pemindahbukuan (Pbk) dapat dilakukan oleh pegawai selain penanggung jawab/PIC pusat?**
+
+A: Saat ini, pengajuan pemindahbukuan pada Coretax DJP hanya dapat dilakukan oleh penanggung jawab/PIC pusat.
+
+---
+### Pengembalian kelebihan pembayaran pajak
+
+Terakhir diupdate pada: 09 Oct 2025
+
+**Q: Bagaimana cara mengajukan permohonan pengembalian kelebihan pembayaran pajak yang seharusnya tidak terutang?**
+
+A: Untuk mengajukan permohonan pengembalian kelebihan pembayaran pajak, Anda dapat melakukan langkah-langkah berikut:
+
+1. Masuk ke menu **Pembayaran > Formulir Restitusi Pajak**.
+2. Lengkapi formulir permohonan restitusi\. Pada nomor permohonan isikan nomor sesuai kebijakan internal wajib pajak atau beri tanda setrip/garis datar apabila tidak menggunakan nomor dokumen.
+3. Isi email pemohon restitusi.
+4. Pada kolom penanda tangan, untuk jenis wajib pajak badan, instansi pemerintah, atau pemungut PPN luar negeri melalui *e-Commerce* harus dipilih "Kuasa Wajib Pajak" atau "Wakil Wajib Pajak" dan pastikan permohonan diajukan melalui *impersonate* akun yang diwakilinya.
+5. Pada isian hal pengembalian, pilih alasan permintaan restitusi kemudian lengkapi informasi yang dibutuhkan. Kolom-kolom informasi yang muncul akan berbeda-beda sesuai dengan alasan permintaan restitusi.
+6. Pilih rekening bank yang dikehendaki sebagai rekening tujuan restitusi.
+7. Lengkapi dokumentasi pendukung sesuai kebutuhan. Lampiran yang wajib diunggah untuk seluruh alasan permintaan restitusi yaitu:
+
+Penghitungan pajak yang seharusnya tidak terutang.
+8. Surat kuasa khusus (untuk permohonan yang diajukan oleh kuasa wajib pajak) atau surat penunjukan pengurus (bagi permohonan yang diajukan oleh pengurus wajib pajak).
+9. Lampiran-lampiran lainnya menyesuaikan regulasi yang berlaku.
+
+Setelah formulir lengkap, klik tombol **Submit**. Apabila Anda belum mendaftarkan nomor rekening bank, maka Anda dapat mengikuti langkah-langkah [pada artikel ini](/data-rekening-bank).
+
+---
 ### Konfirmasi SPKKP
 
 Terakhir diupdate pada: 10 Oct 2025

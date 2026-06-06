@@ -6,30 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Faktur tanggal mundur
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apakah pembuatan faktur pajak dengan tanggal mundur bisa dilakukan?**
-
-A: Faktur Pajak paling lambat diunggah (di-upload) paling lambat tanggal 20 bulan berikutnya setelah tanggal pembuatan e-Faktur.
-
----
-
-### Uang muka legacy, pelunasan Coretax
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apa saja yang perlu diketahui terkait penerbitan faktur pajak pelunasan di Coretax DJP atas faktur pajak uang muka yang telah diterbitkan di sistem lama (*****legacy*****)?**
-
-A: Wajib pajak dapat memperhatikan beberapa hal sebagai berikut:
-
-1. Faktur pajak pelunasan di Coretax DJP tidak terhubung dengan faktur pajak uang muka yang dibuat di sistem lama.
-2. Wajib pajak membuat faktur pajak keluaran di Coretax DJP tanpa perlu mencentang “Pelunasan.”
-3. Nilai transaksi yang diinput adalah sejumlah pembayaran atas pelunasan.
-
----
-
 ### Faktur pajak uang muka dan pelunasan
 
 Terakhir diupdate pada: 17 Sep 2025

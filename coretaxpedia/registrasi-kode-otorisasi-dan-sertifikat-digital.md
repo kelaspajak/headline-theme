@@ -6,26 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Lupa passphrase kode otorisasi
-
-Terakhir diupdate pada: 10 Dec 2025
-
-**Q: Saya lupa *****passphrase *****yang saya gunakan sebagai kode otorisasi. Bagaimana cara melakukan pengaturan ulang kode otorisasi?**
-
-A: Pengaturan ulang kode otorisasi dapat dilakukan dengan mengikuti langkah-langkah yang sama dengan membuat kode otorisasi baru. Prosedur permintaan kode otorisasi baru dapat Anda baca pada artikel [Bagaimana mendapat kode otorisasi](/bagaimana-mendapat-kode-otorisasi).
-
----
-
-### Kode otorisasi tidak muncul
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Kode otorisasi/sertifikat digital belum muncul pada akun wajib pajak.**
-
-A: Anda dapat mengajukan permintaan kode otorisasi/sertifikat digital secara mandiri melalui Coretax DJP. Kode otorisasi hanya akan muncul untuk wajib pajak orang pribadi, karena yang memiliki wewenang untuk melaksanakan hak dan kewajiban perpajakan dalam Coretax DJP adalah wajib pajak orang pribadi baik untuk dirinya sendiri ataupun dalam kapasitas sebagai wakil atau kuasa untuk wajib pajak badan atau instansi pemerintah yang diwakilinya.
-
----
-
 ### Siapa yang harus memiliki kode otorisasi
 
 Terakhir diupdate pada: 26 Sep 2025

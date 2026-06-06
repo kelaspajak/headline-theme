@@ -6,55 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Ganti/batal suket PHTB
-
-Terakhir diupdate pada: 10 Oct 2025
-
-**Q: Apa yang harus dilakukan jika ada kesalahan data di surat keterangan validasi SSP PPh pengalihan tanah bangunan?**
-
-A. Surat keterangan bisa diganti apabila terjadi salah input data seperti NOP, alamat objek, luas tanah/bangunan, nama pembeli atau detil pembeli. Penggantian dapat dilakukan melalui menu: **Layanan Perpajakan > Layanan Administrasi > AS.01 Pemenuhan Kewajiban Perpajakan** dan memilih submenu:
-
-- AS.01-08 → untuk penggantian atas suket dari LA.01-03 & LA.01-03A (termasuk suket hasil migrasi sistem lama dan e-PHTB lama) atau;
-- AS.01-08A → untuk penggantian atas suket dari LA.01-04 (suket yang diajukan notaris via Coretax DJP).
-Dalam hal terdapat pembatalan transaksi pengalihan hak atas tanah dan/atau bangunan dan/atau perubahan PPJB atas tanah dan/atau bangunan, maka surat keterangan dapat dibatalkan. Pembatalan juga dilakukan karena adanya kesalahan/perubahan data pada NIK/NPWP Penjual, nama penjual, cara pembayaran, NTPN/Pbk, atau Jumlah Pembayaran. Pembatalan dilakukan melalui menu: **Layanan Perpajakan > Layanan Administrasi > AS.01 Pemenuhan Kewajiban Perpajakan** dan memilih submenu:
-
-- AS.01-07 → untuk suket dari LA.01-03 & LA.01-03A (termasuk suket hasil migrasi sistem lama dan e-PHTB lama) atau;
-- AS.01-07A → untuk suket dari LA.01-04 (suket yang diajukan notaris via Coretax DJP).
-Pembayaran lama yang dibatalkan tidak bisa dipindahbukukan (Pbk) dan tidak bisa divalidasi ulang. Atas pembayaran tersebut, Anda dapat mengajukan permohonan pengembalian pajak yang tidak seharusnya terutang, sebelum bisa digunakan untuk pembayaran pajak lain.
-
-Untuk menghindari terjadinya kesalahan serupa maka pastikan pada saat pengajuan suket:
-
-- Pengisian data dan nilai pembayaran sudah benar sejak awal.
-- Download dan cek isi dokumen sebelum melanjutkan kasus.
-- Alur kasus telah selesai sampai tahap akhir yang ditandai dengan status “kasus ditutup” atau langkah saat ini: “*End*”.
-- Jika ada hal yang tidak jelas, konfirmasi terlebih dulu sebelum lanjut.
-**Artikel terkait:**
-
-- [Pembatalan SKET PHTB](/pembatalan-sket-phtb)
-- [Pengembalian kelebihan pembayaran pajak](/pengembalian-kelebihan-pembayaran-pajak)
-
----
-
-### Bendahara pusat
-
-Terakhir diupdate pada: 02 Oct 2025
-
-**Q: Bagaimana tata cara pelaksanaan kewajiban perpajakan oleh pejabat perbendaharaan pada satuan kerja kementerian/lembaga (instansi pemerintah pusat) terkait pemotongan/pemungutan, penyetoran (termasuk penggunaan akun deposit 411618), pembuatan bukti pemotongan di Coretax DJP, hingga pelaporan SPT masa?**
-
-A: Satuan kerja adalah unit yang bertanggung jawab atas penggunaan anggaran dan melaksanakan kewajiban perpajakan sebagai berikut:
-
-1. Pemotongan/pemungutan Pajak: Dilakukan atas transaksi yang dikenakan pajak.
-2. Potongan/pungutan PPN dan PPh dalam SPP LS dan SPM LS: menggunakan akun pajak PPN dan PPh sesuai jenis pajaknya.
-3. Uang persediaan menggunakan deposit: Kewajiban perpajakan atas transaksi pemerintah yang menggunakan UP, penyetoran pajaknya menggunakan akun 411618 (deposit pajak).
-4. Pencatatan di aplikasi SAKTI: PPK merekam pemotongan/pemungutan PPh/PPN pada akun 411618 saat menyusun SPBy.
-5. Verifikasi dan penyetoran oleh BP/BPP: Dilakukan maksimal tiga hari kerja setelah pemotongan/pemungutan.
-6. Pembuatan bukti potong di Coretax DJP: membuat bukti potong PPh di Sistem Coretax DJP.
-7. Pelaporan SPT masa di Coretax DJP: menyelesaikan administrasi SPT masa berdasarkan bukti potong dan faktur.
-8. Transaksi via SPM LS: Nomor SP2D LS merupakan NTPN.
-Informasi lebih lanjut, hubungi kantor pajak terdaftar atau kontak Kring Pajak di 1500200.
-
----
-
 ### Pembelian tanah/bangunan oleh instansi pemerintah
 
 Terakhir diupdate pada: 02 Oct 2025

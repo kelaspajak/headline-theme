@@ -6,26 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Pengaruh konsep delta
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Bagaimana konsep "delta" mempengaruhi pembetulan SPT masa PPh 21, terutama jika SPT awal lebih bayar?**
-
-A: Sistem Coretax DJP menggunakan konsep perhitungan delta sehingga jika SPT normal menunjukkan lebih bayar, maka kompensasi dilakukan secara otomatis ke masa pajak berikutnya dan tidak dapat diubah secara manual.
-
----
-
-### Koreksi LB menjadi nihil atau KB
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apa implikasi finansial jika lebih bayar dalam SPT PPh 21 normal kemudian dilakukan pembetulan menjadi nihil atau kurang bayar?**
-
-A: Jika pembetulan menghasilkan SPT dengan status nihil, atau lebih bayar tetapi dengan nilai yang lebih kecil, atau kurang bayar, maka selisihnya harus dibayar pada masa pajak saat pembetulan dilakukan, karena lebih bayar sebelumnya sudah tercatat sebagai kompensasi.
-
----
-
 ### Nilai kompensasi tidak terisi
 
 Terakhir diupdate pada: 18 Sep 2025

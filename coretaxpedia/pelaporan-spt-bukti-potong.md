@@ -6,33 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Bagaimana bukti potong dikirimkan
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Bagaimana penerima penghasilan menerima bukti potong PPh dalam Coretax DJP?**
-
-A: Dalam Coretax DJP, bukti potong PPh akan langsung dikirim ke akun wajib pajak pihak penerima penghasilan, sehingga tidak perlu lagi meminta atau menyimpannya secara manual. Penerima penghasilan akan menerima notifikasi yang berisi detail bukti potong yang diterbitkan pemberi penghasilan.
-
----
-
-### Bagaimana membuat bukti potong
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Bagaimana cara membuat bukti potong PPh di Coretax DJP?**
-
-A: Berikut tata cara pembuatan bukti potong di Coretax DJP:
-
-1. Setelah *login*, masuk ke menu **eBupot**
-2. Pilih jenis bukti potong yang sesuai.
-3. Klik tombol **Create eBupot** untuk mengisi bukti potong pajak penghasilan.
-4. Isi formulir berdasarkan data yang valid termasuk informasi tentang pihak pemberi penghasilan, penerima penghasilan, jenis penghasilan, dan jumlah PPh yang dipotong.
-5. Klik tombol **Submit**, dan bukti potong akan otomatis tersimpan dalam sistem.
-![](/files/view/779243de-2ccb-4ac2-93fa-3c87c665168a.png)
-
----
-
 ### Dampak penggunaan NPWP sementara
 
 Terakhir diupdate pada: 17 Sep 2025

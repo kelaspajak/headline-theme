@@ -6,51 +6,6 @@ source: "https://pajak.go.id/coretaxpedia"
 lastScraped: "2026-06-06"
 ---
 
-### Dua jenis role
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Apa saja *****role***** akses atau peran yang dapat didelegasikan oleh PIC kepada pihak terkait dalam Coretax DJP?**
-
-A: Ada dua jenis *role* yang dapat ditetapkan bagi pihak terkait yaitu:
-
-- *Drafter*: melakukan pengisian dan pembuatan dokumen perpajakan.
-- *Signer*: melakukan penandatanganan dokumen perpajakan.
-PIC dapat mendelegasikan satu atau lebih peran tertentu kepada satu atau lebih pegawai, pengurus, atau kuasa melalui menu **Portal Saya > Profil Saya > Wakil/Kuasa Saya**.
-
-Dengan pembagian peran ini, perusahaan bisa lebih efisien mengatur dan membatasi hak akses kewajiban perpajakan. Administrasi perpajakan menjadi lebih jelas dan tertib sesuai tanggung jawab masing-masing pihak.
-
-**Artikel terkait:**
-
-- [Beri/cabut role](/beri-cabut-role)
-- [Cek role akses yang diberikan](/cek-role-akses-yang-diberikan)
-
----
-
-### Siapa saja pihak terkait
-
-Terakhir diupdate pada: 17 Sep 2025
-
-**Q: Siapa saja yang dimaksud dengan Pihak Terkait?**
-
-A: Pihak-pihak terkait dalam Coretax DJP terbagi atas dua kategori yaitu (1) orang terkait dan (2) wajib pajak terkait.
-
-**1. Orang terkait**
-
-Bagi wajib pajak badan, pihak terkait yang masuk dalam kategori orang terkait antara lain pengurus perusahaan (direktur, komisaris), pemegang saham, dan karyawan perusahaan.
-
-Bagi wajib pajak instansi pemerintah, pihak terkait yang masuk dalam kategori orang terkait antara lain bendaharawan, kuasa pengguna anggaran, pejabat penandatangan SPM, dan pegawai keuangan.
-
-Pihak terkait dalam kategori orang terkait ini dapat ditunjuk sebagai wakil/kuasa wajib pajak, dan diberikan hak akses (*role*) untuk menjalankan hak dan kewajiban perpajakan sesuai kebijakan internal perusahaan, misalnya sebagai pembuat faktur pajak, atau penandatangan SPT Masa PPh 21/26.
-
-**2. Wajib pajak terkait**
-
-Bagi wajib pajak badan, pihak terkait yang termasuk dalam kategori wajib pajak terkait antara lain perusahaan lain yang terhubung dalam satu grup perusahaan, penanggung pajak, atau penerima manfaat (*beneficial owner*).
-
-Wajib pajak terkait tidak dapat ditunjuk sebagai wakil/kuasa wajib pajak.
-
----
-
 ### Tambah/hapus pihak terkait
 
 Terakhir diupdate pada: 28 Apr 2026

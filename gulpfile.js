@@ -3,7 +3,6 @@ const pump = require('pump');
 const fs = require('fs');
 const path = require('path');
 const order = require('ordered-read-streams');
-const through2 = require('through2');
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
@@ -15,33 +14,12 @@ const zip = require('gulp-zip');
 
 // postcss plugins
 const easyimport = require('postcss-easy-import');
+const tailwindcss = require('@tailwindcss/postcss');
 const cssnano = require('cssnano');
 
 // translations support
 const { mergeLocales } = require('@tryghost/theme-translations/build');
 const sharedThemeAssetsPath = path.dirname(require.resolve('@tryghost/shared-theme-assets/package.json'));
-
-function getBuildStamp() {
-    const d = new Date();
-    const pad = (n) => String(n).padStart(2, '0');
-    const date = `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;
-    const time = `${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
-    return `${date}-${time}`;
-}
-
-function stampStream() {
-    const stamp = getBuildStamp();
-    return through2.obj(function (file, _, cb) {
-        if (file.isNull()) {
-            return cb(null, file);
-        }
-        const header = `/* Built: ${stamp} */\n`;
-        const orig = file.contents.toString();
-        file.contents = Buffer.from(header + orig);
-        this.push(file);
-        cb(null);
-    });
-}
 
 function serve(done) {
     livereload.listen();
@@ -69,10 +47,9 @@ function css(done) {
         src('assets/css/screen.css', {sourcemaps: true}),
         postcss([
             easyimport,
+            tailwindcss(),
             cssnano()
-        ]).on('error', function(err) {
-            console.error('CSS Error:', err.message);
-        }),
+        ]),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));

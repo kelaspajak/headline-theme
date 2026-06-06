@@ -1,0 +1,1012 @@
+---
+title: "Spt Spt"
+category: "PELAPORAN SPT"
+description: "Kumpulan FAQ Spt Spt dari Coretaxpedia"
+source: "https://pajak.go.id/coretaxpedia"
+lastScraped: "2026-06-06"
+---
+
+### Pengaruh konsep delta
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Bagaimana konsep "delta" mempengaruhi pembetulan SPT masa PPh 21, terutama jika SPT awal lebih bayar?**
+
+A: Sistem Coretax DJP menggunakan konsep perhitungan delta sehingga jika SPT normal menunjukkan lebih bayar, maka kompensasi dilakukan secara otomatis ke masa pajak berikutnya dan tidak dapat diubah secara manual.
+
+---
+
+### Koreksi LB menjadi nihil atau KB
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Apa implikasi finansial jika lebih bayar dalam SPT PPh 21 normal kemudian dilakukan pembetulan menjadi nihil atau kurang bayar?**
+
+A: Jika pembetulan menghasilkan SPT dengan status nihil, atau lebih bayar tetapi dengan nilai yang lebih kecil, atau kurang bayar, maka selisihnya harus dibayar pada masa pajak saat pembetulan dilakukan, karena lebih bayar sebelumnya sudah tercatat sebagai kompensasi.
+
+---
+
+### Nilai kompensasi tidak terisi
+
+Terakhir diupdate pada: 18 Sep 2025
+
+**Q: Bagaimana jika kompensasi lebih bayar PPN dari masa pajak sebelumnya tidak terisi pada konsep SPT masa PPN?**
+
+A: Data kompensasi lebih bayar PPN akan secara otomatis terisi pada konsep SPT masa PPN tujuan kompensasi. Dalam hal data kompensasi tidak tersedia silakan hubungi petugas di KPP terdekat atau Kring Pajak 1500200 untuk dilakukan pengecekan dan update data kompensasi (apabila diperlukan) oleh tim teknis.
+
+---
+
+### Tanggal pelaporan SPT
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Kapan SPT kurang bayar dianggap sudah dilaporkan (*****submitted*****)?**
+
+A: Pembayaran SPT dengan status kurang bayar hanya dapat dilakukan dengan salah satu dari dua cara yaitu (1) menggunakan kode billing yang otomatis terbit setelah klik **Bayar dan Lapor** pada saat membuat konsep SPT, atau (2) menggunakan saldo deposit yang telah disetorkan sebelumnya.
+
+1. Jika menggunakan kode billing, tanggal lapor SPT adalah tanggal kode billing dibayarkan.
+2. Jika menggunakan deposit, maka tanggal lapor SPT adalah tanggal dilakukan **Bayar dan Lapor**.
+Untuk pembayaran menggunakan deposit, pastikan saldo deposit cukup senilai pajak terutang dalam SPT tersebut. Pembayaran tidak dapat dilakukan dengan menggunakan sebagian deposit dan sebagian kode billing.
+
+**Artikel terkait:**
+
+- [Bayar tagihan dan SPT dengan deposit](/bayar-tagihan-dan-spt-dengan-deposit)
+- [Pemanfaatan deposit secara manual](/pemanfaatan-deposit-secara-manual)
+
+---
+
+### Jatuh tempo jatuh pada hari libur
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Apakah jatuh tempo pembayaran dan pelaporan SPT masa PPh pasal 21 bisa mundur bila jatuh pada hari libur? Apakah Sabtu dan Minggu dihitung sebagai hari libur?**
+
+A: Ya, jatuh tempo kewajiban pembayaran dan pelaporan pajak masa dapat mundur jika jatuh pada hari libur (Dasar Hukum: PMK 81 Tahun 2024).
+
+- Pasal 100 ayat (1) PMK 81 Tahun 2024
+"Dalam hal tanggal jatuh tempo pembayaran atau penyetoran pajak sebagaimana dimaksud dalam Pasal 94 bertepatan dengan hari libur, pembayaran atau penyetoran pajak dapat dilakukan paling lambat pada hari kerja berikutnya."
+
+- Pasal 173 ayat (1) PMK 81 Tahun 2024
+"Dalam hal batas akhir pelaporan sebagaimana dimaksud dalam Pasal 171 dan Pasal 172 bertepatan dengan hari libur, pelaporan dapat dilakukan paling lambat pada hari kerja berikutnya."
+
+- Pasal 100 ayat (2) & Pasal 173 ayat (2) PMK 81 Tahun 2024
+Definisi hari libur: Hari Sabtu, hari Minggu, hari libur nasional, hari libur Pemilu, dan hari cuti bersama nasional.
+
+Jika jatuh tempo pembayaran atau pelaporan kewajiban masa bertepatan dengan salah satu hari di atas, pembayaran/pelaporan tersebut dapat dilakukan paling lambat pada hari kerja berikutnya. Pastikan selalu memantau kalender dan pengumuman resmi dari pemerintah.
+
+**Contoh:**
+
+Jatuh tempo penyetoran PPh pasal 21 masa pajak Januari jatuh pada hari 15 Februari (hari Sabtu). Dalam hal ini batas waktu penyetoran mundur hingga hari Senin tanggal 17 Februari.
+
+---
+
+### Lapor PPN nihil
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Apakah masih bisa melaporkan PPN nihil pada tanggal 1, sementara faktur pajak baru dibuat pada tanggal 2 dan seterusnya? Apakah pembetulan SPT baru dapat dilakukan setelah rekanan melakukan pembayaran?**
+
+A: Pada sistem Coretax DJP, SPT masa PPN normal dibuat secara otomatis oleh sistem setiap tanggal 1 bulan berikutnya. Saat SPT masa PPN terbuat otomatis, sistem akan menarik seluruh data faktur pajak yang diterbitkan di masa pajak terkait.
+
+Sesuai Pasal 44 PER-11/PJ/2025, batas waktu upload e-faktur paling lambat tanggal 20 bulan berikutnya setelah tanggal pembuatan e-faktur.
+
+SPT masa PPN untuk suatu masa pajak tidak dapat disampaikan jika SPT masa PPN untuk masa pajak sebelumnya belum disampaikan.
+
+Apabila faktur pajak diterbitkan setelah tanggal 1, padahal SPT masa PPN normal sudah dilaporkan pada tanggal 1, wajib pajak dapat melaporkannya dalam SPT masa PPN pembetulan.
+
+Pembetulan tidak bergantung pada pembayaran oleh rekanan. Faktur pajak yang diterbitkan dalam masa pajak terkait akan otomatis ditarik ke dalam SPT oleh sistem.
+
+**Contoh:**
+
+Jika faktur pajak untuk masa pajak Juni 2025 dibuat pada tanggal 2 Juli 2025, maka faktur tersebut masih dapat dilaporkan dalam SPT masa PPN Juni 2025 hingga batas akhir *upload *faktur yaitu tanggal 20 Juli 2025.
+
+---
+
+### Dokumen lain PIB PEB
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Bagaimana cara wajib pajak membuat dokumen lain pajak masukan (PIB), atau dokumen pajak keluaran (PEB) konsolidasi di Coretax DJP?**
+
+A: Langkah-langkah pembuatan dokumen lain pajak masukan (PIB dan termasuk PIB konsolidasi)
+
+1. Masuk ke menu **e-Faktur**.
+2. Pada submenu Dokumen Lain, pilih **Pajak Masukan**.
+3. Klik tombol **Create From Interface**.
+4. Pilih masa dan tahun pajak sesuai dengan masa pajak SSP atas PIB.
+5. Pada bagian *prepopulated data*, pilih “Prepopulated PIB.”
+6. Klik tombol **Membuat**. Sistem akan mengambil data PIB sesuai yang tercatat di sistem DJBC.
+Langkah-langkah pembuatan dokumen lain pajak keluaran (PEB dan termasuk PEB Konsolidasi)
+
+1. Masuk ke menu **e-Faktur**.
+2. Pada submenu Dokumen Lain, pilih **Pajak Keluaran**.
+3. Klik tombol **+Prepopulated Data**.
+4. Pilih masa dan tahun pajak.
+5. Pada bagian *prepopulated data *pilih “Prepopulated PEB.”
+6. Klik tombol **Membuat**.
+7. Tunggu sistem Coretax DJP mengambil data dari sistem DJBC.
+8. Jika berhasil, klik tombol **↻** (*refresh*) pada bagian atas tabel.
+**Catatan**
+
+- Pastikan NPWP pemilik barang adalah NPWP yang digunakan untuk *prepopulated data*.
+- Setelah data berhasil terisi secara otomatis (*prepopulated*), pada kolom "Perekam" akan terisi "DJBC".
+- Lakukan penarikan data dokumen lain (keluaran dan masukan) secara berkala, misalnya mingguan.
+
+---
+
+### Lapor SPT terkendala
+
+Terakhir diupdate pada: 17 Sep 2025
+
+**Q: Lapor SPT masih terkendala sehingga belum bisa buat billing. Apa solusi agar tidak terlambat setor?**
+
+A: Gunakan fitur deposit agar terhindar dari sanksi keterlambatan setor pajak jika belum bisa membuat kode billing akibat kendala pada modul pelaporan SPT. Karena tanggal pengisian deposit dianggap sama dengan tanggal setor pajak maka Anda dapat terhindar dari sanksi keterlambatan setor meski pelaporan SPT atau kode billing belum bisa diproses.
+
+Deposit dapat Anda gunakan di kemudian waktu melalui mekanisme pemindahbukuan melalui salah satu dari dua cara, yaitu secara otomatis pada saat proses pelaporan SPT atau secara manual.
+
+**Artikel terkait:**
+
+- [Bayar tagihan dan SPT dengan deposit](/bayar-tagihan-dan-spt-dengan-deposit)
+- [Pemanfaatan deposit secara manual](/pemanfaatan-deposit-secara-manual)
+
+---
+
+### Lapor SPT tahunan orang pribadi
+
+Terakhir diupdate pada: 27 Feb 2026
+
+**Q: Bagaimana melaporkan SPT tahunan orang pribadi?**
+
+A: Pelaporan SPT tahunan dapat dilakukan dengan mudah di Coretax DJP mengikuti langkah-langkah sebagai berikut:
+
+1. Pada Coretax DJP akses menu **Surat Pemberitahuan (SPT) > Surat Pemberitahuan (SPT) > Buat Konsep SPT**.
+2. Pilih **PPh Orang Pribadi **kemudian klik tombol** Lanjut**.
+3. Pilih **SPT Tahunan** dan masukkan periode dan tahun pajak (misalnya Januari - Desember 2025). Klik tombol **Lanjut**.
+4. Pilih model SPT: “Normal” untuk pelaporan pertama kali, dan “Pembetulan” untuk membetulkan dan menyampaikan kembali SPT yang sudah pernah disampaikan.
+5. Klik tombol **Buat Konsep SPT**.
+6. Klik *icon* pensil 🖉 untuk memulai pengisian formulir SPT.
+7. Klik tombol **Posting** dan sistem akan secara otomatis mengisi sejumlah data pada formulir induk dan lampiran SPT.
+8. Periksa kembali data yang telah diisikan oleh sistem. Lakukan perbaikan apabila diperlukan.
+9. Isi dan lengkapi semua bagian SPT. Anda dapat mengikuti instruksi pada artikel terkait atau video tutorial di bawah.
+10. Untuk melaporkan SPT, klik tombol **Bayar dan Lapor**.
+11. Pilih penyedia penandatangan kemudian isi tanda tangan digital berupa ID dan kata sandi untuk validasi akhir pembuatan SPT.
+12. Klik tombol **Simpan** kemudian **Konfirmasi Tanda Tangan**.
+13. SPT yang berstatus kurang bayar akan pindah dari bagian konsep SPT ke SPT menunggu pembayaran.
+14. SPT yang telah selesai dilaporkan akan berpindah ke bagian SPT Dilaporkan.
+Untuk panduan lebih lengkap, saksikan video tutorial di bawah ini.
+
+**⚠ ****Penting:**
+
+Untuk melakukan pembayaran atas SPT dengan status kurang bayar, Anda dapat menggunakan saldo deposit atau menggunakan kode billing. Apabila Anda memilih pembayaran dengan menggunakan kode billing, maka sistem secara otomatis menerbitkan kode billing dengan nominal pembayaran yang sesuai dengan jumlah yang perlu dibayarkan. Anda hanya perlu melakukan pembayaran atas kode billing tersebut.
+
+Dokumen kode billing yang diterbitkan sistem dapat Anda lihat pada daftar kode billing belum dibayar (menu: **Pembayaran > Daftar Kode Billing Belum Dibayar**)** **atau pada dokumen Anda (menu: **Portal Saya > Dokumen Saya**).** **Untuk menampilkan data pada tabel, klik tombol **↻ **(Refresh).
+
+**Artikel terkait:**
+
+- [Penghasilan istri dari satu pemberi kerja](/penghasilan-istri-dari-satu-pemberi-kerja)
+- [Lapor SPT bagi istri yang memilih terpisah](/lapor-spt-bagi-istri-yang-memilih-terpisah)
+- [Bupot PPh salah masuk ke akun suami](/bupot-pph-salah-masuk-ke-akun-suami)
+- [Contoh kasus: NPWP gabung, penghasilan istri dari satu pemberi kerja.](/contoh-kasus-npwp-gabung-penghasilan-istri-dari-satu-pemberi-kerja)
+- [Contoh kasus: NPWP gabung, suami istri karyawan, memiliki usaha kecil.](/contoh-kasus-npwp-gabung-suami-istri-karyawan-memiliki-usaha-kecil)
+- [Contoh kasus: NPWP pisah, suami istri karyawan.](/contoh-kasus-npwp-pisah-suami-istri-karyawan)
+- [Coretax Form untuk lapor SPT tahunan PPh](/coretax-form-untuk-lapor-spt-tahunan-pph)
+
+**Pelaporan SPT tahunan orang pribadi karyawan**
+
+**Pelaporan SPT tahunan orang pribadi UMKM**
+
+**Pelaporan SPT tahunan orang pribadi profesional (dokter, pengacara, arsitek, notaris, dan sebagainya)**
+
+---
+
+### Simulator SPT Tahunan PPh Badan
+
+Terakhir diupdate pada: 16 Oct 2025
+
+**A: Apakah DJP menyediakan simulasi untuk pelaporan SPT tahunan bagi wajib pajak badan?**
+
+Q: Anda dapat menggunakan simulator pelaporan SPT tahunan yang dapat diakses melalui tautan berikut [https://spt-simulasi.pajak.go.id/login.](https://spt-simulasi.pajak.go.id/login.)
+
+![](/files/view/3949aa1c-5a0b-4402-ba2e-fe07b0d3e8bf.jpeg)
+
+Untuk masuk pada simulator ini, gunakan kata sandi *P@jakTumbuh1ndonesiaT@ngguh*.
+
+Setelah berhasil masuk, Anda akan dipandu untuk melakukan langkah-langkah yang diperlukan untuk melaporkan SPT tahunan bagi wajib pajak badan.
+
+---
+
+### Bukti Penerimaan Elektronik (BPE) SPT Tahunan
+
+Terakhir diupdate pada: 11 Feb 2026
+
+Q: Setelah melaporkan SPT Tahunan, dimanakah saya dapat melihat Bukti Penerimaan Elektronik (BPE) SPT Tahunan untuk memastikan SPT saya sudah berhasil dilaporkan?
+
+A: Tanda terima pelaporan atau BPE SPT Tahunan **hanya dikirimkan melalui email** dan bukan dalam bentuk file PDF. Dokumen BPE juga **tidak dikirimkan melalui Portal Wajib Pajak**, sehingga tidak ada di menu Dokumen Saya.
+
+Jika Anda tidak menerima Bukti Penerimaan Elektronik (BPE) SPT Tahunan silakan lakukan kirim ulang email dengan melakukan langkah berikut:
+
+- Buka menu **Surat Pemberitahuan (SPT)>Surat Pemberitahuan (SPT)**
+- Klik **SPT Dilaporkan**
+- Klik ikon **Email ✉ **di samping kiri SPT Tahunan![](/files/view/b6d3f6e7-e42f-4ed9-8bc8-9e9002074bee.jpeg)
+
+---
+
+### Lapor SPT tahunan badan
+
+Terakhir diupdate pada: 27 Nov 2025
+
+**Q: Bagaimana melaporkan SPT tahunan bagi wajib pajak badan?**
+
+A: Proses pelaporan SPT tahunan PPh badan melalui Coretax pada dasarnya memiliki alur yang sama untuk semua sektor usaha, kecuali detail pengisian lampiran yang bervariasi tergantung pada sektor yang dipilih. Perhatikan bahwa pelaporan SPT di Coretax selalu dimulai dari formulir induk terlebih dahulu, baru kemudian dilanjutkan dengan pengisian lampirannya.
+
+**1. Tahap persiapan dokumen**
+
+Siapkan dokumen-dokumen pendukung seperti:
+
+1. Laporan laba rugi.
+2. Laporan posisi keuangan (neraca).
+3. Bukti pemotongan atau pemungutan PPh dari lawan transaksi.
+4. Dokumen pendukung lainnya yang diperlukan.
+**2. Tahap login dan buat konsep SPT**
+
+1. Orang pribadi yang ditunjuk untuk mempersiapkan SPT (penanggung jawab, wakil, atau kuasa wajib pajak) melakukan login pada [https://coretaxdjp.pajak.go.id/](https://coretaxdjp.pajak.go.id/).
+2. Setelah berhasil *login*, lakukan *impersonate *ke akun wajib pajak badan dengan memilih NPWP badan pada *dropdown list*.
+3. Akses menu **Surat Pemberitahuan (SPT) > Surat Pemberitahuan (SPT) > Buat Konsep SPT**.
+4. Pilih jenis SPT “PPh Badan”, kemudian klik *lanjut*.
+5. Pilih periode SPT tahunan dan tentukan periode serta tahun pajak yang akan dilaporkan.
+6. Pilih model SPT normal.
+7. Klik **Buat Konsep SPT**. Konsep SPT akan terbentuk dan muncul dalam daftar.
+8. Klik ikon pensil 🖉 (atau tombol **lihat**) untuk membuka dan memulai pengisian SPT tahunan badan.
+**3. Tahap pengisian formulir induk SPT**
+
+Pengisian formulir induk melibatkan menjawab serangkaian pertanyaan “Ya” atau “Tidak” *yang akan menentukan lampiran mana saja yang wajib diisi*.
+
+Pada *Header* formulir induk, Pilih metode pembukuan yang dilakukan: Stelsel Akrual (metode *default*) atau Stelsel Kas (jika telah menyampaikan pemberitahuan).
+
+Formulir induk memiliki 10 bagian sebagai berikut:
+
+1. Identitas wajib pajak
+2. Informasi laporan keuangan
+3. Penghasilan yang dikenakan PPh yang bersifat final dan tidak termasuk objek pajak
+4. Penghitungan PPh
+5. Pengurang PPh terutang
+6. PPh kurang/lebih bayar
+7. Penghitungan angsuran PPh pasal 25 tahun berjalan
+8. Pernyataan transaksi
+9. Lampiran lainnya
+10. Pernyataan
+Beberapa pilihan yang perlu diperhatikan:
+
+**Informasi laporan keuangan (Bagian B)**
+
+- Pilih **sektor usaha** yang dilakukan oleh wajib pajak. *Pemilihan sektor ini akan menentukan jenis Lampiran 1 (Rekonsiliasi Laporan Keuangan) yang wajib diisi*.
+- Jawab apakah laporan keuangan **diaudit oleh akuntan publik**. Jika "Ya," isikan opini auditor dan NIK/NPWP 16 digit kantor akuntan publik.
+**PPh kurang/lebih bayar (Bagian F)**
+
+- Jika berstatus **lebih bayar**, pilih prosedur pengembalian kelebihan pembayaran (pemeriksaan atau pengembalian pendahuluan)
+- Tentukan nomor rekening bank tujuan. Nomor rekening dapat diubah melalui menu **Portal Saya > Perubahan Data > Identitas Wajib Pajak**.
+**Pernyataan transaksi (Bagian H)**
+
+- Jawab 9 pertanyaan transaksi (Ya atau Tidak), termasuk terkait transaksi hubungan istimewa (*related party*), kewajiban menyampaikan dokumen *transfer pricing*, penyertaan modal/utang/piutang ke afiliasi, pembebanan biaya penyusutan/amortisasi fiskal, dan lain-lain.
+- *Setiap jawaban "Ya" akan memunculkan notifikasi lampiran tambahan yang harus diisi (misalnya: Lampiran 9 jika memilih "Ya" pada biaya penyusutan/amortisasi*).
+**4. Tahap Pengisian Lampiran SPT**
+
+Gulir ke bagian paling atas dan isi lampiran-lampiran yang diwajibkan oleh sistem berdasarkan jawaban Anda pada formulir induk.
+
+**5. Tahap Pembayaran dan Pelaporan SPT **
+
+1. Setelah semua data pada lampiran diisi, kembali ke formulir induk dan pastikan nilai PPh yang masih harus dibayar telah sesuai.
+2. Baca dan beri tanda centang pada pernyataan (Bagian J).
+3. Klik tombol **Bayar dan Lapor**.
+4. Jika status SPT adalah Kurang Bayar maka sistem akan menawarkan opsi pelunasan menggunakan **deposit pajak** (jika saldo mencukupi) atau melalui **pembuatan kode *****billing***. Pilih salah satu metode pembayaran.
+5. **Tandatangani SPT** dengan memilih penyedia tanda tangan dan memasukkan *passphrase*. Klik tombol **Simpan**
+6. Apabila *passphrase* yang dimasukkan telah sesuai, klik tombol **Konfirmasi Tanda Tangan**.
+**Status Akhir Pelaporan:**
+
+- Jika status SPT **Nihil** atau **Lebih Bayar**, atau jika pembayaran dilakukan menggunakan deposit, SPT akan otomatis berstatus **Dilaporkan**.
+- Jika pembayaran dilakukan dengan kode *billing*, status SPT akan berubah menjadi **Menunggu Pembayaran** dan akan otomatis berubah menjadi **Dilaporkan** setelah pelunasan.
+Untuk panduan lebih lengkap, saksikan video tutorial pada tautan berikut:
+
+**Pelaporan SPT PPh tahunan badan sektor UMKM **
+
+**Pelaporan SPT PPh tahunan badan sektor perdagangan**
+
+**Pelaporan SPT PPh tahunan badan sektor jasa**
+
+**Pelaporan SPT PPh tahunan badan sektor manufaktur**
+
+**Pelaporan SPT PPh tahunan badan sektor perbankan**
+
+---
+
+### Edit SPT menunggu pembayaran
+
+Terakhir diupdate pada: 10 Dec 2025
+
+**Q: Konsep SPT saya sudah terbit kode billing dan berubah status menjadi SPT menunggu pembayaran, tetapi ternyata ada yang perlu diperbaiki. Bagaimana saya melakukan edit atas konsep SPT yang sudah berstatus menunggu pembayaran?**
+
+A: Edit hanya dapat dilakukan atas SPT yang ada dalam kategori “Konsep SPT.” Untuk itu apabila Anda perlu melakukan edit atas SPT yang sudah terbit kode billing dan berpindah kategori menjadi “SPT Menunggu Pembayaran,” maka Anda perlu membatalkan kode billing yang sudah terbit tersebut agar SPT kembali berstatus konsep SPT.
+
+Untuk membatalkan kode billing yang sudah terbit, Anda dapat melakukan langkah-langkah sebagai berikut:
+
+1. Login ke akun Coretax DJP Anda dan akses menu **Pembayaran > Daftar Kode Billing Belum Dibayar**.
+2. Pada tabel yang memuat daftar kode billing belum dibayar, gulir ke kanan untuk menemukan kolom “Aksi.”
+3. Pada kode billing yang terbit dari SPT yang ingin diperbaiki, klik tombol **Batal**.
+4. Kode billing yang dibatalkan tidak lagi muncul di tabel daftar kode billing belum dibayar.
+5. Setelah beberapa saat, SPT akan berpindah kembali menjadi konsep dan dapat Anda edit.
+![](/files/view/2b3512ad-4c37-4a1e-b7c3-cbc9f4ef9b3c.png)⚠️*Harap berhati-hati apabila akan melakukan pembayaran SPT. Pastikan Anda membayar menggunakan kode billing yang benar (yang dihasilkan dari konsep SPT yang telah selesai dilakukan edit) untuk menghindari pembayaran menggunakan kode billing yang telah dibatalkan.*
+
+---
+
+### Lapor SPT bagi istri yang memilih terpisah
+
+Terakhir diupdate pada: 16 Apr 2026
+
+**Q: Saya istri yang memilih untuk menjalankan kewajiban perpajakan terpisah dari suami. Bagaimana saya melaporkan SPT saya melalui Coretax DJP?**
+
+A: Bagi wajib pajak orang pribadi, pelaporan SPT melalui Coretax DJP dilakukan mengikuti langkah-langkah yang dijelaskan [pada artikel ini](/lapor-spt-tahunan-orang-pribadi).
+
+Khusus bagi istri yang menjalankan kewajiban perpajakan menggunakan NPWP sendiri (tidak gabung dengan NPWP suami), maka pastikan bahwa:
+
+1. Anda telah melakukan aktivasi akun Coretax DJP. Apabila Anda belum pernah melakukan aktivasi akun, Anda dapat mengikuti langkah-langkah [pada artikel ini](/akses-coretax-bagi-bukan-user-djp-online).
+2. Status NPWP Anda adalah “Aktif.” Apabila status NPWP adalah tidak aktif, Anda dapat mengubah status NPWP menjadi aktif mengikut langkah-langkah [pada artikel ini](/ubah-status-menjadi-aktif).
+3. Status unit perpajakan Anda pada Daftar Unit Keluarga suami adalah “Kepala Keluarga Lain (PH/MT)” dan kategori profil wajib pajak adalah PH atau MT. Untuk melakukan perubahan status dan kategori, ikuti panduan [pada artikel ini](/ubah-status-ph-mt).
+Contoh kasus untuk pelaporan SPT suami dan istri karyawan yang memilih menjalankan kewajiban perpajakan secara terpisah dapat dilihat [pada artikel ini](/contoh-kasus-npwp-pisah-suami-istri-karyawan).
+
+**Artikel terkait:**
+
+- [Cek status dan kategori wajib pajak](/cek-status-dan-kategori-wajib-pajak)
+- [Pelaporan SPT suami istri pisah NPWP](/pelaporan-spt-suami-istri-pisah-npwp)
+
+---
+
+### Penghasilan istri dari satu pemberi kerja
+
+Terakhir diupdate pada: 04 Feb 2026
+
+**Q: Bagaimana cara melaporkan penghasilan istri dari satu pemberi kerja untuk istri yang bergabung dengan NPWP suami?**
+
+A: Bagi suami istri yang melaporkan SPT sebagai satu kesatuan perpajakan (NPWP istri gabung dengan suami), maka penghasilan istri digabung dengan penghasilan suami untuk perhitungan pajak penghasilan.
+
+Dalam hal istri memperoleh penghasilan hanya dari satu pemberi kerja dan pekerjaan tersebut tidak ada hubungannya dengan usaha atau pekerjaan suami atau anggota keluarga lainnya, maka penghasilan istri tersebut diperlakukan sebagai penghasilan yang dipotong pajak penghasilan yang bersifat final.
+
+Dalam kondisi ini, maka suami perlu melakukan penyesuaian lampiran SPT agar tidak terjadi kurang bayar pajak yang diakibatkan oleh penghasilan istri yang digabung dengan penghasilan suami.
+
+Penyesuaian dilakukan dengan cara sebagai berikut:
+
+1. Pastikan istri telah terdaftar dengan status tanggungan dalam Data Unit Keluarga pada akun Coretax DJP suami.
+2. Pada formulir induk SPT, jawab "Ya" pada pertanyaan nomor 10a (Apakah terdapat PPh yang telah dipotong/dipungut oleh pihak lain?) dan nomor 14c (Apakah Anda menerima penghasilan yang dikenakan pajak penghasilan bersifat final?).
+3. Pada lampiran SPT, periksa lampiran 1 bagian D (Penghasilan Neto Dalam Negeri dari Pekerjaan) dan bagian E (Daftar Bukti Pemotongan/Pemungutan PPh) dan catat detail data bukti potong penghasilan istri termasuk:NPWP pemberi kerja,
+4. jumlah penghasilan, dan
+5. jumlah PPh terutang.
+Masukkan data penghasilan tersebut pada lampiran 2 bagian A (Penghasilan yang Dikenakan Pajak Penghasilan Bersifat Final).1. Klik tombol **Tambah**.
+2. Masukkan NPWP pemberi kerja sebagai pemotong pajak. Sistem secara otomatis akan menampilkan nama pemotong pajak.
+3. Pada isian jenis penghasilan pilih “Penghasilan istri dari satu pemberi kerja.” Sistem secara otomatis akan mengisi kode objek pajak.
+4. Masukkan jumlah penghasilan istri sebagai dasar pengenaan pajak.
+5. Masukkan jumlah PPh terutang yang telah dipotong oleh pemberi kerja.
+6. Klik tombol **Simpan**.
+Kembali ke lampiran 1 kemudian hapus data penghasilan istri dari bagian D, dan bukti potong pajak untuk penghasilan tersebut dari bagian E. Hapus data dilakukan dengan cara klik ikon tong sampah 🗑 pada kolom Tindakan pada baris data yang akan dihapus.  Setelah data penghasilan istri dari lampiran 1 dihapus maka data penghasilan dari pekerjaan yang diperhitungkan pada induk SPT tidak lagi memasukkan data penghasilan istri.**Artikel terkait:**
+
+- [Lapor SPT tahunan orang pribadi](/lapor-spt-tahunan-orang-pribadi)
+- [Lapor SPT bagi istri yang memilih terpisah](/lapor-spt-bagi-istri-yang-memilih-terpisah)
+
+---
+
+### Tombol Posting pada SPT Tahunan
+
+Terakhir diupdate pada: 04 Feb 2026
+
+**Q: Apakah saya perlu klik tombol “Posting" pada formulir induk SPT Tahunan? Apa fungsi tombol tersebut? **
+
+A: Untuk melakukan pelaporan SPT tahunan pajak penghasilan, Anda perlu klik tombol **Posting** yang ada pada formulir induk SPT. Tombol ini berfungsi untuk membantu Anda melakukan pengisian SPT dengan cara melakukan pengisian sejumlah data pada formulir secara otomatis menggunakan data yang telah tersimpan dalam sistem Coretax DJP sehingga Anda tidak perlu melakukan pengisian data secara manual atas data tersebut.
+
+Untuk SPT Tahunan PPh Orang Pribadi, tombol ini membantu mengisi data seperti data harta, utang, daftar anggota keluarga, bukti potong PPh, dan pembayaran pajak. Sedangkan untuk SPT Tahunan PPh Badan, tombol ini membantu mengisi data seperti data pemegang saham/pemilik modal, bukti potong PPh, pembayaran PPh yang telah dilakukan, dan harta pada penyusutan/amortisasi fiskal.
+
+Atas data-data yang terisi secara otomatis tersebut, Anda tetap perlu melakukan pengecekan kembali. Jika terdapat data yang tidak benar atau tidak mutakhir, lakukan perbaikan sebelum melakukan pelaporan SPT.
+
+**Artikel terkait:**
+
+- [Lapor SPT tahunan orang pribadi](/lapor-spt-tahunan-orang-pribadi)
+- [Lapor SPT tahunan badan](/lapor-spt-tahunan-badan)
+
+---
+
+### SPT Tahunan Bagian Tahun Pajak
+
+Terakhir diupdate pada: 12 Feb 2026
+
+**Q: Saat membuat Konsep SPT, terdapat pilihan "SPT Bagian Tahun Pajak" dan "SPT Tahunan", mana yang harus saya pilih?**
+
+A: SPT Tahunan Bagian Tahun Pajak adalah Surat Pemberitahuan yang digunakan untuk melaporkan: penghitungan dan/atau pembayaran pajak, objek pajak dan bukan objek pajak, serta harta dan kewajiban, untuk jangka waktu kurang dari 1 (satu) tahun pajak (tidak penuh 12 bulan).
+
+SPT Tahunan Bagian Tahun Pajak ini menggantikan SPT Tahunan Tahun Pajak (1 tahun penuh) apabila kewajiban subjektif Wajib Pajak dimulai atau berakhir di pertengahan tahun.
+
+Siapa yang Menggunakan SPT Bagian Tahun Pajak?SPT Bagian Tahun Pajak bukan pilihan bebas, tetapi konsekuensi hukum atas kondisi tertentu ketika kewajiban pajak tidak berlangsung setahun penuh.
+
+**⚠**** Kondisi yang WAJIB menggunakan SPT Bagian Tahun Pajak:**
+
+1. Orang Pribadi Baru Menjadi Subjek Pajak Dalam Negeri (SPDN), misalnya:Tuan B adalah WNA dan mulai menjadi SPDN pada Oktober 2025
+2. SPT yang dibuat: Bagian Tahun Pajak Oktober–Desember 2025
+Orang Pribadi Kehilangan Kewajiban Subjektif di Tengah Tahun
+Misalnya karena:- meninggalkan Indonesia untuk selama-lamanya, atau
+- meninggal dunia.
+Contoh:
+
+Tuan C meninggal dunia pada Agustus 2025. SPT yang dibuat: Bagian Tahun Pajak Januari–Agustus 2025
+
+1. Warisan Belum Terbagi (WBT)  Kewajiban subjektif orang pribadi berakhir saat meninggal dunia. Selanjutnya timbul subjek pajak baru, yaitu Warisan Belum Terbagi (WBT).Contoh:Pewaris meninggal Agustus 2025. SPT Almarhum: Bagian Tahun Pajak Jan–Agu 2025
+2. Warisan belum dibagi sampai akhir tahun. WBT menyampaikan SPT Bagian Tahun Pajak Sep–Des 2025
+**⚠ ****Kondisi yang TIDAK BOLEH Menggunakan SPT Bagian Tahun Pajak**SPT Bagian Tahun Pajak tidak boleh dipilih apabila kewajiban subjektif Wajib Pajak sebenarnya berlangsung selama 1 tahun penuh, meskipun **baru bekerja di tengah tahun** atau **berhenti bekerja di tengah tahun**.
+
+Bukti Potong & Pemilihan Jenis SPTPrinsip Utama pemilihan Jenis SPT ditentukan oleh **status kewajiban subjektif**, bukan oleh lama bekerja.
+
+- Bukti Potong “Kurang dari Setahun” (TANPA disetahunkan)  **WAJIB memilih SPT Tahunan (Tahun Pajak penuh)** karena status ini digunakan untuk pegawai yang Subjek Pajak Dalam Negeri sepanjang tahun, tetapi hanya bekerja sebagian tahun pada pemberi kerja tersebut.
+Contoh Kasus
+
+1. Pegawai pindah kerja  Tuan A pindah kerja di tengah tahun.Januari – Juni Tuan A bekerja di PT X JakartaJuli – Desember Tuan A bekerja di PT X SurabayaPT X Jakarta menerbitkan BPA1 “Kurang dari Setahun”✅ Tuan A wajib Lapor SPT Tahun Pajak penuh dan gabungkan semua bukti potong***⚠ ******Tuan A tidak bisa melaporkan SPT Bagian Tahun Pajak Januari – Juni atau Bagian Tahun Pajak Juli – Desember***
+2. Pegawai baru mulai bekerja  Nona B (WNI) mulai bekerja September 2025.BPA1 September – Desember berstatus “Kurang dari Setahun”✅ Nona B wajib memilih Tahun Pajak 2025***⚠ ******Nona B tidak bisa memilih Bagian Tahun Pajak September – Desember 2025***
+3. Pensiun di tengah tahun (tetap tinggal di Indonesia)  Bapak C pensiun pada Juli 2025.BPA1 Januari – Juni berstatus “Kurang dari Setahun”✅ Bapak C wajib memilih Tahun Pajak 2025***⚠ ******Bapak C tidak bisa memilih Bagian Tahun Pajak Januari – Juni***
+- Bukti Potong: “Kurang dari Setahun yang Penghasilannya Disetahunkan”  Jika Anda mendapat bukti poting ini maka Anda memilih SPT Bagian Tahun Pajak***⚠ Syarat: ******kewajiban subjektif benar-benar baru dimulai atau berakhir di tengah tahun.***
+
+---
+
+### Hapus konsep SPT Tahunan dan posting ulang
+
+Terakhir diupdate pada: 05 Feb 2026
+
+**Q: Jika saya terlanjur menghapus/mengubah data-data pada SPT tahunan seperti data bukti potong pajak penghasilan, harta, utang, dan data lainnya yang sebelumnya telah diisi secara otomatis oleh sistem dan saya ingin mengembalikan data seperti semula, apa yang harus saya lakukan?**
+
+A: Anda dapat menghapus konsep SPT tahunan yang telah dibuat kemudian membuat kembali konsep SPT yang baru. Setelah konsep SPT yang baru telah dibuat, lakukan pengisian data secara otomatis dengan klik pada tombol **Posting**.
+
+Untuk menghapus konsep SPT:
+
+1. Akses menu **Surat Pemberitahuan (SPT) > Surat Pemberitahuan (SPT)**.
+2. Pada layar SPT Belum Disampaikan, klik ikon tong sampah 🗑 pada kolom paling kiri.
+**Artikel terkait:**
+
+- [Lapor SPT tahunan orang pribadi](/lapor-spt-tahunan-orang-pribadi)
+- [Lapor SPT tahunan badan](/lapor-spt-tahunan-badan)
+
+---
+
+### Penghasilan dari pekerjaan bebas
+
+Terakhir diupdate pada: 19 Feb 2026
+
+**Q: Salah satu pilihan sumber penghasilan pada formulir induk Coretax DJP adalah pekerjaan bebas. Apa yang dimaksud pekerjaan bebas ini, siapa saja contohnya, dan bagaimana penghitungan pajaknya?**
+
+A: Pekerjaan bebas merupakan pekerjaan yang dilakukan oleh orang pribadi yang mempunyai keahlian khusus sebagai usaha untuk memperoleh penghasilan yang tidak terikat oleh suatu hubungan kerja. Orang pribadi yang memperoleh penghasilan dari pekerjaan bebas termasuk:
+
+1. Profesi/tenaga ahli yang melakukan pekerjaan bebas, antara lain: pengacara, akuntan, arsitek, dokter, konsultan, notaris, pejabat pembuat akta tanah, penilai, dan aktuaris;
+2. Pemain musik, pembawa acara, penyanyi, pelawak, bintang film, bintang sinetron, bintang iklan, sutradara, kru film, foto model, peragawan/peragawati, pemain drama, penari, pemahat, pelukis, pembuat/pencipta konten pada media yang dibagikan secara daring (*influencer*, *selebgram*, *blogger*, *vlogger*, dan sejenis lainnya), dan seniman lainnya;
+3. Olahragawan;
+4. Penasihat, pengajar, penceramah, penyuluh, dan moderator;
+5. Pengarang, peneliti, dan penerjemah;
+6. Pemberi jasa dalam segala bidang;
+7. Agen iklan;
+8. Pengawas atau pengelola proyek;
+9. Pembawa pesanan atau yang menemukan langganan, atau perantara;
+10. Petugas penjaja barang dagangan;
+11. Agen asuransi
+12. Distributor perusahaan MLM atau *direct selling* dan kegiatan sejenis lainnya.
+Apabila pekerjaan Anda termasuk dalam daftar di atas, maka pilih “Pekerjaan Bebas” pada isian sumber penghasilan di formulir induk SPT.
+
+![](/files/view/e2ed987f-521c-4996-bac4-42f4eec98f75.png)
+
+**Penggunaan Norma**
+
+Wajib pajak orang pribadi yang memperoleh penghasilan dari pekerjaan bebas dan tidak menyelenggarakan pembukuan, dapat menggunakan norma penghitungan penghasilan neto (NPPN) sebagai dasar untuk menghitung pajak terutang.
+
+Kriteria yang harus dipenuhi yaitu:
+
+1. Penghasilan bruto (omzet) gabungan seluruh anggota keluarga (suami, istri, dan anak) dalam satu tahun **tidak melebihi** Rp4,8 miliar.
+2. Menyampaikan pemberitahuan penggunaan norma melalui Coretax DJP paling lambat tiga bulan pertama dari tahun pajak yang bersangkutan (contoh: untuk tahun pajak 2026, batas akhir pemberitahuan adalah 31 Maret 2026).
+3. Menyelenggarakan pencatatan, meskipun tidak membuat pembukuan.
+Dengan menggunakan NPPN, maka penghasilan neto dihitung berdasarkan persentase yang ditetapkan Direktur Jenderal Pajak sesuai jenis usaha/pekerjaan dan wilayah tempat usaha.
+
+Jika tidak menyampaikan pemberitahuan penggunaan NPPN, maka wajib pajak dianggap memilih menyelenggarakan pembukuan.
+
+**Penghitungan Pajak**
+
+Perhitungan pajak mengikuti langkah-langkah sebagai berikut:
+
+1. Hitung penghasilan bruto (omzet), kemudian kalikan dengan norma yang sesuai. Hasil penghitungan ini adalah penghasilan neto.
+2. Kurangkan penghasilan tidak kena pajak dari penghasilan neto untuk mendapatkan penghasilan kena pajak.
+3. Hitung besarnya pajak yang terutang dari angka yang dihasilkan pada langkah nomor 2 di atas dengan menggunakan tarif pajak penghasilan progresif (pasal 17 UU Pajak Penghasilan)
+4. Kurangkan kredit pajak yaitu pajak yang telah dibayarkan, dipotong, atau dipungut oleh pihak lain.
+5. Nilai yang diperoleh pada langkah nomor 4 adalah nilai pajak yang kurang atau lebih bayar.
+Rumus perhitungan di atas dapat digambarkan sebagai berikut:
+
+Penghasilan Bruto
+
+x
+
+Norma
+
+= Penghasilan Neto
+
+-
+
+PTKP (Penghasilan Tidak Kena Pajak)
+
+= Penghasilan Kena Pajak (PKP)
+
+x
+
+Tarif Pasal 17 UU PPh
+
+= Pajak Terutang
+
+-
+
+Kredit Pajak (Bukti Potong)
+
+**= Pajak yang kurang/lebih dibayar**
+
+**Artikel terkait:**
+
+- [Layanan pemberitahuan norma penghitungan penghasilan neto](/pemberitahuan-penggunaan-nppn)
+
+---
+
+### Coretax Form untuk lapor SPT tahunan PPh
+
+Terakhir diupdate pada: 27 Feb 2026
+
+**Q: Apakah saya dapat menggunakan Coretax Form untuk melaporkan SPT tahunan pajak penghasilan?**
+
+A: Sejak 25 Februari 2026, Coretax Form dapat digunakan untuk menyampaikan SPT tahunan pajak penghasilan. Coretax Form merupakan alternatif saluran penyampaian SPT tahunan bagi wajib pajak orang pribadi dengan situasi perpajakan yang tidak kompleks dan menghadapi kendala jaringan internet. Dengan Coretax Form, Anda dapat mengunduh formulir SPT kemudian mengisi dan melengkapinya secara *offline* sebelum melaporkan SPT tersebut (pelaporan membutuhkan koneksi internet).
+
+Agar dapat menggunakan Coretax Form untuk menyampaikan SPT tahunan, Anda harus memenuhi kriteria sebagai berikut:
+
+- Penghasilan Anda berasal dari pekerjaan, usaha, dan/atau pekerjaan bebas
+- SPT yang Anda sampaikan berstatus nihil
+- Anda tidak menggunakan norma dalam menghitung penghasilan neto.
+Apabila Anda memenuhi kriteria di atas, Anda dapat menggunakan Coretax Form dengan mengikuti langkah-langkah sebagai berikut:
+
+Tahap 1: Pembuatan konsep SPT (perlu koneksi internet)
+
+1. Login pada akun Coretax DJP Anda dan akses menu **Surat Pemberitahuan (SPT) > Coretax Form**.
+2. Pada layar SPT Belum Disampaikan, klik tombol **Buat Konsep SPT**.
+3. Pilih **SPT Tahunan **dan masukkan tahun pajak yang akan dilaporkan. Klik tombol **Lanjut**.
+4. Pilih model SPT: **Normal** kemudian klik tombol **Buat Konsep**.
+5. Setelah konsep dibuat, Anda dapat mengajukan permintaan unduh formulir SPT dengan cara klik ikon berkas (*file*).
+6. Konfirmasi dengan klik tombol **Ya**.
+7. Pilih tombol **↻ Refresh**. Apabila berhasil, maka formulir SPT akan pindah dari kategori Konsep SPT menjadi SPT Diunduh pada panel sebelah kiri layar.
+8. Pada layar SPT Diunduh, klik ikon **⭣** untuk mengunduh formulir dalam format PDF.
+9. Masukkan kode *passphrase* Anda kemudian klik tombol **OK**.
+Tahap 2: Pengisian formulir induk dan lampiran SPT (tidak memerlukan koneksi internet)
+
+1. Buka file PDF yang sudah Anda unduh kemudian isi dan lengkapi formulir induk dan lampiran sesuai dengan keadaan yang sebenarnya.
+2. Isian pada formulir induk akan menentukan lampiran yang perlu Anda lengkapi.
+3. Setelah selesai mengisi formulir SPT, pada bagian akhir dari formulir induk, beri tanda centang pada pernyataan, kemudian isi tanggal sesuai tanggal Anda melaporkan SPT.
+Tahap 3: Penyampaian SPT (perlu koneksi internet)
+
+1. Masukkan kode verifikasi yang dikirimkan sistem ke alamat email Anda yang terdaftar, kemudian klik tombol **Submit**.
+2. Setelah berhasil dilaporkan, maka konsep SPT akan masuk ke dalam riwayat penyampaian Anda pada kategori SPT Dilaporkan.
+Catatan:
+
+1. Untuk membuka dokumen formulir SPT, Anda perlu mengunduh dan menginstal aplikasi Adobe Acrobat Reader (minimal versi 20). Unduh Adobe Acrobat Reader [melalui tautan ini](https://get.adobe.com/reader/).
+2. Jika status SPT Anda adalah kurang atau lebih bayar, maka Anda harus menggunakan saluran web Coretax DJP untuk menyampaikan SPT.
+3. Ketika Anda selesai membuat dan mengunduh Coretax Form, sistem secara otomatis akan mengirimkan email kode verifikasi ke alamat email Anda yang terdaftar. Anda dapat meminta kembali kode verifikasi pada Coretax DJP melalui menu **Surat Pemberitahuan (SPT) > Coretax Form > SPT Diunduh** dan klik pada ikon ✉ (amplop).
+**Artikel terkait:**
+
+- [Lapor SPT tahunan orang pribadi](/lapor-spt-tahunan-orang-pribadi)
+- [Contoh kasus: NPWP gabung, penghasilan istri dari satu pemberi kerja.](/contoh-kasus-npwp-gabung-penghasilan-istri-dari-satu-pemberi-kerja)
+- [Contoh kasus: NPWP gabung, suami istri karyawan, memiliki usaha kecil.](/contoh-kasus-npwp-gabung-suami-istri-karyawan-memiliki-usaha-kecil)
+
+---
+
+### SPT berstatus Nihil
+
+Terakhir diupdate pada: 08 Mar 2026
+
+**Q: Apa itu SPT Tahunan berstatus Nihil dan bagaimana mekanismenya?**
+
+**A: SPT Tahunan PPh Nihil** adalah kondisi pelaporan pajak di mana jumlah **Pajak Penghasilan (PPh) Terutang** sama besarnya dengan **Kredit Pajak** (pajak yang sudah dipotong pihak lain atau dibayar sendiri), atau ketika **tidak ada PPh terutang dan kredit pajak** sama sekali.
+
+Secara matematis dalam formulir induk SPT, status "Nihil" terjadi ketika angka pada baris **"PPh Kurang/Lebih Bayar"** menunjukkan angka **0 (Nol)**. Hal ini menunjukkan bahwa tidak terdapat pajak yang harus disetor sendiri oleh Wajib Pajak bersamaan dengan penyampaian SPT Tahunan PPh, namun juga tidak berhak atas pengembalian (restitusi) pajak.
+
+**Kemungkinan Skenario Penyebab SPT Tahunan Berstatus Nihil:**
+
+1. **Skenario Karyawan (Satu Pemberi Kerja):** Jumlah PPh yang dipotong oleh perusahaan (pemberi kerja) sama dengan jumlah PPh terutang dalam 1 tahun sehingga pajak sudah dipotong lunas oleh perusahaan (pemberi kerja) melalui mekanisme PPh Pasal 21 dan tidak ada penghasilan lain yang merupakan objek pajak tidak final.
+2. **Skenario Di Bawah PTKP:** Penghasilan neto setahun lebih kecil dari Penghasilan Tidak Kena Pajak (PTKP) sehingga tidak terdapat PPh terutang dan tidak terdapat kredit pajak.
+3. **Skenario Usaha Final (Wajib Pajak yang memiliki Peredaran Bruto Tertentu):** Seluruh penghasilan dikenakan PPh Final (seperti PPh final 0,5% berdasarkan PP 55 Tahun 2022).
+
+**Tabel Simulasi Perhitungan: 3 Skenario SPT Nihil**
+
+Lampiran berikut adalah tabel perbandingan perhitungan pada Induk SPT Tahunan untuk ketiga skenario tersebut.
+
+*Asumsi: Wajib Pajak berstatus Lajang, Tidak ada Tanggungan (TK/0) dengan PTKP Rp54.000.000.*
+
+![](https://pajak.go.id/sites/default/files/2026-03/Skenario%20SPT%20Nihil.png)
+
+---
+
+### Penghasilan dalam pelaporan SPT Tahunan PPh
+
+Terakhir diupdate pada: 06 Mar 2026
+
+**Q: Apa yang dimaksud dengan “penghasilan” dalam pelaporan SPT Tahunan PPh?**
+
+** **
+
+**A: Definisi Yuridis (UU PPh Pasal 4 Ayat 1)**
+
+Penghasilan didefinisikan sebagai **setiap tambahan kemampuan ekonomis** yang diterima atau diperoleh Wajib Pajak, yang mencakup tiga elemen utama :
+
+- **Sumber:** Baik yang berasal dari Indonesia maupun dari luar Indonesia (*World Wide Income*).
+- **Penggunaan:** Baik yang dipakai untuk konsumsi (habis pakai) maupun untuk menambah kekayaan (investasi/tabungan).
+- **Bentuk:** Dengan nama dan dalam bentuk apa pun (termasuk uang tunai maupun natura/fasilitas).
+
+**Kategorisasi dalam Pelaporan SPT (PER-11/PJ/2025)**
+
+Dalam formulir SPT Tahunan PPh Orang Pribadi di Coretax, definisi luas tersebut dipecah menjadi beberapa kategori pelaporan agar sesuai dengan tarif pajaknya:
+
+**A. Penghasilan Objek Pajak Non-Final (Digabungkan)**
+
+Penghasilan ini wajib digabung di akhir tahun dan dikenakan tarif PPh progresif (Pasal 17 ayat (1) huruf a). Dalam Lampiran PER-11/PJ/2025, penghasilan ini terdiri dari:
+
+1. **Penghasilan dari Pekerjaan:** Gaji, tunjangan, bonus, dan pensiun dari pemberi kerja bagi pegawai tetap, pegawai tidak tetap, atau penerima pensiun berkala.
+2. **Penghasilan dari Usaha/Pekerjaan Bebas:** Penghasilan neto dari kegiatan usaha (dagang/jasa/industri) atau profesi keahlian khusus/pekerjaan bebas (dokter, notaris, dll sesuai dengan ketentuan berlaku) yang tidak dikenakan pajak final.
+3. **Penghasilan Dalam Negeri Lainnya:** Penghasilan pasif atau insidentil yang bukan dari usaha atau pekerjaan bebas seperti royalti, keuntungan penjualan harta (*capital gain*) aset pribadi (misal: jual mobil/emas), dan bunga pinjaman non-bank,
+4. **Penghasilan Luar Negeri:** Seluruh penghasilan yang diterima dari luar negeri.
+
+**B. Penghasilan Objek Pajak Final (Dipisahkan)**
+
+Penghasilan yang pajaknya sudah dianggap "selesai" saat dipotong/disetor dan tidak digabung dengan penghasilan poin A sesuai dengan peraturan perundang-undangan yang berlaku. Penghasilan tersebut tetap wajib dilaporkan dalam SPT Tahunan pada** Lampiran 2 bagian A. **Contohnya:
+
+- Bunga deposito/obligasi.
+- Penjualan tanah/bangunan.
+- Penghasilan usaha dengan peredaran bruto tertentu (UMKM 0,5%).
+
+**C. Penghasilan Bukan Objek Pajak (Hanya Dilaporkan)**
+
+Penerimaan yang dikecualikan dari pengenaan Pajak Penghasilan berdasarkan Undang-Undang Pajak Penghasilan. Penghasilan ini tetap wajib dilaporkan dalam SPT Tahunan pada Lampiran 2 bagian B. Contohnya:
+
+1. Warisan
+2. Hibah dari anak atau orang tua yang tidak ada hubungan dengan usaha, pekerjaan, kepemilikan, atau penguasaan di antara pihak-pihak yang bersangkutan
+3. Bantuan/Sumbangan yang memenuhi ketentuan
+4. Bagian Laba dari Perusahaan Komanditer (CV)
+5. Klaim Asuransi Kesehatan, Kecelakaan, Jiwa, Dwiguna, Beasiswa
+6. Sisa Hasil Usaha (SHU) dari Koperasi
+7. Dividen Dalam Negeri/Luar Negeri yang memenuhi ketentuan investasi dan telah dilaporkan dalam SPT Tahunan sebagai penghasilan yang dikecualikan dari objek PPh dan Laporan Realisasi Investasi sesuai ketentuan.
+
+---
+
+### Penghasilan bukan Objek Pajak
+
+Terakhir diupdate pada: 06 Mar 2026
+
+**Q: Apa yang dimaksud dengan “penghasilan bukan objek” dalam pelaporan SPT Tahunan PPh Orang Pribadi?**
+
+**A:** Berdasarkan Undang-Undang Pajak Penghasilan (UU PPh) dan peraturan turunannya, **Penghasilan Bukan Objek Pajak** adalah jenis penghasilan yang menambah kemampuan ekonomis Wajib Pajak namun **dikecualikan** dari pengenaan Pajak Penghasilan.
+
+Artinya, atas penghasilan ini **tidak dikenakan pajak**, tidak perlu digabungkan dengan penghasilan lain untuk menghitung pajak terutang, dan tidak memengaruhi besarnya angsuran PPh Pasal 25, namun **tetap wajib dilaporkan** dalam SPT Tahunan pada **Lampiran 2 Bagian B.**
+
+**Tabel Penghasilan Bukan Objek Pajak dalam SPT Tahunan**
+
+![](https://pajak.go.id/sites/default/files/2026-03/tabel%20penghasilan%20bukan%20objek_001_1.png)![](https://pajak.go.id/sites/default/files/2026-03/tabel%20penghasilan%20bukan%20objek_002_0.png)Catatan Pelaporan:
+
+1. **Kewajiban Pelaporan:** Meskipun penghasilan di atas tidak dikenakan pajak, Wajib Pajak **wajib** melaporkan Penghasilan Brutonya dalam SPT Tahunan. Hal ini penting untuk menelusuri sumber kenaikan harta (kekayaan) Wajib Pajak di tahun tersebut.
+
+2. **Dividen:** Khusus untuk dividen, jika tidak memenuhi syarat investasi (digunakan untuk konsumsi atau tidak lapor realisasi investasi), maka Dividen dalam negeri harus dilaporkan pada Lampiran 2 Bagian A **Penghasilan yang Dikenakan PPh Final. **Jika** **dividen luar negeri tidak memenuhi syarat investasi, maka dividen luar negeri tersebut harus dilaporkan pada Lampiran 2 Bagian C Penghasilan Luar Negeri.
+
+3. **Dokumen Pendukung:** Untuk jenis penghasilan tertentu seperti hibah atau warisan, disarankan menyimpan dokumen pendukung (seperti akta hibah atau surat keterangan waris) untuk pembuktian jika dilakukan pengawasan atau pemeriksaan.
+
+---
+
+### Kegiatan Usaha dalam konteks pelaporan SPT Tahunan PPh OP
+
+Terakhir diupdate pada: 06 Mar 2026
+
+**Q: Apa yang dimaksud dengan melakukan kegiatan usaha dalam konteks pelaporan SPT Tahunan PPh Orang Pribadi?**
+
+**A:** Dalam konteks **Sumber Penghasilan** pada Induk SPT di Coretax, penghasilan dari **kegiatan usaha** adalah yang penghasilan yang berasal dari aktivitas yang dijalankan sendiri oleh Wajib Pajak secara teratur dan berkesinambungan untuk mencari keuntungan.
+
+Penghasilan dari kegiatan usaha tidak termasuk penghasilan sebagai pegawai atau penghasilan orang pribadi dari jasa sehubungan dengan pekerjaan bebas (profesi/keahlian) yang telah ditentukan dalam peraturan tersendiri, seperti Pengacara, Akuntan, Arsitek, Dokter, Konsultan, Notaris, Penilai, Pelaku Seni dan  Hiburan, Content Creator, Olahragawan, Agen Asuransi, Perantara, dan lain sebagainya (sesuai daftar jasa sehubungan dengan pekerjaan bebas dalam Pasal 56 ayat (4) PP 55 Tahun 2022).
+
+Kegiatan usaha dikelompokkan menjadi:
+
+- **Dagang (Perdagangan), **contohnya:Perdagangan eceran pakaian jadi
+- Perdagangan besar pakaian jadi
+- Perdagangan mobil bekas
+- Toko (fisik/online) yang menjual barang
+- Toko bahan bangunan
+- Toko bahan sembako
+**Industri, **contohnya**:**- Industri makanan
+- Industri makanan ternak
+- Industri makanan ringan
+- Manufaktur ember plastik
+**Jasa (selain jasa pekerjaan bebas), **contohnya**:**- Jasa persewaan kendaraan
+- Jasa reparasi mobil (bengkel)
+- Jasa kecantikan, seperti salon/potong rambut
+- Jasa katering
+**Perbedaan dengan "Pekerjaan Bebas"**
+
+Penting untuk membedakan antara penghasilan sehubungan dengan "pekerjaan bebas" dengan melakukan "kegiatan usaha" (bisnis), karena perlakuan pajaknya berbeda.
+
+**Contoh Kasus (Pemain Piano):**
+
+- **Pekerjaan Bebas:** Tuan A memiliki keahlian bermain piano. Ia mengajar piano secara privat untuk dan atas namanya sendiri. Penghasilan ini dianggap sebagai jasa sehubungan dengan **pekerjaan bebas**.
+**Kegiatan Usaha:** Jika Tuan A membuka tempat kursus piano dan mempekerjakan orang lain (guru-guru lain), maka penghasilan tersebut dikategorikan sebagai penghasilan dari **usaha**, bukan pekerjaan bebas.
+
+---
+
+### Cara membayar SPT kurang bayar
+
+Terakhir diupdate pada: 27 Feb 2026
+
+**Q: Bagaimana saya melakukan pembayaran atas SPT dengan status kurang bayar setelah klik tombol “Bayar dan Lapor”? Apakah saya perlu membuat kode billing lagi?**
+
+A: Terdapat dua cara untuk membayar SPT kurang bayar. Setelah klik tombol **Bayar dan Lapor**,** **sistem akan memberikan pilihan pembayaran menggunakan deposit dan kode billing.
+
+1. Deposit
+Jika Anda memiliki saldo deposit yang mencukupi untuk membayar sejumlah kurang bayar dalam SPT, Anda dapat melakukan pembayaran menggunakan deposit dengan mengikuti langkah-langkah pada [artikel ini](/bayar-tagihan-dan-spt-dengan-deposit).
+
+1. Kode Billing
+Jika Anda memilih pembayaran dengan menggunakan kode biling, maka akan otomatis terbentuk kode billing dan konsep SPT Anda berpindah ke menu SPT menunggu pembayaran.
+
+*⚠ ****Anda tidak perlu lagi membuat kode billing mandiri.***
+
+Anda dapat melihat kode billing yang terbentuk melalui dua cara:
+
+1. Menu **Pembayaran > Daftar Kode Billing Belum Dibayar**![](/files/view/b99086f7-1e20-4684-b775-a88590059e12.png)
+2. Menu **Portal Saya > Dokumen Saya**![](/files/view/0173a2ee-7fff-4859-b0e4-ad31433647ec.png)
+- Untuk menampilkan data pada tabel, klik tombol ↻ (Refresh). Pada tabel, cari dan unduh dokumen dengan Judul Dokumen “Billing Code.”
+- Setelah mengunduh kode billing, Anda dapat membayar SPT menggunakan 15 digit Kode Billing dengan mengikuti langkah [pada artikel ini](/bayar-kode-billing).
+- Pembayaran dapat dilakukan melalui bank/pos atau lembaga lainnya sesuai [daftar ini](https://www.pajak.go.id/id/daftar-bankpos-dan-lembaga-persepsi-lainnya). Pastikan nominal sesuai dengan jumlah kurang bayar pada SPT Anda.
+- Jika pembayaran telah berhasil maka konsep SPT akan otomatis terlapor dan berpindah ke kategori **SPT Dilaporkan**.
+**Artikel terkait:**
+
+- [Bayar kode billing](/bayar-kode-billing)
+
+---
+
+### Bukti Pembayaran Zakat atau Sumbangan Keagamaan yang Bersifat Wajib
+
+Terakhir diupdate pada: 14 Apr 2026
+
+**Q: Bagaimana ketentuan bukti pembayaran zakat atau sumbangan keagamaan yang bersifat wajib agar dapat menjadi pengurang penghasilan dalam SPT Tahunan PPh OP?**
+
+**A:** Zakat yang dibayarkan oleh Wajib Pajak Orang Pribadi pemeluk agama Islam atau sumbangan keagamaan yang bersifat wajib yang dibayarkan oleh Wajib Pajak Orang Pribadi pemeluk agama selain agama Islam yang diakui di Indonesia dapat menjadi pengurang penghasilan bruto di SPT Tahunan PPh, dengan syarat:
+
+- Terdapat bukti pembayaran yang sah;
+- Dibayar sendiri oleh Wajib Pajak (tidak melalui pemberi kerja/perusahaan yang sudah diperhitungkan dalam pemotongan PPh Pasal 21)
+- Pembayaran zakat atau sumbangan keagamaan tidak menyebabkan rugi fiskal;
+- Diterima oleh badan amil zakat, lembaga amil zakat, atau lembaga keagamaan yang dibentuk atau disahkan oleh pemerintah dan memiliki Nomor Pokok Wajib Pajak;
+- Daftar badan atau lembaga penerima zakat atau sumbangan keagamaan yang sifatnya wajib yang dapat dikurangkan dari penghasilan bruto dapat dilihat pada PER-22/PJ/2025;
+Agar dianggap sah sebagai dokumen pendukung pengurangan pajak, bukti pembayaran zakat atau sumbangan keagamaan yang bersifat wajib tersebut **paling sedikit harus memuat informasi berikut**:
+
+- **Nomor dan Tanggal Bukti:** Nomor unik bukti pembayaran dan tanggal transaksi dilakukan
+- **Identitas Pembayar Zakat atau Sumbangan Keagamaan yang Sifatnya Wajib:****Nama Lengkap; **dan
+- **Nomor Pokok Wajib Pajak (NPWP)** atau **Nomor Induk Kependudukan (NIK)**
+**Jumlah Pembayaran:** Pembayaran zakat atau sumbangan keagamaan yang sifatnya wajib dapat dilakukan dalam bentuk **uang** atau **barang** (yang disetarakan dengan uang).- Jika berupa **uang**, nilainya berdasarkan nominal uang yang dibayarkan.
+- Jika berupa **barang**, nilainya berdasarkan **harga pasar** saat diserahkan atau **harga pokok penjualan** (jika barang tersebut produksi sendiri).
+**Identitas Penerima Zakat atau Sumbangan Keagamaan yang Sifatnya Wajib:**- **Nama Badan/Lembaga** penerima; dan
+- **Nomor Pokok Wajib Pajak (NPWP)** badan/lembaga penerima.
+**Validasi:** Tanda tangan petugas badan/lembaga penerima atau validasi pembayaran (misalnya validasi sistem perbankan jika dibayar via transfer yang diakui lembaga tersebut).Dalam pelaporan SPT Tahunan PPh Orang Pribadi:Nilai zakat/sumbangan keagamaan yang sifatnya wajib diisikan pada **Lampiran 5 Bagian B: Pengurang Penghasilan Neto** dengan memilih kode jenis pengurang yang sesuai (Kode 501 untuk Zakat atau 502 untuk Sumbangan Keagamaan).
+
+Salinan bukti pembayaran zakat/sumbangan keagamaan tersebut harus dilampirkan atau diunggah sebagai **Dokumen Tambahan **dalam SPT Tahunan (induk SPT Bagian J).
+
+Jika zakat atau sumbangan keagamaan yang sifatnya wajib dibayarkan melalui pemberi kerja (potong gaji), bukti pembayarannya dapat tercantum atau diperhitungkan dalam Bukti Potong PPh 21 (Formulir BPA1 atau BPA2).
+
+Namun, jika Anda membayar sendiri secara langsung kepada badan/lembaga penerima zakat atau sumbangan keagamaan yang sifatnya wajib, Anda wajib menyimpan dan melampirkan bukti pembayaran yang sesuai dengan kriteria di atas agar tidak dikoreksi saat pemeriksaan pajak.
+
+Dasar: **Peraturan Menteri Keuangan Nomor 114 Tahun 2025, Peraturan Direktur Jenderal Pajak Nomor PER-22/PJ/2025** dan **Peraturan Direktur Jenderal Pajak Nomor PER-11/PJ/2025 (Lampiran G)**
+
+---
+
+### Pekerjaan Bebas dalam konteks pelaporan SPT Tahunan PPh OP
+
+Terakhir diupdate pada: 06 Mar 2026
+
+**Q: Apa yang dimaksud dengan Pekerjaan Bebas dalam konteks pelaporan SPT Tahunan PPh Orang Pribadi?**
+
+**A:** Pekerjaan bebas adalah pekerjaan yang dilakukan oleh orang pribadi yang mempunyai keahlian khusus sebagai usaha untuk memperoleh penghasilan yang tidak terikat oleh suatu hubungan kerja.
+
+Ciri:
+
+- Bekerja atas nama diri sendiri.
+- Hanya berdasarkan permintaan penerima jasa.
+- Bekerja berdasarkan keahlian tertentu atau professional.
+**Contoh Pekerjaan Bebas**
+
+Berdasarkan peraturan yang berlaku, pekerjaan bebas dikelompokkan ke dalam beberapa kategori profesi sebagai berikut:
+
+**1. Tenaga Ahli** Orang pribadi yang memberikan jasa berdasarkan keahlian profesional tertentu, meliputi:
+
+- Pengacara
+- Akuntan
+- Arsitek
+- Dokter
+- Konsultan
+- Notaris
+- Pejabat Pembuat Akta Tanah (PPAT)
+- Penilai (*Appraisal*)
+- Aktuaris
+- Tenaga Ahli Sejenis Lainnya
+**2. Pelaku Seni dan Hiburan** Meliputi seniman dan pekerja seni, seperti:
+
+- Pemain musik, penyanyi, penari.
+- Pembawa acara (*Master of Ceremony*).
+- Pelawak.
+- Bintang film, bintang sinetron, bintang iklan.
+- Sutradara dan kru film.
+- Foto model, peragawan/peragawati.
+- Pemain drama, pemahat, pelukis.
+- Pembuat konten (*content creator*).
+- Seniman Lainnya
+**3. Profesi Edukasi dan Informasi**
+
+- Penasihat, pengajar, pelatih, penceramah, penyuluh, moderator, dan profesi sejenis lainnya.
+- Pengarang, peneliti, penerjemah, dan profesi sejenis lainnya.
+**4. Olahragawan**
+
+Atlet atau olahragawan yang memperoleh penghasilan dari profesinya.
+
+**5. Jasa Perantara dan Pemasaran**
+
+- Agen iklan.
+- Pengawas atau pengelola proyek.
+- Perantara.
+- Petugas penjaja barang dagangan.
+- Agen asuransi.
+- Distributor perusahaan pemasaran berjenjang (*multilevel marketing*) atau penjualan langsung (*direct selling*).
+**Perbedaan dengan "Kegiatan Usaha"**
+
+Penting untuk membedakan antara melakukan "pekerjaan bebas" dengan melakukan "kegiatan usaha" (bisnis), karena perlakuan pajaknya berbeda.
+
+**Contoh Kasus (Pemain Piano):**
+
+- **Pekerjaan Bebas:** Tuan A memiliki keahlian bermain piano. Ia mengajar piano secara privat untuk dan atas namanya sendiri. Penghasilan ini dianggap sebagai jasa sehubungan dengan **pekerjaan bebas**.
+**Kegiatan Usaha:** Jika Tuan A membuka tempat kursus piano dan mempekerjakan orang lain (guru-guru lain), maka penghasilan tersebut dikategorikan sebagai penghasilan dari **usaha**, bukan pekerjaan bebas
+
+---
+
+### Kendala data pengurus pada Lampiran L2 SPT Tahunan Badan
+
+Terakhir diupdate pada: 28 Apr 2026
+
+**Q: Mengapa data pengurus tidak tercantum, atau tercantum ganda pada Lampiran L2A SPT Tahunan Badan 2025 atau tetap muncul meskipun sudah dihapus dari tabel Pihak Terkait? **
+
+A: Sistem Coretax menentukan kemunculan data pengurus/pemegang saham di Lampiran L2A SPT Tahunan Badan berdasarkan pengaturan tanggal pada tabel Pihak Terkait, bukan sekadar status aktif/hapus. Masalah seperti data tidak muncul (*prefill*), muncul ganda, atau tetap tampil meskipun sudah dihapus, umumnya disebabkan oleh kesalahan pengisian atau tidak diisinya kolom **Tanggal Mulai (*****Valid From*****)** dan **Tanggal Berakhir (*****Valid To*****)**.
+
+**Ketentuan pengisian tanggal untuk Tahun Pajak 2025**
+
+Agar data pengurus masuk ke L2A SPT Tahunan Badan 2025, pastikan pengisian tanggal pada tabel Pihak Terkait memenuhi syarat berikut:
+
+- **Agar muncul di L2A 2025**Isi Tanggal Mulai (*Valid From*) dengan tanggal sebelum 31 Desember 2025 (contoh: 30 Desember 2025), dan kosongkan kolom Tanggal Berakhir (*Valid To*).
+- **Agar tidak muncul di L2A 2025**Isi Tanggal Mulai sesuai SK awal menjabat, dan isi Tanggal Berakhir dengan tanggal sebelum 1 Januari 2025 (contoh: 30 Desember 2024).
+⚠️**Perhatian: **
+
+- Jika Tanggal Berakhir diisi dengan tanggal yang sama dengan atau setelah 1 Januari 2025, data akan tetap muncul pada L2A 2025, meskipun sudah dihapus dari tabel Pihak Terkait.
+- Jangan langsung menghapus data pengurus dari tabel Pihak Terkait tanpa mengisi Tanggal Berakhir terlebih dahulu. Jika data dihapus tanpa mengatur Tanggal Berakhir ke tanggal sebelum 2025 maka data akan hilang dari tabel namun tetap muncul pada lampiran SPT Tahunan.
+**Contoh Kasus**
+
+***Pergantian pengurus di tengah tahun 2025***
+
+Apabila terjadi pergantian pengurus dalam tahun pajak 2025, kedua pengurus (lama dan baru) tetap akan muncul di L2A karena masing-masing aktif dalam periode tahun pajak tersebut.
+
+Pengisian yang benar pada tabel Pihak Terkait adalah sebagai berikut:
+
+- Pengurus lama (misal: Tuan A, menjabat hingga 30 Juni 2025) – Tanggal Mulai diisi sesuai SK awal, Tanggal Berakhir diisi 30 Juni 2025.
+- Pengurus baru (misal: Tuan B, mulai menjabat 1 Juli 2025) – Tanggal Mulai diisi 1 Juli 2025, Tanggal Berakhir dikosongkan.
+
+**Ringkasan:**
+
+**Kondisi yang diiginkan****Tanggal Mulai****Tanggal Berakhir**Muncul di L2A SPT Tahun Pajak 2025Sebelum 31 Des 2025KosongTidak muncul di L2A SPT Tahun Pajak 2025Sesuai SK awalSebelum 1 Jan 2025
+
+---
+
+### Pemberitahuan perpanjangan SPT Tahunan PPh Badan
+
+Terakhir diupdate pada: 30 Apr 2026
+
+**Q: Bagaimana cara mengajukan perpanjangan waktu penyampaian SPT Tahunan PPh Badan melalui Coretax DJP?**
+
+A: Wajib pajak badan yang membutuhkan waktu tambahan untuk menyampaikan SPT Tahunan PPh dapat mengajukan pemberitahuan perpanjangan melalui Coretax DJP dengan mengikuti langkah-langkah sebagai berikut:
+
+**Sebelum Mulai: Yang Perlu Disiapkan**
+
+Pastikan dokumen-dokumen berikut sudah tersedia sebelum memulai pengajuan:
+
+- **Penghitungan sementara PPh terutang** (dokumen PDF)
+- **Laporan keuangan sementara** (dokumen PDF)
+- **Bukti Penerimaan Negara (BPN) kode billing 411618-200**, jika SPT diperkirakan kurang bayar
+- **Surat pernyataan akuntan publik** bahwa audit belum selesai, jika laporan keuangan sedang diaudit
+- **Surat kuasa khusus**, jika permohonan ditandatangani oleh kuasa Wajib Pajak
+**Langkah-Langkah Pengajuan**
+
+**1. Login ke Coretax**
+
+Masuk ke Portal Coretax DJP menggunakan NPWP atau NIK Wakil/Kuasa bukan akun badan secara langsung.
+
+**2. Impersonate ke Akun Badan**
+
+Setelah login, lakukan *impersonate* ke akun Wajib Pajak Badan yang akan mengajukan perpanjangan. Pilih nama badan dari daftar yang tersedia.
+
+**3. Buka Menu Layanan Administrasi**
+
+Navigasi ke: **Layanan Wajib Pajak > Layanan Administrasi > Buat Permohonan Layanan Administrasi**.
+
+**4. Pilih Nomor Penunjukan Wakil/Kuasa**
+
+Di halaman permohonan, klik ikon pencarian pada kolom **Nomor Penunjukan**, lalu pilih nomor penunjukan yang sesuai dari daftar yang muncul.
+
+**5. Pilih Jenis Layanan AS.08-01**
+
+Dari daftar layanan di panel kiri, pilih **AS.08 – Pemberitahuan Perpanjangan Jangka Waktu Penyampaian SPT dan SPOP**. Kemudian pilih sub-layanan **AS.08-01 – Pemberitahuan Perpanjangan Jangka Waktu Penyampaian SPT Tahunan**, lalu klik **Simpan**.
+
+**6. Pilih Form dan Mulai Pengisian**
+
+Pada panel sebelah kiri pilih **Alur Kasus**. Pilih form yang sesuai. Untuk WP Badan dengan pembukuan Rupiah, pilih **"Pemberitahuan Perpanjangan Jangka Waktu Penyampaian SPT Tahunan PPh Wajib Pajak Badan"** — lalu klik **Simpan**, kemudian klik **Lanjut**.
+
+**7. Isi Data Permohonan**
+
+Lengkapi semua field yang wajib diisi (*):
+
+FieldKeteranganTanggal Jatuh Tempo BaruPilih tanggal, maksimal 2 bulan sejak batas waktu penyampaian SPT tahunanAlasanContoh: "hasil audit laporan keuangan belum selesai"Penghasilan Neto Setelah FasilitasAngka sementaraKompensasi KerugianIsi 0 jika tidak adaPenghasilan Kena PajakAngka sementaraPPh TerutangEstimasi sementaraPengurang PPh TerutangKredit pajak yang dapat dikurangkanPPh Kurang/Lebih BayarDihitung otomatis oleh sistemAngsuran PPh Pasal 25Angka sementaraPPh FinalJika adaPenghasilan Tidak Termasuk Objek PajakIsi 0 jika tidak adaTahun PajakPilih sesuai periode pembukuanKota/KabupatenPilih dari dropdown**8. Bayar Kekurangan Pajak (Jika Ada)**
+
+Jika hasil estimasi menunjukkan kurang bayar, wajib pajak harus terlebih dahulu membuat kode billing dengan kode **KAP-KJS 411618-200** dan melakukan pembayaran dengan satu kode deposit (jangan dipecah dalam beberapa pembayaran). Setelah pembayaran selesai, kembali ke form dan pilih data NTPN/Pbk pada bagian **Dokumen Lampiran** — sistem hanya akan menampilkan transaksi dengan MAP-KJS 411618-200.
+
+**9. Unggah Dokumen Lampiran**
+
+Pada bagian **Dokumen Lampiran**, unggah dokumen yang diwajibkan:
+
+- Dokumen Penghitungan Sementara PPh
+- Dokumen Laporan Keuangan Sementara
+- Pernyataan Akuntan Publik (jika relevan)
+**10. Centang Pernyataan dan Simpan**
+
+Baca dan centang **Pernyataan Wajib Pajak**, lalu klik **Simpan**. Pastikan muncul notifikasi *"Save was successful!"* sebelum melanjutkan.
+
+**11. Buat PDF dan Tanda Tangan Elektronik**
+
+Klik **Create PDF** untuk membuat dokumen permohonan. Setelah PDF terbuat, klik **Sign** dan lakukan penandatanganan elektronik (TTE).
+
+Pastikan kolom **Tertanda** berubah menjadi **1** setelah proses selesai.
+
+**12. Kirim Permohonan**
+
+Setelah Tertanda = 1, klik **Kirim**.
+
+**13. Tunggu Proses Penerbitan BPE**
+
+Sistem akan otomatis melanjutkan ke langkah penerbitan **Bukti Penerimaan Elektronik (BPE)**. Jika tidak berjalan otomatis, klik **Lanjut **hingga muncul status **"Kasus ditutup" **atau **“Kasus sedang dalam proses. Tidak ada tindakan yang dapat dilakukan saat ini”**yang menandakan permohonan telah berhasil disampaikan.
+
+**Verifikasi Hasil Pengajuan**
+
+Daftar kasus yang belum selesai diproses dapat Anda pantau pada menu **Portal Wajib Pajak > Kasus Saya**.
+
+Jika permohonan perpanjangan disetujui, pastikan fasilitas tersebut telah muncul di menu **Layanan Wajib Pajak > Layanan Administrasi > Daftar Fasilitas Saya**. Pastikan entri **LA.08-01 – Pemberitahuan Perpanjangan Jangka Waktu Penyampaian SPT Tahunan** muncul di daftar.
+
+**Penting:**
+
+- Permohonan hanya dapat diajukan **setelah tahun pajak berakhir** hingga **sebelum batas waktu penyampaian SPT berakhir**.
+- Setiap Wajib Pajak hanya dapat mengajukan **satu kali** permohonan perpanjangan per tahun pajak.
+- Perpanjangan diberikan paling lama **dua bulan** sejak batas waktu penyampaian SPT tahunan.
+- Pemberitahuan perpanjangan dapat disampaikan melalui pos/ekspedisi/kurir, atau secara langsung ke kantor pajak terdekat.
+**Artikel terkait:**
+
+- [Pembayaran deposit perpanjangan SPT Tahunan Badan](/pembayaran-deposit-perpanjangan-spt-tahunan-badan)
+
+---
+
+### Pembayaran deposit perpanjangan SPT Tahunan Badan
+
+Terakhir diupdate pada: 30 Apr 2026
+
+**Q: Mengapa permohonan perpanjangan SPT Tahunan Badan gagal disubmit meski deposit sudah dibayar?**
+
+A: Sistem Coretax hanya dapat membaca **satu NTPN** untuk deposit KAP 411618 KJS 200 saat menyampaikan perhitungan sementara kurang bayar dalam permohonan perpanjangan SPT. Meskipun total nilai deposit mencukupi, apabila pembayaran dilakukan lebih dari satu kali, sistem tidak dapat menggabungkan beberapa NTPN tersebut sehingga permohonan gagal disubmit.
+
+Apabila pembayaran deposit sudah terlanjur dilakukan lebih dari satu kali, ikuti dua langkah berikut:
+
+1. Bayar ulang dalam satu transaksiLakukan pembayaran baru dengan kode KAP 411618 KJS 200 sebesar total nilai kurang bayar perhitungan sementara **dalam satu kali bayar **untuk menghasilkan satu NTPN baru. Gunakan NTPN baru ini untuk mengisi bagian pembayaran saat submit permohonan perpanjangan.
+2. Pindahbukukan deposit lama yang tidak terpakaiSaldo deposit KJS 200 dari pembayaran cicilan sebelumnya yang tidak dapat digunakan dapat diajukan pemindahbukuan (Pbk) menjadi deposit Umum (KAP 411618 KJS 100). Deposit KJS 100 bersifat lebih fleksibel dan dapat digunakan untuk pelunasan kurang bayar pada saat pelaporan SPT Tahunan PPh yang diperpanjang, maupun untuk keperluan pembayaran pajak lainnya.
+**Artikel terkait:**
+
+- [Pemberitahuan perpanjangan SPT Tahunan PPh Badan](/pemberitahuan-perpanjangan-spt-tahunan-pph-badan)
+
+---

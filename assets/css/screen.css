@@ -1,6 +1,6 @@
-/*@import "tailwindcss";*/
 @import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
 @import "fonts.css";
+@import "tailwindcss.css";
 @import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
 :root {
     --font-sans:

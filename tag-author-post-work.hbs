@@ -1,0 +1,168 @@
+{{!< default}}
+
+{{#contentFor "head"}}
+<style>
+    .city-tag-page { }
+    .city-tag-header {
+        background: linear-gradient(135deg, var(--color-darkgrey) 0%, #1a1a2e 100%);
+        color: var(--color-white);
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+    }
+    .city-tag-title { font-family: var(--font-serif); font-size: 3.2rem; margin: 0 0 1rem; }
+    .city-tag-desc { font-size: 1.6rem; opacity: 0.8; max-width: 600px; }
+    
+    .city-section { margin-bottom: 4rem; }
+    .city-section-title { 
+        font-family: var(--font-serif); 
+        font-size: 2.4rem; 
+        border-bottom: 2px solid var(--color-darkgrey); 
+        padding-bottom: 0.5rem; 
+        margin-bottom: 1.5rem; 
+    }
+    
+    .author-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+        gap: 1.5rem; 
+        margin-top: 1.5rem; 
+    }
+    .author-card { 
+        text-align: center; 
+        padding: 1.5rem; 
+        border: 1px solid var(--color-light-gray); 
+        border-radius: 8px; 
+        transition: box-shadow 0.2s, transform 0.2s; 
+        text-decoration: none; 
+        color: inherit; 
+        display: block; 
+    }
+    .author-card:hover { 
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1); 
+        transform: translateY(-2px); 
+    }
+    .author-avatar { 
+        width: 96px; height: 96px; border-radius: 50%; 
+        object-fit: cover; margin: 0 auto 1rem; 
+        border: 3px solid var(--color-white);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .author-avatar-placeholder { 
+        width: 96px; height: 96px; border-radius: 50%; 
+        background: var(--color-darkgrey); color: var(--color-white);
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 700; font-size: 2.4rem; font-family: var(--font-serif);
+        margin: 0 auto 1rem;
+    }
+    .author-name { font-weight: 600; font-size: 1.5rem; margin: 0.5rem 0 0.25rem; }
+    .author-location { font-size: 1.2rem; color: var(--color-secondary-text); margin: 0 0 0.5rem; }
+    .author-bio { font-size: 1.3rem; color: var(--color-secondary-text); margin: 0; line-height: 1.5; }
+    .author-meta { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.2rem; color: var(--color-secondary-text); margin-top: 0.5rem; }
+    
+    .authors-loading { text-align: center; padding: 2rem; color: var(--color-secondary-text); }
+    .authors-error { text-align: center; padding: 2rem; color: var(--color-red, #dc2626); }
+</style>
+{{/contentFor}}
+
+<main class="gh-main">
+
+    {{!-- ===== HEADER (Tag Context) ===== --}}
+    <header class="city-tag-header">
+        <div class="gh-container">
+            <h1 class="city-tag-title">{{name}}</h1>
+            {{#if description}}
+                <p class="city-tag-desc">{{description}}</p>
+            {{/if}}
+            {{!-- Inject city name for JS via data attribute --}}
+            <span id="city-tag-data" 
+                  data-city-slug="{{slug}}" 
+                  data-city-name="{{meta_title}}" 
+                  style="display:none;"></span>
+        </div>
+    </header>
+
+    {{!-- ===== SECTION 1: Posts (Server-side, Native) ===== --}}
+    <div class="gh-page">
+        <div class="gh-container">
+            <section class="city-section" aria-labelledby="posts-title">
+                <h2 id="posts-title" class="city-section-title">Layanan di {{name}}</h2>
+                <div class="gh-feed">
+                    {{#foreach posts}}
+                        {{> "loop-zebra"}}
+                    {{/foreach}}
+                </div>
+                
+                {{#if pagination.pages}}
+                <nav class="pagination" role="navigation" aria-label="Pagination">
+                    {{#if prev}}<a class="newer-posts" href="{{page_url prev}}">&larr; Baru</a>{{/if}}
+                    {{#if next}}<a class="older-posts" href="{{page_url next}}">Lainnya &rarr;</a>{{/if}}
+                </nav>
+                {{/if}}
+            </section>
+
+            {{!-- ===== SECTION 2: Authors (Client-side injected) ===== --}}
+            <section class="city-section" aria-labelledby="authors-title">
+                <h2 id="authors-title" class="city-section-title">Praktisi di {{meta_title}}</h2>
+                <div id="city-authors-container" class="author-grid">
+                    <div class="authors-loading">Memuat praktisi...</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</main>
+
+{{!-- ===== CLIENT-SIDE AUTHOR FETCH ===== --}}
+<script>
+(function() {
+    const dataEl = document.getElementById('city-tag-data');
+    if (!dataEl) return;
+
+    const citySlug = dataEl.dataset.citySlug;
+    const cityName = dataEl.dataset.cityName;
+    const container = document.getElementById('city-authors-container');
+    
+    if (!cityName) {
+        container.innerHTML = '<div class="authors-error">City name not configured (set tag.meta_title)</div>';
+        return;
+    }
+
+    // Fetch ALL authors (max ~20), filter by location in JS
+    // Ghost API filter doesn't support multi-word locations (spaces/commas)
+    const apiUrl = `${window.location.origin}/ghost/api/content/authors/` +
+        `?key=6a39e11c427b0e5fdafd297dbc` +
+        `&limit=50` +
+        `&include=count.posts` +
+        `&order=name asc`;
+
+    fetch(apiUrl)
+        .then(r => r.ok ? r.json() : Promise.reject(r.status))
+        .then(data => {
+            const allAuthors = data.authors || [];
+            // Exact match on location (case-sensitive, as stored in Ghost)
+            const authors = allAuthors.filter(a => a.location === cityName);
+            
+            if (authors.length === 0) {
+                container.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--color-secondary-text);">Belum ada praktisi terdaftar untuk wilayah ini.</p>';
+                return;
+            }
+            
+            container.innerHTML = authors.map(author => `
+                <a href="${author.url}" class="author-card" aria-label="Lihat profil ${author.name}">
+                    ${author.profile_image 
+                        ? `<img src="${author.profile_image}" alt="${author.name}" class="author-avatar" loading="lazy">`
+                        : `<div class="author-avatar-placeholder">${author.name.charAt(0)}</div>`
+                    }
+                    <h3 class="author-name">${author.name}</h3>
+                    ${author.location ? `<span class="author-location">${author.location}</span>` : ''}
+                    ${author.bio ? `<p class="author-bio">${author.bio.substring(0, 120)}${author.bio.length > 120 ? '...' : ''}</p>` : ''}
+                    ${author.count?.posts ? `<div class="author-meta"><span>${author.count.posts} artikel</span></div>` : ''}
+                </a>
+            `).join('');
+        })
+        .catch(err => {
+            console.error('Author fetch failed:', err);
+            container.innerHTML = '<div class="authors-error">Gagal memuat daftar praktisi.</div>';
+        });
+})();
+</script>

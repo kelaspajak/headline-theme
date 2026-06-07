@@ -20,7 +20,7 @@
             </section>
 
             {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
-            {{#get "tags" filter="slug:[hash-resources,coretax,pph-final-umkm-pp20-2026]" limit="5" include="count.posts"}}
+            {{#get "tags" filter="slug:[hash-resources,coretaxpedia,pph-final-umkm-pp20-2026]" limit="5" include="count.posts"}}
             {{#foreach tags}}
             <section class="resource-section tag-{{slug}}">
                 {{#if feature_image}}

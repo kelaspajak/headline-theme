@@ -5,31 +5,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-    :root {
-  /* Define your base hex color */
-  --base-hex: var(--color-tag);
-
-  /* 1. Background */
-  --bg-color: var(--color-tag);
-
-  /* 2. Border (Darken by 20%) */
-  --border-color: rgb(from var(--color-tag) calc(r * 0.8) calc(g * 0.8) calc(b * 0.8));
-
-  /* 3. Text (Calculate contrast directly from the hex value) */
-  --text-color: rgb(from var(--color-tag)
-    calc((r * 0.299 + g * 0.587 + b * 0.114) > 128 ? 20 : 255)
-    calc((r * 0.299 + g * 0.587 + b * 0.114) > 128 ? 20 : 255)
-    calc((r * 0.299 + g * 0.587 + b * 0.114) > 128 ? 20 : 255)
-  );
+.gh-feed {
+    width: 100%;
+    max-width: 720px;
 }
-
-/* Apply variables to your element */
-.dynamic-card {
-  background-color: var(--bg-color);
-  color: var(--text-color) !important;
-  border: 2px solid var(--border-color);
-  padding: 16px;
-  border-radius: 8px;
+.gh-postfeed {
+    justify-items: center;
 }
 </style>
 {{/contentFor}}

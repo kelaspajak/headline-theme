@@ -1822,5 +1822,3 @@ body:not(.home-template) .gh-topic-grid .gh-card {
         font-size: 2rem;
     }
 }
-
-/* ── Infinity scroll: keep pagination sentinel in layout flow ──*/

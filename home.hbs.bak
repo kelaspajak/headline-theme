@@ -10,10 +10,9 @@
     padding: 8vmin 24px;
 }
 .cf-letter-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 4rem;
     font-weight: 800;
-    color: var(--color-darkgrey);
     text-align: center;
     margin: 0 0 28px;
     line-height: 1.15;
@@ -51,7 +50,7 @@
     font-family: var(--font-serif);
     font-size: 2.4rem;
     font-weight: 800;
-    color: var(--color-darkgrey);
+    color: var(--color-dark-gray);
     margin: 0 0 20px;
     line-height: 1.2;
 }
@@ -59,7 +58,7 @@
     font-family: var(--font-sans);
     font-size: 1.5rem;
     line-height: 1.7;
-    color: var(--color-darkgrey);
+    color: var(--color-dark-gray);
     margin: 0 0 18px;
 }
 .cf-body p:last-child {
@@ -100,7 +99,7 @@
     font-family: var(--font-serif);
     font-size: 1.6rem;
     font-style: italic;
-    color: var(--color-darkgrey);
+    color: var(--color-dark-gray);
     margin: 0 0 4px;
 }
 .cf-signoff-text strong {
@@ -108,7 +107,7 @@
     font-family: var(--font-serif);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-darkgrey);
+    color: var(--color-dark-gray);
     font-style: normal;
     margin-top: 12px;
 }
@@ -129,10 +128,9 @@
     .cf-objection-inner { padding: 28px 24px; }
 }
 .cf-objection-heading {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 3rem;
     font-weight: 700;
-    color: var(--color-darkgrey);
     margin: 0 0 16px;
     line-height: 1.25;
 }
@@ -162,17 +160,16 @@
     .cf-answers-inner { padding: 28px 24px; }
 }
 .cf-answers-heading {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 3rem;
     font-weight: 600;
-    color: var(--color-primary-text);
     margin: 0 0 20px;
     text-align: center;
     line-height: 1.25;
 }
 .cf-answers-heading strong {
     font-weight: 800;
-    color: var(--color-darkgrey);
+    color: var(--color-dark-gray);
     font-size: 2.4rem;
 }
 .cf-answers-list {
@@ -238,7 +235,7 @@
     gap: 6px;
     font-size: 1.35rem;
     font-weight: 600;
-    color: var(--color-darkgrey);
+    color: var(--color-dark-gray);
     text-decoration: none;
     transition: gap 0.2s ease;
 }
@@ -246,255 +243,6 @@
     gap: 10px;
 }
 
-/* ── Little things, big difference ── */
-.cf-tiny {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 6vmin 24px;
-}
-.cf-tiny-inner {
-    background: repeating-linear-gradient(
-        -45deg,
-        var(--color-lighter-gray),
-        var(--color-lighter-gray) 1px,
-        transparent 1px,
-        transparent 12px
-    );
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 48px 40px;
-}
-@media (max-width: 600px) {
-    .cf-tiny-inner { padding: 32px 20px; }
-}
-.cf-tiny-heading {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin: 0 0 24px;
-    text-align: center;
-}
-.cf-tiny-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-@media (min-width: 600px) {
-    .cf-tiny-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 900px) {
-    .cf-tiny-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.cf-tiny-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 6px;
-    padding: 18px 20px;
-}
-.cf-tiny-card p {
-    font-size: 1.35rem;
-    line-height: 1.5;
-    color: var(--color-secondary-text);
-    margin: 0;
-}
-.cf-tiny-cta {
-    text-align: center;
-    margin-top: 24px;
-}
-.cf-tiny-cta a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 24px;
-    background: var(--color-darkgrey);
-    color: var(--color-white);
-    border-radius: 6px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.15s ease;
-    font-family: var(--font-sans);
-}
-.cf-tiny-cta a:hover {
-    opacity: 0.85;
-}
-
-/* ── It fits in a lot of places ── */
-.cf-places {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 6vmin;
-}
-.cf-places-heading {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin: 0 0 24px;
-    text-align: center;
-}
-.cf-places-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-@media (min-width: 600px) {
-    .cf-places-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 900px) {
-    .cf-places-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.cf-places-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 28px 24px;
-}
-.cf-places-card-label {
-    font-family: var(--font-serif);
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin-bottom: 8px;
-    line-height: 1.25;
-}
-.cf-places-card p {
-    font-size: 1.35rem;
-    line-height: 1.5;
-    color: var(--color-secondary-text);
-    margin: 0;
-}
-.cf-places-card a {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 12px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-darkgrey);
-    text-decoration: none;
-    transition: gap 0.2s ease;
-}
-.cf-places-card a:hover {
-    gap: 8px;
-    color: var(--color-primary-text);
-}
-
-/* ── Subscribe ── */
-.cf-subscribe {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 0 24px 6vmin;
-}
-.cf-subscribe-inner {
-    background: var(--color-lighter-gray);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 36px 40px;
-    text-align: center;
-}
-@media (max-width: 600px) {
-    .cf-subscribe-inner { padding: 28px 24px; }
-}
-.cf-subscribe p {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    color: var(--color-secondary-text);
-    margin: 0 0 20px;
-}
-.cf-subscribe-form {
-    display: flex;
-    gap: 8px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-@media (max-width: 480px) {
-    .cf-subscribe-form { flex-direction: column; }
-}
-.cf-subscribe-form input {
-    flex: 1;
-    padding: 10px 14px;
-    border: 1px solid var(--color-light-gray);
-    border-radius: 6px;
-    font-size: 1.4rem;
-    color: var(--color-darkgrey);
-    background: var(--color-white);
-    outline: none;
-    font-family: var(--font-sans);
-}
-.cf-subscribe-form input:focus {
-    border-color: var(--color-primary-text);
-}
-.cf-subscribe-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background: var(--color-darkgrey);
-    color: var(--color-white);
-    font-size: 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.15s ease;
-    font-family: var(--font-sans);
-}
-.cf-subscribe-form button:hover {
-    opacity: 0.85;
-}
-
-/* ── Recent posts ── */
-.cf-posts {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 0 24px 8vmin;
-}
-.cf-posts-title {
-    font-family: var(--font-serif);
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--color-secondary-text);
-    margin: 0 0 16px;
-    text-align: center;
-}
-.cf-posts-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.cf-posts-item {
-    border-bottom: 1px solid var(--color-light-gray);
-}
-.cf-posts-item:last-child {
-    border-bottom: none;
-}
-.cf-posts-link {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    padding: 12px 0;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.15s ease;
-}
-.cf-posts-link:hover {
-    opacity: 0.7;
-}
-.cf-posts-date {
-    flex-shrink: 0;
-    font-family: var(--font-sans);
-    font-size: 1.15rem;
-    color: var(--color-secondary-text);
-    min-width: 70px;
-}
-.cf-posts-link h3 {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--color-darkgrey);
-    margin: 0;
-    line-height: 1.35;
-}
 </style>
 
 <main class="gh-main">

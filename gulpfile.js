@@ -56,6 +56,12 @@ function css(done) {
 }
 
 function tailwind(done) {
+    // Touch source to bust Tailwind v4 internal compiler cache
+    // (gulp-postcss discards dependency messages, so scanner never
+    //  re-initialises without this — new .hbs classes stay undetected)
+    const now = new Date();
+    fs.utimesSync('assets/css/tailwind.css', now, now);
+
     pump([
         src('assets/css/tailwind.css', {sourcemaps: true}),
         postcss([
@@ -115,7 +121,7 @@ function locales(done) {
 }
 
 const localesWatcher = () => watch('./locales-local/**/*.json', locales);
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], parallel(hbs, tailwind));
 const cssWatcher = () => watch('assets/css/screen.css', css);
 const tailwindWatcher = () => watch('assets/css/tailwind.css', tailwind);
 const jsWatcher = () => watch('assets/js/**/*.js', js);

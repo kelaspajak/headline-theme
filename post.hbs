@@ -1,91 +1,170 @@
 {{!< default}}
 
-{{#contentFor "body_class"}}resources-template{{/contentFor}}
+{{#contentFor "body_class"}}{{#if feature_image}}has-feature-image {{/if}}post-template education-layout{{/contentFor}}
 
 {{#contentFor "head"}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+<style>
+/* ── Education Post Layout ── */
+.edu-post { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Post Hero ── */
+.edu-hero { padding: 6vmin 0 4vmin; }
+.edu-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; font-size: 1.25rem; color: var(--color-secondary-text); }
+.edu-meta-tag { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 1.1rem; font-weight: 600; text-decoration: none; color: inherit; }
+.edu-meta-sep { color: var(--color-mid-gray); }
+.edu-title { font-family: var(--font-serif); font-size: 3.2rem; font-weight: 800; color: var(--color-darkgrey); margin: 0 0 16px; line-height: 1.2; letter-spacing: -0.02em; }
+@media (min-width: 768px) { .edu-title { font-size: 4rem; } }
+.edu-excerpt { font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; color: var(--color-secondary-text); line-height: 1.5; margin: 0; }
+
+/* ── Feature Image ── */
+.edu-feature-img { margin: 0 -24px 4vmin; }
+@media (min-width: 768px) { .edu-feature-img { margin: 0 0 4vmin; border-radius: 8px; overflow: hidden; } }
+.edu-feature-img img { width: 100%; height: auto; display: block; }
+
+/* ── Content + Sidebar Layout ── */
+.edu-body { display: grid; grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 960px) { .edu-body { grid-template-columns: 1fr 240px; } }
+
+/* ── Table of Contents (Sidebar) ── */
+.edu-toc-wrap { display: none; }
+@media (min-width: 960px) {
+    .edu-toc-wrap { display: block; position: sticky; top: 100px; align-self: start; }
+}
+.edu-toc-label { font-family: var(--font-sans); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-mid-gray); margin: 0 0 12px; }
+.edu-toc nav { border-left: 2px solid var(--color-light-gray); padding-left: 12px; }
+.edu-toc nav ul { list-style: none; margin: 0; padding: 0; }
+.edu-toc nav li { margin: 0; }
+.edu-toc nav a { display: block; padding: 4px 0; font-size: 1.15rem; color: var(--color-secondary-text); text-decoration: none; line-height: 1.4; border: none; }
+.edu-toc nav a:hover { color: var(--color-darkgrey); }
+.edu-toc nav ul ul a { padding-left: 12px; font-size: 1.05rem; }
+
+/* ── Post Content ── */
+.edu-content { font-size: 1.5rem; line-height: 1.7; color: var(--color-darkgrey); }
+.edu-content h2 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; margin: 2em 0 0.8em; line-height: 1.3; }
+.edu-content h3 { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 700; margin: 1.6em 0 0.6em; line-height: 1.35; }
+.edu-content p { margin: 0 0 1.2em; }
+.edu-content ul, .edu-content ol { margin: 0 0 1.2em 1.5em; }
+.edu-content li { margin: 0 0 0.6em; }
+.edu-content strong { font-weight: 700; }
+.edu-content a { color: var(--color-darkgrey); text-decoration: underline; }
+.edu-content a:hover { color: var(--color-primary); }
+.edu-content blockquote { border-left: 3px solid var(--color-light-gray); padding-left: 20px; margin: 1.5em 0; font-style: italic; color: var(--color-secondary-text); }
+.edu-content code { background: var(--color-lighter-gray); padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+.edu-content pre { background: var(--color-lighter-gray); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 1.5em 0; }
+.edu-content pre code { background: none; padding: 0; }
+.edu-content table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 1.35rem; }
+.edu-content th, .edu-content td { border: 1px solid var(--color-light-gray); padding: 10px 12px; text-align: left; }
+.edu-content th { background: var(--color-lighter-gray); font-weight: 700; font-family: var(--font-serif); }
+.edu-content img { max-width: 100%; height: auto; border-radius: 6px; margin: 1.5em 0; }
+
+/* ── Info Box ── */
+.edu-info-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px 24px; margin: 1.5em 0; }
+.edu-info-box-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: #1e40af; margin: 0 0 8px; }
+.edu-info-box p { margin: 0; font-size: 1.3rem; color: #1e3a5f; }
+.edu-warning-box { background: #fef3c7; border: 1px solid #fde68a; }
+.edu-warning-box .edu-info-box-title { color: #92400e; }
+.edu-warning-box p { color: #78350f; }
+.edu-success-box { background: #d1fae5; border: 1px solid #a7f3d0; }
+.edu-success-box .edu-info-box-title { color: #065f46; }
+.edu-success-box p { color: #064e3b; }
+
+/* ── Step by Step ── */
+.edu-steps { counter-reset: step; margin: 1.5em 0; }
+.edu-step { position: relative; padding-left: 48px; margin: 0 0 2em; }
+.edu-step:before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: var(--color-darkgrey); color: var(--color-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 1.2rem; font-weight: 700; }
+.edu-step-title { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--color-darkgrey); margin: 0 0 8px; line-height: 1.3; }
+.edu-step p { margin: 0; font-size: 1.35rem; }
+
+/* ── Post Footer ── */
+.edu-footer { border-top: 1px solid var(--color-light-gray); margin-top: 4vmin; padding-top: 3vmin; }
+.edu-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.edu-tag { display: inline-block; padding: 4px 12px; background: var(--color-lighter-gray); border-radius: 4px; font-size: 1.15rem; color: var(--color-secondary-text); text-decoration: none; transition: background 0.15s ease; }
+.edu-tag:hover { background: var(--color-light-gray); color: var(--color-darkgrey); }
+</style>
 {{/contentFor}}
 
 {{#post}}
-<main class="gh-main gh-resources-page">
+<main class="gh-main">
+<div class="edu-post">
 
-    <div class="gh-resources-hero">
-    <span class="gh-post-meta">
-        {{#if tags.[0]}}
-        <a class="gh-post-meta-tag" href="/" style="--color-tag: {{#if tags.[0].accent_color}}{{tags.[0].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[0].name}}</a>
-        {{/if}}
-        {{#if tags.[1]}}
-        <span class="bull">→</span> 
-        <a class="gh-post-meta-tag" href="{{tags.[1].url}}" style="--color-tag: {{#if tags.[1].accent_color}}{{tags.[1].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[1].name}}</a> 
-        {{/if}}
-        <span class="bull">•</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
-    </span>
-        <h1>{{title}}</h1>
-        {{#if custom_excerpt}}
-            <p>{{custom_excerpt}}</p>
-        {{/if}}
-    </div>
-
-    <div class="gh-content gh-canvas">
-            <aside class="gh-sidebar"><div class="gh-toc"></div></aside>
-            {{content}}
-    </div>
-
-    {{!-- untuk sementara tidak tau gunanya
-    <div class="gh-resources-body">
-        {{#get "tags" filter="slug:[building,publishing,growth,business]" include="count.posts"}}
-            {{#foreach tags}}
-            <section class="gh-resources-section tag-{{slug}}">
-                <div class="gh-resources-section-header">
-                    {{#if feature_image}}
-                    <div>
-                        <img
-                            srcset="{{img_url feature_image size="s"}} 300w,
-                                    {{img_url feature_image size="m"}} 720w,
-                                    {{img_url feature_image size="l"}} 960w"
-                            sizes="(max-width: 767px) 100vw, 50vw"
-                            src="{{img_url feature_image size="l"}}"
-                            alt="{{name}}"
-                            loading="lazy"
-                        />
-                    </div>
-                    {{/if}}
-                    <div>
-                        <h2>{{name}} - </h2>
-                        {{#if description}}<p>{{description}}</p>{{/if}}
-                    </div>
-                </div>
-
-                {{#get "posts" filter="tag:{{slug}}" limit="5"}}
-                <div class="gh-resources-posts">
-                    {{#foreach posts}}
-                    <article class="gh-resources-post">
-                        <a href="{{url}}">
-                            <span class="gh-resources-post-title">{{title}}</span>
-                            <span class="gh-resources-post-meta">{{reading_time}}</span>
-                        </a>
-                    </article>
-                    {{/foreach}}
-                </div>
-                {{/get}}
-
-                <a class="gh-resources-link" href="{{url}}">
-                    {{t "Explore the full series"}} →
-                </a>
-            </section>
+    {{!-- ── HERO ── --}}
+    <header class="edu-hero">
+        <div class="edu-meta">
+            {{#foreach tags limit="3"}}
+            <a class="edu-meta-tag" href="{{url}}" style="background: {{#if accent_color}}{{accent_color}}15{{else}}var(--color-lighter-gray){{/if}}; color: {{#if accent_color}}{{accent_color}}{{else}}var(--color-secondary-text){{/if}};">{{name}}</a>
             {{/foreach}}
-        {{/get}}
+            <span class="edu-meta-sep">•</span>
+            <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+            <span class="edu-meta-sep">•</span>
+            <span>{{date format="DD MMM YYYY"}}</span>
+        </div>
+        <h1 class="edu-title">{{title}}</h1>
+        {{#if custom_excerpt}}
+        <p class="edu-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+    </header>
+
+    {{!-- ── FEATURE IMAGE ── --}}
+    {{#if feature_image}}
+    <div class="edu-feature-img">
+        <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
     </div>
-    --}}
+    {{/if}}
+
+    {{!-- ── BODY: Content + TOC Sidebar ── --}}
+    <div class="edu-body">
+        <div class="edu-content">
+            {{content}}
+        </div>
+        <aside class="edu-toc-wrap">
+            <p class="edu-toc-label">{{t "Di halaman ini"}}</p>
+            <div class="edu-toc"></div>
+        </aside>
+    </div>
+
+    {{!-- ── POST SERIES ── --}}
+    {{#if tags.[0]}}
+    {{#get "posts" filter:"tag:{{tags.[0].slug}}" limit="10" include="tags"}}
+    {{#if posts}}
+    <div class="edu-series" style="margin-top: 4vmin; padding-top: 3vmin; border-top: 1px solid var(--color-light-gray);">
+        <p style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-mid-gray); margin: 0 0 12px;">{{t "Seri:"}} {{tags.[0].name}}</p>
+        <ol style="list-style: none; margin: 0; padding: 0; border: 1px solid var(--color-light-gray); border-radius: 8px; overflow: hidden;">
+            {{#foreach posts}}
+            <li style="border-bottom: 1px solid var(--color-light-gray);{{#if ../post.id}} background: var(--color-lighter-gray);{{/if}}">
+                <a href="{{url}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; text-decoration: none; color: inherit; font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.4;">
+                    <span style="flex-shrink: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: {{#if ../post.id}}var(--color-darkgrey){{else}}var(--color-lighter-gray){{/if}}; color: {{#if ../post.id}}var(--color-white){{else}}var(--color-mid-gray){{/if}}; border-radius: 50%; font-family: var(--font-sans); font-size: 1rem; font-weight: 700;">{{@number}}</span>
+                    <span>{{title}}</span>
+                </a>
+            </li>
+            {{/foreach}}
+        </ol>
+    </div>
+    {{/if}}
+    {{/get}}
+    {{/if}}
+
+    {{!-- ── TAGS ── --}}
+    <footer class="edu-footer">
+        <div class="edu-tags">
+            {{#foreach tags}}
+            <a class="edu-tag" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+        </div>
+    </footer>
+
+</div>
 </main>
 {{/post}}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
 <script>
     tocbot.init({
-        tocSelector: '.gh-toc',
-        contentSelector: '.gh-content',
-        headingSelector: 'h1, h2, h3, h4',
+        tocSelector: '.edu-toc',
+        contentSelector: '.edu-content',
+        headingSelector: 'h2, h3, h4',
         hasInnerContainers: true,
+        orderedList: false,
+        collapseDepth: 2,
     });
 </script>

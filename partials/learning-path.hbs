@@ -1,0 +1,116 @@
+{{!-- Learning Path Section --}}
+<style>
+.lp-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6vmin 24px;
+}
+.lp-heading {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    text-align: center;
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+.lp-subheading {
+    font-family: var(--font-sans);
+    font-size: 1.4rem;
+    color: var(--color-secondary-text);
+    text-align: center;
+    margin: 0 0 36px;
+}
+.lp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+@media (min-width: 600px) {
+    .lp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+    .lp-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.lp-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 24px 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.lp-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+.lp-card-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+.lp-card-label {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    line-height: 1.3;
+}
+.lp-card-desc {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    flex: 1;
+}
+.lp-card-tags {
+    font-size: 1.1rem;
+    color: var(--color-mid-gray);
+    margin-top: 4px;
+}
+</style>
+
+<section class="lp-section">
+    <h2 class="lp-heading">{{t "Mau belajar pajak? Pilih jalur yang cocok untuk Anda"}}</h2>
+    <p class="lp-subheading">{{t "Tiap jalur dirancang sesuai kebutuhan Anda — dari pemula sampai praktisi."}}</p>
+    <div class="lp-grid">
+        <a class="lp-card" href="/tag/tutorial/">
+            <span class="lp-card-icon">①</span>
+            <span class="lp-card-label">{{t "Dasar Pajak"}}</span>
+            <span class="lp-card-desc">{{t "Bingung mulai dari mana? Belajar konsep dasar: apa itu pajak, jenis-jenisnya, dan kenapa penting."}}</span>
+            <span class="lp-card-tags">PPh · PPN · PBB</span>
+        </a>
+        <a class="lp-card" href="/tag/wp-op/">
+            <span class="lp-card-icon">②</span>
+            <span class="lp-card-label">{{t "Saya Karyawan"}}</span>
+            <span class="lp-card-desc">{{t "Gaji dipotong pajak? Pelajari PPh 21, cara hitung PTKP, dan isian SPT Tahunan untuk karyawan."}}</span>
+            <span class="lp-card-tags">PPh 21 · PTKP · SPT OP</span>
+        </a>
+        <a class="lp-card" href="/tag/umkm/">
+            <span class="lp-card-icon">③</span>
+            <span class="lp-card-label">{{t "Saya Pemilik UMKM"}}</span>
+            <span class="lp-card-desc">{{t "Usaha kena pajak apa? Panduan lengkap PPh Final UMKM 0.5%, PPN PKP, dan e-Faktur."}}</span>
+            <span class="lp-card-tags">UMKM · PPh Final · PPN</span>
+        </a>
+        <a class="lp-card" href="/tag/spt/">
+            <span class="lp-card-icon">④</span>
+            <span class="lp-card-label">{{t "Pelaporan SPT"}}</span>
+            <span class="lp-card-desc">{{t "Langkah demi langkah isi dan kirim SPT Tahunan / Masa. Lengkap dengan screenshot."}}</span>
+            <span class="lp-card-tags">e-Filing · DJP Online · SPT</span>
+        </a>
+        <a class="lp-card" href="/tag/pemeriksaan/">
+            <span class="lp-card-icon">⑤</span>
+            <span class="lp-card-label">{{t "Ada Masalah Pajak"}}</span>
+            <span class="lp-card-desc">{{t "Dapat surat DJP, SKPKB, atau SP2DK? Kenali hak dan langkah yang harus diambil."}}</span>
+            <span class="lp-card-tags">Pemeriksaan · Keberatan · Banding</span>
+        </a>
+        <a class="lp-card" href="/tag/update-regulasi/">
+            <span class="lp-card-icon">⑥</span>
+            <span class="lp-card-label">{{t "Update Regulasi"}}</span>
+            <span class="lp-card-desc">{{t "Ringkasan cepat PMK, PER, SE terbaru yang berdampak langsung ke Anda."}}</span>
+            <span class="lp-card-tags">PMK · PER · SE · KMK</span>
+        </a>
+    </div>
+</section>

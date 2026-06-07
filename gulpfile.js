@@ -55,6 +55,18 @@ function css(done) {
     ], handleError(done));
 }
 
+function tailwind(done) {
+    pump([
+        src('assets/css/tailwind.css', {sourcemaps: true}),
+        postcss([
+            tailwindcss(),
+            cssnano()
+        ]),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
+
 function getJsFiles(version) {
     const jsFiles = [
         src(`${sharedThemeAssetsPath}/assets/js/${version}/lib/**/*.js`),
@@ -104,10 +116,11 @@ function locales(done) {
 
 const localesWatcher = () => watch('./locales-local/**/*.json', locales);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const cssWatcher = () => watch('assets/css/**/*.css', css);
+const cssWatcher = () => watch('assets/css/screen.css', css);
+const tailwindWatcher = () => watch('assets/css/tailwind.css', tailwind);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, localesWatcher);
-const build = series(css, js, locales);
+const watcher = parallel(hbsWatcher, cssWatcher, tailwindWatcher, jsWatcher, localesWatcher);
+const build = series(css, tailwind, js, locales);
 
 exports.build = build;
 exports.zip = series(build, zipper);

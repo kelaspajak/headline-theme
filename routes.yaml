@@ -8,14 +8,18 @@ collections:
     /:
         permalink: "/{slug}/"
         template: index
-        # Exclude posts assigned to dedicated collections
-        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-coretaxpedia,hash-pemeriksaan]
+        # Hide internal collection tags from homepage
+        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-resources,hash-ppn-ptll]
 
     /resources/:
         permalink: /resources/{slug}/
-        # Posts with internal-only tags (#hash-xxx) have primary_tag=null,
-        # so we use tag: instead of primary_tag:
+        template: resources
         filter: tag:[hash-resources]
+
+    /kota/:
+        permalink: /kota/{slug}/
+        template: kota
+        filter: tag:[hash-wilayah]
 
 taxonomies:
     tag: "/{slug}/"

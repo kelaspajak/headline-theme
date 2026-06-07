@@ -11,14 +11,6 @@
     --color-primary-text: var(--color-darker-gray);
     --h1-size: 4.4rem;
     --footer-spacing: 120px;
-
-    /* Undefined variable definitions */
-    --color-tag: var(--ghost-accent-color);
-    --color-base: var(--color-darker-gray);
-    --color-blue: #3eb0ef;
-    --color-whitegrey: #e6e6e6;
-    --color-darkgrey: var(--color-dark-gray);
-    --color-midgrey: #738a94;
 }
 
 @media (max-width: 767px) {
@@ -1035,6 +1027,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 .resource-list-item {
     align-items: center;
     border-bottom: 1px solid var(--color-whitegrey);
+    color: var(--color-tag), var(--color-base);
     display: flex;
     font-size: 1.6rem;
     justify-content: space-between;
@@ -1043,31 +1036,16 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     text-decoration: none;
 }
 
-.resource-list-item:hover {
-    animation: resource-slide 0.35s ease forwards;
-}
-
-@keyframes resource-slide {
-    0% {
-        background-color: transparent;
-        padding-left: 0;
-        padding-right: 0;
-        transform: translateX(0);
-    }
-    50% {
-        background-color: var(--color-lighter-gray);
-        transform: translateX(6px);
-    }
-    100% {
-        background-color: var(--color-lighter-gray);
-        padding-left: 8px;
-        padding-right: 8px;
-        transform: translateX(0);
-    }
-}
-
 .resource-list-item:first-of-type {
     border-top: 1px solid var(--color-whitegrey);
+}
+
+.resource-list-item:hover {
+    background: #f9fafa;
+    box-shadow: var(--color-whitegrey) 0 -1px 0 0;
+    color: var(--color-tag, var(--color-blue));
+    padding: 25px 0;
+    transition: all 0.2s ease;
 }
 
 .resource-list-item-content p {
@@ -1171,7 +1149,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 .search-input input {
     border: none;
-    font-family: var(--font-sans);
+    font-family: var(--font-sans-serif);
     font-size: 2rem;
     font-weight: 400;
     height: 6.5rem;
@@ -1455,7 +1433,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 
 .gh-resources-search input:focus {
-    border-color: var(--color-dark-gray);
+    border-color: var(--color-darkgrey);
 }
 
 /* Tag Sections */
@@ -1639,6 +1617,13 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     }
 }
 
+/* ── Post Feed (list) ── */
+.gh-postfeed {
+    padding: 6vmin 0;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 /* pengaturan tag*/
 .gh-post-meta-tag:hover {
     color: var(--color-tag, var(--color-darker-gray)) !important;
@@ -1673,11 +1658,11 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     color: contrast-color(var(--color-tag));
     font-size: 4.2rem;
     font-weight: 800;
-    margin: 0 0 0.2em;
+    margin: 0 0 .2em;
     letter-spacing: -0.02em;
 }
 .gh-tag-head-content p {
-    color: contrast-color(var(--color-tag));
+color: contrast-color(var(--color-tag));
     font-size: 1.8rem;
     line-height: 1.5em;
     opacity: 0.9;
@@ -1692,11 +1677,11 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 .gh-tag-head-content > div > span > span,
 .gh-tag-head-content > div > span > a {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255,255,255,0.5);
     border-radius: 2rem;
     display: inline-block;
     font-weight: 500;
-    letter-spacing: -0.5px;
+    letter-spacing: -.5px;
     margin: 0 1.2rem 0 0;
     padding: 6px 14px;
     text-decoration: none;
@@ -1709,10 +1694,10 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     color: #fff;
 }
 .gh-tag-head-content > div > span > a:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.15);
 }
 .gh-tag-head-img {
-    box-shadow: 0 10px 100px -50px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 100px -50px rgba(0,0,0,.6);
     flex-grow: 0;
     flex-shrink: 0;
     height: 100%;
@@ -1730,7 +1715,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     grid-template-columns: repeat(3, 1fr);
     margin: 6vmin auto 0;
     max-width: 1000px;
-    padding-top: 60px;
+    padding-top: 60px
 }
 .gh-card-link {
     color: currentColor;
@@ -1749,10 +1734,10 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     display: block;
     font-size: 1.3rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
     line-height: 1.2em;
-    margin: 0 0 0.8rem;
-    opacity: 0.6;
+    margin: 0 0 .8rem;
+    opacity: .6;
     text-transform: uppercase;
 }
 .gh-card-title {
@@ -1823,4 +1808,9 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     }
 }
 
-/* ── Infinity scroll: keep pagination sentinel in layout flow ──*/
+/* ── Infinity scroll: keep pagination sentinel in layout flow ── */
+.pagination {
+    visibility: hidden;
+    height: 1px;
+    overflow: hidden;
+}

@@ -1,0 +1,41 @@
+{{!< default}}
+
+<main class="gh-main">
+    <div class="gh-page">
+        <div class="gh-container">
+
+            <header class="super">
+                <h1 class="superhero">Kota & Wilayah</h1>
+                <p class="supersub">Informasi perpajakan berdasarkan kota dan wilayah di Indonesia.</p>
+            </header>
+
+            {{!-- List all kota tags with posts --}}
+            {{#get "tags" filter="slug:kota-balikpapan, slug:kota-bekasi, slug:kota-jakarta-barat, slug:kota-jakarta-selatan, slug:kota-jakarta-timur, slug:kota-kabupaten-tegal, slug:kota-makassar, slug:kota-malang, slug:kota-palembang, slug:kota-palu, slug:kota-samarinda, slug:kota-sidoarjo, slug:kota-surabaya, slug:kota-tambolaka-sumba-barat-daya, slug:kota-tangerang-selatan" limit="50" include="count.posts"}}
+            {{#foreach tags}}
+            <section class="resource-section tag-{{slug}}">
+                {{#if feature_image}}
+                <a class="resource-section-coverlink" href="{{url}}">
+                    <img src="{{feature_image}}" alt="{{name}}" loading="lazy" />
+                </a>
+                {{/if}}
+                <div class="resource-list" style="--color-tag: {{accent_color}};">
+                    <h2>{{name}}</h2>
+                    {{#if description}}<p>{{description}}</p>{{/if}}
+
+                    {{#get "posts" filter="tag:{{slug}}" limit="5" include="tags"}}
+                    {{#foreach posts}}
+                    {{> "loop-zebra"}}
+                    {{/foreach}}
+                    {{/get}}
+
+                    <a class="resource-section-morelink" href="{{url}}">{{t "Jelajahi seri lengkapnya"}} <span>&rarr;</span></a>
+                </div>
+            </section>
+            {{/foreach}}
+            {{/get}}
+
+        </div>
+    </div>
+</main>
+
+{{#contentFor "body_class"}}kota-template{{/contentFor}}

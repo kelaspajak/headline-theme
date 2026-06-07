@@ -1,202 +1,94 @@
 {{!< default}}
 
 {{#contentFor "head"}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* ── Tag Archive Layout ── */
-.edu-tag-header {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 8vmin 24px 4vmin;
-    text-align: center;
-}
-.edu-tag-breadcrumb {
-    font-size: 1.2rem;
-    color: var(--color-secondary-text);
-    margin-bottom: 12px;
-}
-.edu-tag-breadcrumb a {
-    color: var(--color-secondary-text);
-    text-decoration: none;
-}
-.edu-tag-breadcrumb a:hover {
-    color: var(--color-darkgrey);
-}
-.edu-tag-name {
-    font-family: var(--font-serif);
-    font-size: 3.6rem;
-    font-weight: 800;
-    color: var(--color-darkgrey);
-    margin: 0 0 12px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-}
-@media (min-width: 768px) {
-    .edu-tag-name { font-size: 4.4rem; }
-}
-.edu-tag-desc {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--color-secondary-text);
-    margin: 0 0 8px;
-    line-height: 1.5;
-}
-.edu-tag-count {
-    font-size: 1.2rem;
-    color: var(--color-mid-gray);
-}
-.edu-tag-related {
-    margin-top: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-}
-.edu-tag-related a {
-    display: inline-block;
-    padding: 4px 12px;
-    background: var(--color-lighter-gray);
-    border-radius: 4px;
-    font-size: 1.15rem;
-    color: var(--color-secondary-text);
-    text-decoration: none;
-    transition: background 0.15s ease;
-}
-.edu-tag-related a:hover {
-    background: var(--color-light-gray);
-    color: var(--color-darkgrey);
+    :root {
+  /* Define your base hex color */
+  --base-hex: var(--color-tag);
+
+  /* 1. Background */
+  --bg-color: var(--color-tag);
+
+  /* 2. Border (Darken by 20%) */
+  --border-color: rgb(from var(--color-tag) calc(r * 0.8) calc(g * 0.8) calc(b * 0.8));
+
+  /* 3. Text (Calculate contrast directly from the hex value) */
+  --text-color: rgb(from var(--color-tag)
+    calc((r * 0.299 + g * 0.587 + b * 0.114) > 128 ? 20 : 255)
+    calc((r * 0.299 + g * 0.587 + b * 0.114) > 128 ? 20 : 255)
+    calc((r * 0.299 + g * 0.587 + b * 0.114) > 128 ? 20 : 255)
+  );
 }
 
-/* ── Tag Post Feed ── */
-.edu-tag-feed {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 8vmin;
-}
-.edu-tag-section {
-    margin-bottom: 4vmin;
-}
-.edu-tag-section-title {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin: 0 0 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--color-light-gray);
-}
-.edu-tag-post-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.edu-tag-post-item {
-    border-bottom: 1px solid var(--color-lighter-gray);
-}
-.edu-tag-post-item:last-child {
-    border-bottom: none;
-}
-.edu-tag-post-link {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    padding: 14px 0;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.15s ease;
-}
-.edu-tag-post-link:hover {
-    opacity: 0.7;
-}
-.edu-tag-post-date {
-    flex-shrink: 0;
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    color: var(--color-secondary-text);
-    min-width: 90px;
-}
-.edu-tag-post-info {
-    flex: 1;
-}
-.edu-tag-post-title {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color-darkgrey);
-    margin: 0 0 4px;
-    line-height: 1.35;
-}
-.edu-tag-post-excerpt {
-    font-size: 1.2rem;
-    color: var(--color-secondary-text);
-    margin: 0;
-    line-height: 1.5;
-}
-.edu-tag-post-tags {
-    flex-shrink: 0;
-    display: flex;
-    gap: 6px;
-}
-.edu-tag-mini {
-    display: inline-block;
-    padding: 2px 8px;
-    background: var(--color-lighter-gray);
-    border-radius: 3px;
-    font-size: 1rem;
-    color: var(--color-secondary-text);
+/* Apply variables to your element */
+.dynamic-card {
+  background-color: var(--bg-color);
+  color: var(--text-color) !important;
+  border: 2px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
 }
 </style>
 {{/contentFor}}
 
-{{#tag}}
 <main class="gh-main">
 
-    <header class="edu-tag-header tag-{{slug}}">
-        <nav class="edu-tag-breadcrumb">
-            <a href="{{@site.url}}">{{@site.title}}</a> → <span>{{name}}</span>
-        </nav>
-        <h1 class="edu-tag-name">{{name}}</h1>
-        {{#if description}}
-        <p class="edu-tag-desc">{{description}}</p>
-        {{/if}}
-        <p class="edu-tag-count">{{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</p>
-
-        {{!-- Related tags --}}
-        <div class="edu-tag-related">
-            {{#get "tags" limit="10" include="count.posts"}}
-            {{#foreach tags}}
-            {{#unless (slug ../slug)}}
-            <a href="{{url}}">{{name}} ({{count.posts}})</a>
-            {{/unless}}
-            {{/foreach}}
-            {{/get}}
+    {{#tag}}
+    <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{#if accent_color}}{{accent_color}}{{else}}#3eb0ef{{/if}};">
+        <div class="gh-container">
+            <div class="gh-tag-head-content">
+                {{#if feature_image}}
+                <img class="gh-tag-head-img" src="{{feature_image}}" alt="{{name}}" />
+                {{/if}}
+                <div>
+                    <h1>{{name}}</h1>
+                    {{#if description}}
+                    <p>{{description}}</p>
+                    {{/if}}
+                    <span>
+                        <span>{{plural ../pagination.total empty="No posts" singular="% post" plural="% posts"}}</span>
+                        <a href="{{@site.url}}/resources/">{{t "More resources"}} &rarr;</a>
+                    </span>
+                </div>
+            </div>
         </div>
     </header>
+    {{/tag}}
 
-    <div class="edu-tag-feed">
-        {{#foreach posts}}
-        <article class="edu-tag-post-item">
-            <a class="edu-tag-post-link" href="{{url}}">
-                <span class="edu-tag-post-date">{{date format="DD MMM YYYY"}}</span>
-                <div class="edu-tag-post-info">
-                    <h2 class="edu-tag-post-title">{{title}}</h2>
-                    {{#if custom_excerpt}}
-                    <p class="edu-tag-post-excerpt">{{custom_excerpt}}</p>
+    <div class="gh-page">
+        <div class="gh-container">
+            {{!-- Featured posts --}}
+            <div class="gh-featuredposts">
+                {{#foreach posts  limit="3"}}
+                    {{#if featured}}
+                    {{> featured-post }}
                     {{/if}}
+                {{/foreach}}
+            </div>
+
+            {{!-- Post feed + infinity scroll --}}
+            <div class="gh-postfeed">
+                <div class="gh-feed">
+                    {{#foreach posts}}
+                    {{#unless featured}}
+                    {{> loop-zebra }}
+                    {{/unless}}
+                    {{/foreach}}
                 </div>
-            </a>
-        </article>
-        {{/foreach}}
+            </div>
+
+            {{#match pagination.pages ">" 1}}
+            <nav class="pagination" role="navigation" aria-label="Pagination">
+                {{#if next}}
+                <a class="older-posts" href="{{page_url next}}">{{t "Older Posts"}} &rarr;</a>
+                {{/if}}
+            </nav>
+            {{/match}}
+
+        </div>
     </div>
 
-    {{!-- Pagination --}}
-    {{#match pagination.pages ">" 1}}
-    <nav class="pagination" style="max-width: 900px; margin: 0 auto; padding: 0 24px 4vmin;" role="navigation" aria-label="Pagination">
-        {{#if next}}
-        <a class="older-posts" href="{{page_url next}}">{{t "Older Posts"}} &rarr;</a>
-        {{/if}}
-    </nav>
-    {{/match}}
-
 </main>
-{{/tag}}

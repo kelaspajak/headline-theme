@@ -102,7 +102,7 @@
     <h2 class="rt-heading">{{t "Update Regulasi Terbaru"}}</h2>
     <p class="rt-subheading">{{t "Ringkasan cepat peraturan perpajakan yang baru berlaku."}}</p>
     <ul class="rt-list">
-        {{#get "posts" filter:"tag:update-regulasi" limit="5" include="tags"}}
+        {{#get "posts" filter="tag:update-regulasi" limit="5" include="tags"}}
         {{#foreach posts}}
         <li class="rt-item">
             <a class="rt-link" href="{{url}}">

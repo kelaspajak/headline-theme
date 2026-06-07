@@ -77,7 +77,7 @@
 </style>
 
 {{#if tags.[0]}}
-{{#get "posts" filter:"tag:{{tags.[0].slug}}" limit="10" include="tags"}}
+{{#get "posts" filter="tag:{{tags.[0].slug}}" limit="10" include="tags"}}
 {{#if posts}}
 <div class="ps-series">
     <p class="ps-series-label">{{t "Seri"}}</p>

@@ -125,7 +125,7 @@
 
     {{!-- ── POST SERIES ── --}}
     {{#if tags.[0]}}
-    {{#get "posts" filter:"tag:{{tags.[0].slug}}" limit="10" include="tags"}}
+    {{#get "posts" filter="tag:{{tags.[0].slug}}" limit="10" include="tags"}}
     {{#if posts}}
     <div class="edu-series" style="margin-top: 4vmin; padding-top: 3vmin; border-top: 1px solid var(--color-light-gray);">
         <p style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-mid-gray); margin: 0 0 12px;">{{t "Seri:"}} {{tags.[0].name}}</p>

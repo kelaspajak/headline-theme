@@ -1,581 +1,597 @@
-{{!-- ── tidak ada menampilkan postingan di halaman ini  ── --}}
-
 {{!< default}}
+
+{{#contentFor "head"}}
 <style>
-/* ── Campfire-style letter inside default.hbs ── */
-.cf-letter {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 8vmin 24px;
+/* ═══════════════════════════════════════════
+   HOMEPAGE — Ghost.org-inspired layout
+   ═══════════════════════════════════════════ */
+
+/* ── Reset body class ── */
+.home-template .gh-main { padding-top: 0; }
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.dp-hero {
+    position: relative;
+    padding: 12vmin 24px 8vmin;
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-lighter-gray) 0%, var(--color-white) 100%);
+    overflow: hidden;
 }
-.cf-letter-title {
+.dp-hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.dp-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 100px;
+    font-size: 1.25rem;
+    color: var(--color-secondary-text);
+    margin-bottom: 24px;
+}
+.dp-hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+}
+.dp-hero-title {
     font-family: var(--font-serif);
     font-size: 4rem;
     font-weight: 800;
     color: var(--color-darkgrey);
-    text-align: center;
-    margin: 0 0 28px;
+    margin: 0 0 20px;
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
 @media (min-width: 768px) {
-    .cf-letter-title { font-size: 5rem; }
+    .dp-hero-title { font-size: 5.6rem; }
 }
 @media (max-width: 480px) {
-    .cf-letter-title br { display: none; }
-    .cf-letter-title { font-size: 3.2rem; }
+    .dp-hero-title { font-size: 3rem; }
 }
-.cf-letter-inner {
-    background: var(--color-lighter-gray);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 48px 52px;
-    transform: rotate(-0.6deg);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+.dp-hero-title-accent {
+    color: var(--color-tag, #1e40af);
 }
-@media (max-width: 600px) {
-    .cf-letter-inner {
-        padding: 28px 24px;
-        transform: none;
-    }
-}
-.cf-date {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-style: italic;
+.dp-hero-desc {
+    font-size: 1.6rem;
+    line-height: 1.6;
     color: var(--color-secondary-text);
-    margin: 0 0 24px;
+    margin: 0 auto 32px;
+    max-width: 560px;
 }
-.cf-greeting {
-    font-family: var(--font-serif);
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: var(--color-darkgrey);
-    margin: 0 0 20px;
-    line-height: 1.2;
-}
-.cf-body p {
-    font-family: var(--font-sans);
-    font-size: 1.5rem;
-    line-height: 1.7;
-    color: var(--color-darkgrey);
-    margin: 0 0 18px;
-}
-.cf-body p:last-child {
-    margin-bottom: 0;
-}
-@media (min-width: 768px) {
-    .cf-body { columns: 2; column-gap: 36px; }
-    .cf-body p { break-inside: avoid; }
-}
-/*
-@media (min-width: 1024px) {
-    .cf-body { columns: 3; column-gap: 32px; }
-}
-*/
-.cf-signoff {
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid var(--color-light-gray);
+.dp-hero-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 }
-@media (max-width: 480px) {
-    .cf-signoff {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-.cf-signoff-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid var(--color-light-gray);
-}
-.cf-signoff-text p {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    font-style: italic;
-    color: var(--color-darkgrey);
-    margin: 0 0 4px;
-}
-.cf-signoff-text strong {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    font-style: normal;
-    margin-top: 12px;
-}
-
-/* ── Objection ── */
-.cf-objection {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 24px 6vmin;
-}
-.cf-objection-inner {
-    background: var(--color-lighter-gray);
-    border: 1px solid var(--color-light-gray);
+.dp-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
     border-radius: 8px;
-    padding: 40px 48px;
-}
-@media (max-width: 600px) {
-    .cf-objection-inner { padding: 28px 24px; }
-}
-.cf-objection-heading {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin: 0 0 16px;
-    line-height: 1.25;
-}
-.cf-objection-body p {
-    font-size: 1.5rem;
-    line-height: 1.6;
-    color: var(--color-primary-text);
-    margin: 0 0 14px;
-}
-.cf-objection-body p:last-child {
-    margin-bottom: 0;
-}
-
-/* ── All these questions have the same answer: Yes! ── */
-.cf-answers {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 24px 6vmin;
-}
-.cf-answers-inner {
-    background: var(--color-white);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 40px 44px;
-}
-@media (max-width: 600px) {
-    .cf-answers-inner { padding: 28px 24px; }
-}
-.cf-answers-heading {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: 600;
-    color: var(--color-primary-text);
-    margin: 0 0 20px;
-    text-align: center;
-    line-height: 1.25;
-}
-.cf-answers-heading strong {
-    font-weight: 800;
-    color: var(--color-darkgrey);
-    font-size: 2.4rem;
-}
-.cf-answers-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 36px;
-}
-@media (max-width: 640px) {
-    .cf-answers-list { grid-template-columns: 1fr; }
-}
-.cf-answers-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--color-lighter-gray);
-    margin: 0;
     font-size: 1.4rem;
-    line-height: 1.4;
-    color: var(--color-primary-text);
-    position: relative;
-    padding-right: 48px;
-}
-.cf-answers-list li:after {
-    content: "Ada!";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block;
-    background: #d1fae5;
-    color: #065f46;
-    font-size: 75%;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    padding: 0.25em 0.45em 0.3em;
-    border-radius: 4px;
-}
-.cf-answers-list li:nth-child(odd):after {
-    transform: translateY(-50%) rotate(-2deg);
-}
-.cf-answers-list li:nth-child(even):after {
-    transform: translateY(-50%) rotate(1deg);
-}
-.cf-answers-list li:nth-last-child(-n+2) {
-    border-bottom: none;
-}
-@media (max-width: 640px) {
-    .cf-answers-list li:nth-last-child(-n+1) {
-        border-bottom: none;
-    }
-}
-.cf-answers-cta {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 18px;
-    border-top: 1px solid var(--color-light-gray);
-}
-.cf-answers-cta a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 1.35rem;
     font-weight: 600;
-    color: var(--color-darkgrey);
     text-decoration: none;
-    transition: gap 0.2s ease;
+    transition: all 0.15s ease;
 }
-.cf-answers-cta a:hover {
-    gap: 10px;
-}
-
-/* ── Little things, big difference ── */
-.cf-tiny {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 6vmin 24px;
-}
-.cf-tiny-inner {
-    background: repeating-linear-gradient(
-        -45deg,
-        var(--color-lighter-gray),
-        var(--color-lighter-gray) 1px,
-        transparent 1px,
-        transparent 12px
-    );
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 48px 40px;
-}
-@media (max-width: 600px) {
-    .cf-tiny-inner { padding: 32px 20px; }
-}
-.cf-tiny-heading {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin: 0 0 24px;
-    text-align: center;
-}
-.cf-tiny-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-@media (min-width: 600px) {
-    .cf-tiny-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 900px) {
-    .cf-tiny-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.cf-tiny-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 6px;
-    padding: 18px 20px;
-}
-.cf-tiny-card p {
-    font-size: 1.35rem;
-    line-height: 1.5;
-    color: var(--color-secondary-text);
-    margin: 0;
-}
-.cf-tiny-cta {
-    text-align: center;
-    margin-top: 24px;
-}
-.cf-tiny-cta a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 24px;
+.dp-hero-btn-primary {
     background: var(--color-darkgrey);
     color: var(--color-white);
-    border-radius: 6px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.15s ease;
-    font-family: var(--font-sans);
 }
-.cf-tiny-cta a:hover {
+.dp-hero-btn-primary:hover {
     opacity: 0.85;
+    transform: translateY(-1px);
+}
+.dp-hero-btn-secondary {
+    background: var(--color-white);
+    color: var(--color-darkgrey);
+    border: 1px solid var(--color-light-gray);
+}
+.dp-hero-btn-secondary:hover {
+    background: var(--color-lighter-gray);
 }
 
-/* ── It fits in a lot of places ── */
-.cf-places {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px 6vmin;
+/* ── Hero Stats ── */
+.dp-hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-light-gray);
 }
-.cf-places-heading {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-darkgrey);
-    margin: 0 0 24px;
+.dp-stat {
     text-align: center;
 }
-.cf-places-grid {
+.dp-stat-num {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--color-darkgrey);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.dp-stat-label {
+    font-size: 1.15rem;
+    color: var(--color-secondary-text);
+}
+
+/* ═══════════════════════════════════════════
+   FEATURE CARDS
+   ═══════════════════════════════════════════ */
+.dp-features {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8vmin 24px;
+}
+.dp-section-label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-mid-gray);
+    text-align: center;
+    margin: 0 0 8px;
+}
+.dp-section-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    text-align: center;
+    margin: 0 0 12px;
+    line-height: 1.25;
+}
+@media (min-width: 768px) {
+    .dp-section-title { font-size: 3.4rem; }
+}
+.dp-section-desc {
+    font-size: 1.4rem;
+    color: var(--color-secondary-text);
+    text-align: center;
+    margin: 0 auto 40px;
+    max-width: 520px;
+    line-height: 1.6;
+}
+.dp-features-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
 }
-@media (min-width: 600px) {
-    .cf-places-grid { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 640px) {
+    .dp-features-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 900px) {
-    .cf-places-grid { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 960px) {
+    .dp-features-grid { grid-template-columns: repeat(3, 1fr); }
 }
-.cf-places-card {
+.dp-feature-card {
     background: var(--color-white);
     border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 28px 24px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
-.cf-places-card-label {
+.dp-feature-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+}
+.dp-feature-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+}
+.dp-feature-title {
     font-family: var(--font-serif);
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-darkgrey);
-    margin-bottom: 8px;
-    line-height: 1.25;
+    margin: 0 0 8px;
+    line-height: 1.3;
 }
-.cf-places-card p {
-    font-size: 1.35rem;
-    line-height: 1.5;
+.dp-feature-desc {
+    font-size: 1.3rem;
+    line-height: 1.55;
     color: var(--color-secondary-text);
     margin: 0;
 }
-.cf-places-card a {
+.dp-feature-link {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    margin-top: 12px;
+    gap: 6px;
+    margin-top: 14px;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-darkgrey);
     text-decoration: none;
     transition: gap 0.2s ease;
 }
-.cf-places-card a:hover {
-    gap: 8px;
-    color: var(--color-primary-text);
+.dp-feature-link:hover { gap: 10px; }
+
+/* ═══════════════════════════════════════════
+   LOGO / INTEGRATION BAR
+   ═══════════════════════════════════════════ */
+.dp-logos {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6vmin 24px;
+    text-align: center;
+}
+.dp-logos-label {
+    font-size: 1.2rem;
+    color: var(--color-mid-gray);
+    margin: 0 0 24px;
+}
+.dp-logos-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    opacity: 0.5;
+}
+.dp-logos-grid img {
+    height: 28px;
+    width: auto;
+    filter: grayscale(100%);
 }
 
-/* ── Subscribe ── */
-.cf-subscribe {
-    max-width: 660px;
+/* ═══════════════════════════════════════════
+   USE CASE SECTIONS
+   ═══════════════════════════════════════════ */
+.dp-usecase {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px 6vmin;
+    padding: 6vmin 24px;
 }
-.cf-subscribe-inner {
+.dp-usecase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+}
+@media (min-width: 768px) {
+    .dp-usecase-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    .dp-usecase-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.dp-usecase-card {
     background: var(--color-lighter-gray);
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 36px 40px;
-    text-align: center;
-}
-@media (max-width: 600px) {
-    .cf-subscribe-inner { padding: 28px 24px; }
-}
-.cf-subscribe p {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    color: var(--color-secondary-text);
-    margin: 0 0 20px;
-}
-.cf-subscribe-form {
-    display: flex;
-    gap: 8px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-@media (max-width: 480px) {
-    .cf-subscribe-form { flex-direction: column; }
-}
-.cf-subscribe-form input {
-    flex: 1;
-    padding: 10px 14px;
-    border: 1px solid var(--color-light-gray);
-    border-radius: 6px;
-    font-size: 1.4rem;
-    color: var(--color-darkgrey);
-    background: var(--color-white);
-    outline: none;
-    font-family: var(--font-sans);
-}
-.cf-subscribe-form input:focus {
-    border-color: var(--color-primary-text);
-}
-.cf-subscribe-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background: var(--color-darkgrey);
-    color: var(--color-white);
-    font-size: 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.15s ease;
-    font-family: var(--font-sans);
-}
-.cf-subscribe-form button:hover {
-    opacity: 0.85;
-}
-
-/* ── Recent posts ── */
-.cf-posts {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 0 24px 8vmin;
-}
-.cf-posts-title {
-    font-family: var(--font-serif);
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--color-secondary-text);
-    margin: 0 0 16px;
-    text-align: center;
-}
-.cf-posts-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.cf-posts-item {
-    border-bottom: 1px solid var(--color-light-gray);
-}
-.cf-posts-item:last-child {
-    border-bottom: none;
-}
-.cf-posts-link {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    padding: 12px 0;
+    border-radius: 12px;
+    padding: 24px;
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.15s ease;
+    transition: background 0.15s ease;
 }
-.cf-posts-link:hover {
-    opacity: 0.7;
+.dp-usecase-card:hover {
+    background: var(--color-light-gray);
 }
-.cf-posts-date {
-    flex-shrink: 0;
-    font-family: var(--font-sans);
-    font-size: 1.15rem;
-    color: var(--color-secondary-text);
-    min-width: 70px;
+.dp-usecase-card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
 }
-.cf-posts-link h3 {
+.dp-usecase-card-title {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--color-darkgrey);
+    margin: 0 0 6px;
+}
+.dp-usecase-card-desc {
+    font-size: 1.25rem;
+    color: var(--color-secondary-text);
     margin: 0;
-    line-height: 1.35;
+    line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIAL / SOCIAL PROOF
+   ═══════════════════════════════════════════ */
+.dp-testimonials {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8vmin 24px;
+}
+.dp-testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+}
+@media (min-width: 768px) {
+    .dp-testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.dp-testimonial {
+    background: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 12px;
+    padding: 24px;
+}
+.dp-testimonial-quote {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--color-darkgrey);
+    line-height: 1.55;
+    margin: 0 0 16px;
+}
+.dp-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dp-testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-light-gray);
+}
+.dp-testimonial-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-darkgrey);
+}
+.dp-testimonial-role {
+    font-size: 1.1rem;
+    color: var(--color-secondary-text);
+}
+
+/* ═══════════════════════════════════════════
+   SECTION DIVIDER
+   ═══════════════════════════════════════════ */
+.dp-divider {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.dp-divider hr {
+    border: none;
+    border-top: 1px solid var(--color-light-gray);
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+   ═══════════════════════════════════════════ */
+.dp-cta {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8vmin 24px;
+    text-align: center;
+}
+.dp-cta-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-darkgrey);
+    margin: 0 0 12px;
+    line-height: 1.25;
+}
+@media (min-width: 768px) {
+    .dp-cta-title { font-size: 3.4rem; }
+}
+.dp-cta-desc {
+    font-size: 1.4rem;
+    color: var(--color-secondary-text);
+    margin: 0 auto 28px;
+    max-width: 480px;
+    line-height: 1.6;
+}
+.dp-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 </style>
+{{/contentFor}}
 
 <main class="gh-main">
-    <div class="gh-container">
 
-        {{!-- ── THE LETTER ── --}}
-        <section class="cf-letter">
-            <h1 class="cf-letter-title">{{t "Pajak semudah yang seharusnya."}}<br />{{t "Bukan serumit yang selama ini dibayangkan."}}</h1>
-            <div class="cf-letter-inner">
-                <p class="cf-date">{{t "Dari Tim Diskusi Pajak"}}</p>
-
-                <p class="cf-greeting">{{t "Halo,"}}</p>
-
-                <div class="cf-body">
-                    <p>{{t "Kalau Anda pernah merasa pusing saat membaca aturan pajak, tenang, Anda tidak sendirian."}}</p>
-
-                    <p>{{t "Banyak aturan perpajakan ditulis dengan bahasa yang formal dan cukup teknis. Belum lagi regulasinya yang terus berubah. Kadang kita cuma ingin tahu jawaban sederhana untuk masalah yang sedang dihadapi, tetapi harus membaca puluhan halaman aturan terlebih dahulu."}}</p>
-
-                    <p><strong>{{t "Karena itulah kami membuat Diskusi Pajak."}}</strong></p>
-
-                    <p>{{t "Tempat ini kami bangun untuk membantu menjelaskan berbagai topik perpajakan dengan bahasa yang lebih mudah dipahami. Bukan sekadar mengutip aturan, tetapi mencoba menjelaskan bagaimana aturan tersebut berlaku dalam situasi nyata yang sering ditemui pelaku usaha, karyawan, maupun praktisi pajak."}}</p>
-
-                    <p>{{t "Mulai dari urusan e-Faktur, PPN, PPh, sampai berbagai pertanyaan yang muncul dalam aktivitas sehari-hari, kami berusaha menyajikannya dengan cara yang lebih ringan dan mudah diikuti."}}</p>
-
-                    <p>{{t "Kami tentu tidak punya semua jawaban. Namun kami berharap Diskusi Pajak bisa menjadi tempat untuk belajar, berbagi pengalaman, dan menemukan solusi bersama."}}</p>
-
-                    <p>{{t "Terima kasih sudah berkunjung. Semoga informasi yang Anda temukan di sini bermanfaat."}}</p>
-                </div>
-
-                <div class="cf-signoff">
-                    {{#get "authors" filter="slug:tim-redaksi"}}
-                    {{#if authors}}
-                    {{#foreach authors}}
-                    <img class="cf-signoff-avatar" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
-                    {{/foreach}}
-                    {{/if}}
-                    {{/get}}
-                    <div class="cf-signoff-text">
-                        <p>{{t "Salam hangat,"}}</p>
-                        <strong>{{t "Tim {siteTitle}" siteTitle=@site.title}}</strong>
-                    </div>
-                </div>
+{{!-- ═══════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════ --}}
+<section class="dp-hero">
+    <div class="dp-hero-inner">
+        <div class="dp-hero-badge">
+            <span class="dp-hero-badge-dot"></span>
+            Referensi perpajakan terpercaya
+        </div>
+        <h1 class="dp-hero-title">
+            Pajak <span class="dp-hero-title-accent">semudah</span><br />
+            yang seharusnya.
+        </h1>
+        <p class="dp-hero-desc">
+            Panduan perpajakan dalam bahasa yang mudah dipahami. Dari PPh, PPN, sampai SPT — semua yang perlu Anda ketahui, tersedia di sini.
+        </p>
+        <div class="dp-hero-actions">
+            <a class="dp-hero-btn dp-hero-btn-primary" href="/resources/">
+                Mulai Belajar →
+            </a>
+            <a class="dp-hero-btn dp-hero-btn-secondary" href="/tag/tutorial/">
+                Lihat Panduan
+            </a>
+        </div>
+        <div class="dp-hero-stats">
+            <div class="dp-stat">
+                <div class="dp-stat-num">991+</div>
+                <div class="dp-stat-label">Artikel</div>
             </div>
-        </section>
-
-        {{!-- ── "Tapi kan sudah ada Google/Telegram?" ── --}}
-        <section class="cf-objection">
-            <div class="cf-objection-inner">
-                <h2 class="cf-objection-heading">{{t "Tapi kan sudah ada Google atau Telegram?"}}</h2>
-                <div class="cf-objection-body">
-                    <p>{{t "Benar. Di Google banyak sekali artikel pajak. Di grup Telegram juga banyak diskusi. Tapi masalahnya: informasi di Google kadang tidak update, sumbernya tidak jelas, atau bahasanya terlalu teknis. Di Telegram? Ribut, tidak terstruktur, dan harus scroll panjang untuk mencari jawaban."}}</p>
-                    <p>{{t "Di Diskusi Pajak, setiap artikel ditulis dengan bahasa yang mudah dipahami, langkah-langkah konkret yang bisa langsung dipraktikkan, dan selalu mengacu pada aturan yang berlaku. Semua terorganisir rapi dalam satu tempat."}}</p>
-                </div>
+            <div class="dp-stat">
+                <div class="dp-stat-num">40+</div>
+                <div class="dp-stat-label">Topik Pajak</div>
             </div>
-        </section>
-
-        {{!-- ── "All these questions have the same answer: Yes!" ── --}}
-        <section class="cf-answers">
-            <div class="cf-answers-inner">
-                <h2 class="cf-answers-heading">{{t "Semua pertanyaan ini jawabannya:"}} <strong>{{t "Ada!"}}</strong></h2>
-                <ul class="cf-answers-list">
-                    <li>{{t "Ada panduan cara lapor SPT Tahunan di Coretax?"}}</li>
-                    <li>{{t "Bisa buat faktur pajak sendiri tanpa bantuan konsultan?"}}</li>
-                    <li>{{t "Ada solusi kalau e-Faktur error pas mau upload?"}}</li>
-                    <li>{{t "Cara bikin bukti potong PPh 21/26 yang benar?"}}</li>
-                    <li>{{t "Bagaimana cara kompensasi lebih bayar PPN?"}}</li>
-                    <li>{{t "Update terbaru aturan perpajakan 2026?"}}</li>
-                    <li>{{t "Cara daftar NPWP online lewat Coretax?"}}</li>
-                    <li>{{t "Panduan pembuatan e-Bupot PPh 23?"}}</li>
-                    <li>{{t "Bagaimana cara menghitung PPh 21 karyawan?"}}</li>
-                    <li>{{t "Apakah UMKM wajib lapor SPT Tahun lalu?"}}</li>
-                    <li>{{t "Bagaimana cara mengkreditkan pajak masukan?"}}</li>
-                    <li>{{t "Ada contoh pengisian SPT PPN?"}}</li>
-                </ul>
-                <div class="cf-answers-cta">
-                    <a href="{{@site.url}}/resources/">{{t "Lihat daftar lengkap artikel"}} &rarr;</a>
-                </div>
+            <div class="dp-stat">
+                <div class="dp-stat-num">100%</div>
+                <div class="dp-stat-label">Gratis</div>
             </div>
-        </section>
-
-
-
+        </div>
     </div>
+</section>
+
+<div class="dp-divider"><hr /></div>
+
+{{!-- ═══════════════════════════════════════════════
+     LEARNING PATH (seperti Ghost feature cards)
+     ═══════════════════════════════════════════════ --}}
+<section class="dp-features">
+    <p class="dp-section-label">Belajar Sesuai Kebutuhan</p>
+    <h2 class="dp-section-title">Pilih jalur yang cocok untuk Anda</h2>
+    <p class="dp-section-desc">Tiap jalur dirancang sesuai kondisi Anda — dari pemula yang baru kenal pajak sampai praktisi yang butuk update regulasi.</p>
+    <div class="dp-features-grid">
+        <div class="dp-feature-card">
+            <div class="dp-feature-icon" style="background: #dbeafe; color: #1e40af;">📖</div>
+            <h3 class="dp-feature-title">Dasar Pajak</h3>
+            <p class="dp-feature-desc">Bingung mulai dari mana? Belajar konsep dasar: apa itu pajak, jenis-jurusannya, dan kenapa penting untuk Anda.</p>
+            <a class="dp-feature-link" href="/tag/tutorial/">Mulai belajar →</a>
+        </div>
+        <div class="dp-feature-card">
+            <div class="dp-feature-icon" style="background: #d1fae5; color: #065f46;">👤</div>
+            <h3 class="dp-feature-title">Saya Karyawan</h3>
+            <p class="dp-feature-desc">Gaji dipotong pajak? Pelajari PPh 21, cara hitung PTKP, dan isian SPT Tahunan untuk karyawan.</p>
+            <a class="dp-feature-link" href="/tag/wp-op/">Pelajari PPh 21 →</a>
+        </div>
+        <div class="dp-feature-card">
+            <div class="dp-feature-icon" style="background: #fef3c7; color: #92400e;">🏪</div>
+            <h3 class="dp-feature-title">Saya Pemilik UMKM</h3>
+            <p class="dp-feature-desc">Usaha kena pajak apa? Panduan lengkap PPh Final UMKM 0.5%, PPN PKP, dan e-Faktur.</p>
+            <a class="dp-feature-link" href="/tag/umkm/">Panduan UMKM →</a>
+        </div>
+        <div class="dp-feature-card">
+            <div class="dp-feature-icon" style="background: #e0e7ff; color: #3730a3;">📋</div>
+            <h3 class="dp-feature-title">Pelaporan SPT</h3>
+            <p class="dp-feature-desc">Langkah demi langkah isi dan kirim SPT Tahunan / Masa. Lengkap dengan screenshot.</p>
+            <a class="dp-feature-link" href="/tag/spt/">Cara lapor SPT →</a>
+        </div>
+        <div class="dp-feature-card">
+            <div class="dp-feature-icon" style="background: #fee2e2; color: #991b1b;">⚠️</div>
+            <h3 class="dp-feature-title">Ada Masalah Pajak</h3>
+            <p class="dp-feature-desc">Dapat surat DJP, SKPKB, atau SP2DK? Kenali hak dan langkah yang harus diambil.</p>
+            <a class="dp-feature-link" href="/tag/pemeriksaan/">Solusi masalah →</a>
+        </div>
+        <div class="dp-feature-card">
+            <div class="dp-feature-icon" style="background: #f3e8ff; color: #6b21a8;">📢</div>
+            <h3 class="dp-feature-title">Update Regulasi</h3>
+            <p class="dp-feature-desc">Ringkasan cepat PMK, PER, SE terbaru yang berdampak langsung ke Anda.</p>
+            <a class="dp-feature-link" href="/tag/update-regulasi/">Update terbaru →</a>
+        </div>
+    </div>
+</section>
+
+<div class="dp-divider"><hr /></div>
+
+{{!-- ═══════════════════════════════════════════════
+     TOPIK POPULER (seperti Ghost use cases)
+     ═══════════════════════════════════════════════ --}}
+<section class="dp-usecase">
+    <p class="dp-section-label">Topik Populer</p>
+    <h2 class="dp-section-title">Jelajahi berdasarkan jenis pajak</h2>
+    <div class="dp-usecase-grid">
+        {{#get "tags" filter="slug:[pph,ppn,spt,pemeriksaan,umkm,coretax]" limit="6" include="count.posts"}}
+        {{#foreach tags}}
+        <a class="dp-usecase-card" href="{{url}}" style="--color-tag: {{accent_color}};">
+            <div class="dp-usecase-card-icon">
+                {{#if accent_color}}
+                <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:{{accent_color}};"></span>
+                {{else}}
+                📄
+                {{/if}}
+            </div>
+            <h3 class="dp-usecase-card-title">{{name}}</h3>
+            <p class="dp-usecase-card-desc">{{description}}</p>
+        </a>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section>
+
+<div class="dp-divider"><hr /></div>
+
+{{!-- ═══════════════════════════════════════════════
+     REGULATION TRACKER (seperti Ghost latest posts)
+     ═══════════════════════════════════════════════ --}}
+<section class="dp-features" style="padding-top: 6vmin;">
+    <p class="dp-section-label">Update Regulasi</p>
+    <h2 class="dp-section-title">Peraturan perpajakan terbaru</h2>
+    <p class="dp-section-desc">Ringkasan cepat PMK, PER, SE, dan KMK yang baru berlaku.</p>
+    <div class="dp-usecase-grid" style="margin-top: 32px;">
+        {{#get "posts" filter="tag:update-regulasi" limit="4" include="tags"}}
+        {{#foreach posts}}
+        <a class="dp-usecase-card" href="{{url}}">
+            <div class="dp-usecase-card-icon">📅</div>
+            <h3 class="dp-usecase-card-title">{{title}}</h3>
+            <p class="dp-usecase-card-desc">{{date format="DD MMM YYYY"}} · {{reading_time}}</p>
+        </a>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</section>
+
+<div class="dp-divider"><hr /></div>
+
+{{!-- ═══════════════════════════════════════════════
+     ARTIKEL TERBARU (seperti Ghost latest posts)
+     ═══════════════════════════════════════════════ --}}
+<section class="dp-features" style="padding-top: 6vmin;">
+    <p class="dp-section-label">Artikel Terbaru</p>
+    <h2 class="dp-section-title">Bacaan terbaru dari Diskusi Pajak</h2>
+    <div style="margin-top: 32px;">
+        {{#get "posts" limit="6" include="tags"}}
+        {{#foreach posts}}
+        <article style="border-bottom: 1px solid var(--color-light-gray); padding: 20px 0;">
+            <a href="{{url}}" style="text-decoration: none; color: inherit; display: flex; align-items: baseline; gap: 16px;">
+                <time style="flex-shrink: 0; font-size: 1.15rem; color: var(--color-secondary-text); min-width: 90px;">{{date format="DD MMM YYYY"}}</time>
+                <div style="flex: 1;">
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--color-darkgrey); margin: 0 0 4px; line-height: 1.35;">{{title}}</h3>
+                    {{#foreach tags limit="2"}}
+                    <span style="display: inline-block; font-size: 1.05rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-right: 6px; background: {{#if accent_color}}{{accent_color}}15{{else}}var(--color-lighter-gray){{/if}}; color: {{#if accent_color}}{{accent_color}}{{else}}var(--color-secondary-text){{/if}};">{{name}}</span>
+                    {{/foreach}}
+                </div>
+            </a>
+        </article>
+        {{/foreach}}
+        {{/get}}
+    </div>
+    <div style="text-align: center; margin-top: 28px;">
+        <a class="dp-hero-btn dp-hero-btn-secondary" href="/tag/opini/" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-white); color: var(--color-darkgrey); border: 1px solid var(--color-light-gray); border-radius: 8px; font-size: 1.3rem; font-weight: 600; text-decoration: none;">Semua artikel →</a>
+    </div>
+</section>
+
+<div class="dp-divider"><hr /></div>
+
+{{!-- ═══════════════════════════════════════════════
+     CTA (seperti Ghost footer CTA)
+     ═══════════════════════════════════════════════ --}}
+<section class="dp-cta">
+    <h2 class="dp-cta-title">Siap memahami pajak?<br />Mulai dari sini.</h2>
+    <p class="dp-cta-desc">Diskusi Pajak menyediakan panduan perpajakan yang mudah dipahami, aktersemua orang — bukan hanya akuntan.</p>
+    <div class="dp-cta-actions">
+        <a class="dp-hero-btn dp-hero-btn-primary" href="/resources/">
+            Jelajahi Semua Materi →
+        </a>
+        <a class="dp-hero-btn dp-hero-btn-secondary" href="/author/tim-redaksi/">
+            Tentang Kami
+        </a>
+    </div>
+</section>
+
 </main>

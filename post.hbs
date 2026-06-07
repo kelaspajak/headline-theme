@@ -1,91 +1,403 @@
 {{!< default}}
 
-{{#contentFor "body_class"}}resources-template{{/contentFor}}
-
 {{#contentFor "head"}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+<style>
+/* ═══════════════════════════════════════════
+   POST — Ghost.org-inspired article layout
+   ═══════════════════════════════════════════ */
+
+/* ── Post Hero ── */
+.dp-post-hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 8vmin 24px 4vmin;
+}
+.dp-post-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    color: var(--color-secondary-text);
+}
+.dp-post-meta-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+}
+.dp-post-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--color-darkgrey);
+    margin: 0 0 16px;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+@media (min-width: 768px) {
+    .dp-post-title { font-size: 4.4rem; }
+}
+@media (max-width: 480px) {
+    .dp-post-title { font-size: 2.6rem; }
+}
+.dp-post-excerpt {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--color-secondary-text);
+    line-height: 1.5;
+    margin: 0 0 8px;
+}
+.dp-post-byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+.dp-post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-light-gray);
+}
+.dp-post-author-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-darkgrey);
+}
+.dp-post-date {
+    font-size: 1.2rem;
+    color: var(--color-secondary-text);
+}
+
+/* ── Feature Image ── */
+.dp-post-feature {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 4vmin;
+}
+.dp-post-feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* ── Content Layout ── */
+.dp-post-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+@media (min-width: 960px) {
+    .dp-post-body {
+        grid-template-columns: 1fr 220px;
+    }
+}
+
+/* ── TOC Sidebar ── */
+.dp-post-toc-wrap {
+    display: none;
+}
+@media (min-width: 960px) {
+    .dp-post-toc-wrap {
+        display: block;
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+}
+.dp-post-toc-label {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-mid-gray);
+    margin: 0 0 12px;
+}
+.dp-post-toc nav {
+    border-left: 2px solid var(--color-light-gray);
+    padding-left: 12px;
+}
+.dp-post-toc nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.dp-post-toc nav li { margin: 0; }
+.dp-post-toc nav a {
+    display: block;
+    padding: 4px 0;
+    font-size: 1.1rem;
+    color: var(--color-secondary-text);
+    text-decoration: none;
+    line-height: 1.4;
+    border: none;
+}
+.dp-post-toc nav a:hover { color: var(--color-darkgrey); }
+.dp-post-toc nav ul ul a { padding-left: 12px; font-size: 1rem; }
+
+/* ── Article Content ── */
+.dp-post-content {
+    font-size: 1.55rem;
+    line-height: 1.7;
+    color: var(--color-darkgrey);
+    max-width: 680px;
+}
+.dp-post-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 2em 0 0.8em;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+.dp-post-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 1.6em 0 0.6em;
+    line-height: 1.35;
+}
+.dp-post-content p { margin: 0 0 1.2em; }
+.dp-post-content ul, .dp-post-content ol { margin: 0 0 1.2em 1.5em; }
+.dp-post-content li { margin: 0 0 0.6em; }
+.dp-post-content strong { font-weight: 700; }
+.dp-post-content a { color: var(--color-tag, #1e40af); text-decoration: underline; text-underline-offset: 2px; }
+.dp-post-content a:hover { text-decoration: none; }
+.dp-post-content blockquote {
+    border-left: 3px solid var(--color-tag, #1e40af);
+    padding-left: 20px;
+    margin: 1.5em 0;
+    font-style: italic;
+    color: var(--color-secondary-text);
+}
+.dp-post-content code {
+    background: var(--color-lighter-gray);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+.dp-post-content pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+    font-size: 1.3rem;
+}
+.dp-post-content pre code { background: none; padding: 0; color: inherit; }
+.dp-post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 1.35rem;
+}
+.dp-post-content th, .dp-post-content td {
+    border: 1px solid var(--color-light-gray);
+    padding: 10px 12px;
+    text-align: left;
+}
+.dp-post-content th { background: var(--color-lighter-gray); font-weight: 700; }
+.dp-post-content img { max-width: 100%; height: auto; border-radius: 6px; margin: 1.5em 0; }
+.dp-post-content hr { border: none; border-top: 1px solid var(--color-light-gray); margin: 2em 0; }
+
+/* ── Info Boxes ── */
+.dp-post-info-box {
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 1.5em 0;
+}
+.dp-post-info-box p { margin: 0; font-size: 1.35rem; }
+.dp-post-info-box-title {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+.dp-post-note { background: #eff6ff; border: 1px solid #bfdbfe; }
+.dp-post-note .dp-post-info-box-title { color: #1e40af; }
+.dp-post-note p { color: #1e3a5f; }
+.dp-post-warning { background: #fef3c7; border: 1px solid #fde68a; }
+.dp-post-warning .dp-post-info-box-title { color: #92400e; }
+.dp-post-warning p { color: #78350f; }
+.dp-post-success { background: #d1fae5; border: 1px solid #a7f3d0; }
+.dp-post-success .dp-post-info-box-title { color: #065f46; }
+.dp-post-success p { color: #064e3b; }
+
+/* ── Step by Step ── */
+.dp-post-steps { counter-reset: step; margin: 1.5em 0; }
+.dp-post-step { position: relative; padding-left: 48px; margin: 0 0 2em; }
+.dp-post-step:before {
+    counter-increment: step; content: counter(step);
+    position: absolute; left: 0; top: 0;
+    width: 32px; height: 32px;
+    background: var(--color-darkgrey); color: var(--color-white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; font-weight: 700;
+}
+.dp-post-step-title {
+    font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700;
+    color: var(--color-darkgrey); margin: 0 0 8px; line-height: 1.3;
+}
+
+/* ── Post Footer ── */
+.dp-post-footer {
+    border-top: 1px solid var(--color-light-gray);
+    margin-top: 4vmin;
+    padding-top: 3vmin;
+    max-width: 680px;
+}
+.dp-post-tags {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+}
+.dp-post-tag {
+    display: inline-block; padding: 4px 12px;
+    background: var(--color-lighter-gray); border-radius: 4px;
+    font-size: 1.15rem; color: var(--color-secondary-text);
+    text-decoration: none; transition: background 0.15s ease;
+}
+.dp-post-tag:hover { background: var(--color-light-gray); color: var(--color-darkgrey); }
+
+/* ── Post Series ── */
+.dp-post-series {
+    margin-top: 4vmin; padding-top: 3vmin;
+    border-top: 1px solid var(--color-light-gray);
+    max-width: 680px;
+}
+.dp-post-series-label {
+    font-size: 1rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--color-mid-gray); margin: 0 0 12px;
+}
+.dp-post-series ol {
+    list-style: none; margin: 0; padding: 0;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px; overflow: hidden;
+}
+.dp-post-series li { border-bottom: 1px solid var(--color-light-gray); }
+.dp-post-series li:last-child { border-bottom: none; }
+.dp-post-series li.dp-post-series-current { background: var(--color-lighter-gray); }
+.dp-post-series a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; text-decoration: none; color: inherit;
+    font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.4;
+}
+.dp-post-series-num {
+    flex-shrink: 0; width: 24px; height: 24px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--color-lighter-gray); color: var(--color-mid-gray);
+    border-radius: 50%; font-size: 1rem; font-weight: 700;
+    font-family: var(--font-sans);
+}
+.dp-post-series-current .dp-post-series-num {
+    background: var(--color-darkgrey); color: var(--color-white);
+}
+</style>
 {{/contentFor}}
 
 {{#post}}
-<main class="gh-main gh-resources-page">
+<main class="gh-main">
+<div style="max-width: 1100px; margin: 0 auto;">
 
-    <div class="gh-resources-hero">
-    <span class="gh-post-meta">
-        {{#if tags.[0]}}
-        <a class="gh-post-meta-tag" href="/" style="--color-tag: {{#if tags.[0].accent_color}}{{tags.[0].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[0].name}}</a>
-        {{/if}}
-        {{#if tags.[1]}}
-        <span class="bull">→</span> 
-        <a class="gh-post-meta-tag" href="{{tags.[1].url}}" style="--color-tag: {{#if tags.[1].accent_color}}{{tags.[1].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[1].name}}</a> 
-        {{/if}}
-        <span class="bull">•</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
-    </span>
-        <h1>{{title}}</h1>
-        {{#if custom_excerpt}}
-            <p>{{custom_excerpt}}</p>
-        {{/if}}
-    </div>
-
-    <div class="gh-content gh-canvas">
-            <aside class="gh-sidebar"><div class="gh-toc"></div></aside>
-            {{content}}
-    </div>
-
-    {{!-- untuk sementara tidak tau gunanya
-    <div class="gh-resources-body">
-        {{#get "tags" filter="slug:[building,publishing,growth,business]" include="count.posts"}}
-            {{#foreach tags}}
-            <section class="gh-resources-section tag-{{slug}}">
-                <div class="gh-resources-section-header">
-                    {{#if feature_image}}
-                    <div>
-                        <img
-                            srcset="{{img_url feature_image size="s"}} 300w,
-                                    {{img_url feature_image size="m"}} 720w,
-                                    {{img_url feature_image size="l"}} 960w"
-                            sizes="(max-width: 767px) 100vw, 50vw"
-                            src="{{img_url feature_image size="l"}}"
-                            alt="{{name}}"
-                            loading="lazy"
-                        />
-                    </div>
-                    {{/if}}
-                    <div>
-                        <h2>{{name}} - </h2>
-                        {{#if description}}<p>{{description}}</p>{{/if}}
-                    </div>
-                </div>
-
-                {{#get "posts" filter="tag:{{slug}}" limit="5"}}
-                <div class="gh-resources-posts">
-                    {{#foreach posts}}
-                    <article class="gh-resources-post">
-                        <a href="{{url}}">
-                            <span class="gh-resources-post-title">{{title}}</span>
-                            <span class="gh-resources-post-meta">{{reading_time}}</span>
-                        </a>
-                    </article>
-                    {{/foreach}}
-                </div>
-                {{/get}}
-
-                <a class="gh-resources-link" href="{{url}}">
-                    {{t "Explore the full series"}} →
-                </a>
-            </section>
+    {{!-- ── HERO ── --}}
+    <header class="dp-post-hero">
+        <div class="dp-post-meta">
+            {{#foreach tags limit="3"}}
+            <a class="dp-post-meta-tag" href="{{url}}" style="background: {{#if accent_color}}{{accent_color}}15{{else}}var(--color-lighter-gray){{/if}}; color: {{#if accent_color}}{{accent_color}}{{else}}var(--color-secondary-text){{/if}};">{{name}}</a>
             {{/foreach}}
-        {{/get}}
+            <span>·</span>
+            <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+        </div>
+        <h1 class="dp-post-title">{{title}}</h1>
+        {{#if custom_excerpt}}
+        <p class="dp-post-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+        <div class="dp-post-byline">
+            {{#foreach authors}}
+            {{#if profile_image}}
+            <img class="dp-post-avatar" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
+            {{/if}}
+            {{/foreach}}
+            <div>
+                <div class="dp-post-author-name">{{authors}}</div>
+                <div class="dp-post-date">{{date format="DD MMM YYYY"}}</div>
+            </div>
+        </div>
+    </header>
+
+    {{!-- ── FEATURE IMAGE ── --}}
+    {{#if feature_image}}
+    <div class="dp-post-feature">
+        <img src="{{feature_image}}" alt="{{title}}" loading="lazy" />
     </div>
-    --}}
+    {{/if}}
+
+    {{!-- ── BODY ── --}}
+    <div class="dp-post-body">
+        <article class="dp-post-content">
+            {{content}}
+        </article>
+        <aside class="dp-post-toc-wrap">
+            <p class="dp-post-toc-label">{{t "Di halaman ini"}}</p>
+            <div class="dp-post-toc"></div>
+        </aside>
+    </div>
+
+    {{!-- ── POST SERIES ── --}}
+    {{#if tags.[0]}}
+    {{#get "posts" filter="tag:{{tags.[0].slug}}" limit="10" include="tags"}}
+    {{#if posts}}
+    <div class="dp-post-series">
+        <p class="dp-post-series-label">{{t "Seri:"}} {{tags.[0].name}}</p>
+        <ol>
+            {{#foreach posts}}
+            <li class="{{#if ../post.id}}dp-post-series-current{{/if}}">
+                <a href="{{url}}">
+                    <span class="dp-post-series-num">{{@number}}</span>
+                    <span>{{title}}</span>
+                </a>
+            </li>
+            {{/foreach}}
+        </ol>
+    </div>
+    {{/if}}
+    {{/get}}
+    {{/if}}
+
+    {{!-- ── FOOTER ── --}}
+    <footer class="dp-post-footer">
+        <div class="dp-post-tags">
+            {{#foreach tags}}
+            <a class="dp-post-tag" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+        </div>
+    </footer>
+
+</div>
 </main>
 {{/post}}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
 <script>
     tocbot.init({
-        tocSelector: '.gh-toc',
-        contentSelector: '.gh-content',
-        headingSelector: 'h1, h2, h3, h4',
+        tocSelector: '.dp-post-toc',
+        contentSelector: '.dp-post-content',
+        headingSelector: 'h2, h3, h4',
         hasInnerContainers: true,
+        orderedList: false,
+        collapseDepth: 2,
     });
 </script>

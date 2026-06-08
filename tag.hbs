@@ -2,9 +2,6 @@
 
 {{#contentFor "head"}}
 <style>
-html {
-    font-size: 72%;
-}
 .gh-feed {
     width: 100%;
     max-width: 720px;
@@ -45,7 +42,7 @@ html {
                                     <h4 class="text-sm font-medium text-gray-900 group-hover:text-gray-600 transition line-clamp-2 leading-snug">
                                         <a href="{{url}}">{{title}}</a>
                                     </h4>
-                                    <p class="text-xs text-gray-500 mt-1">
+                                    <p class="text-base text-gray-500 mt-1">
                                         {{#if primary_author}}
                                             <span>{{primary_author.name}} · </span>
                                         {{/if}}
@@ -64,12 +61,12 @@ html {
         <!-- Contributors -->
         {{#get "posts" filter="tag:{{tag.slug}}" limit="all" include="authors"}}
             {{#if posts}}
-                <div class="order-3 lg:order-0 px-5 lg:px-0">
+                <div class="order-3 lg:order-0 px-5 lg:px-0" id="contributors-list">
                     <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3">Contributors</h3>
                     <div class="space-y-6">
                         {{#foreach posts}}
                             {{#if primary_author}}
-                                <div class="flex gap-4">
+                                <div class="flex gap-4 contributor-item" data-author-slug="{{primary_author.slug}}">
                                     {{#if primary_author.profile_image}}
                                         <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="w-16 h-16 rounded-full object-cover shrink-0">
                                     {{else}}
@@ -95,6 +92,16 @@ html {
                         {{/foreach}}
                     </div>
                 </div>
+                <script>
+                    (function() {
+                        var seen = {};
+                        document.querySelectorAll('#contributors-list .contributor-item').forEach(function(el) {
+                            var slug = el.getAttribute('data-author-slug');
+                            if (seen[slug]) { el.remove(); }
+                            seen[slug] = true;
+                        });
+                    })();
+                </script>
             {{/if}}
         {{/get}}
     </div>

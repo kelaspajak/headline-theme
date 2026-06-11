@@ -1,0 +1,45 @@
+<div class="gh-palette-switcher hidden">
+    <label for="palette-select" class="gh-palette-label">{{t "Theme"}}</label>
+    <select id="palette-select" class="gh-palette-select">
+        <option value="palette-default">{{t "Default"}}</option>
+        <option value="palette-cyberpunk">{{t "Cyberpunk"}}</option>
+        <option value="palette-ollama">{{t "Ollama"}}</option>
+    </select>
+</div>
+
+<script>
+(function () {
+    var STORAGE_KEY = 'headline-palette';
+
+    function applyPalette(name) {
+        var body = document.body;
+        body.classList.remove('palette-default', 'palette-cyberpunk', 'palette-ollama');
+        if (name) {
+            body.classList.add(name);
+        }
+    }
+
+    function initSwitcher() {
+        var select = document.getElementById('palette-select');
+        if (!select) return;
+
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            select.value = saved;
+            applyPalette(saved);
+        }
+
+        select.addEventListener('change', function () {
+            var val = select.value;
+            localStorage.setItem(STORAGE_KEY, val);
+            applyPalette(val);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSwitcher);
+    } else {
+        initSwitcher();
+    }
+})();
+</script>

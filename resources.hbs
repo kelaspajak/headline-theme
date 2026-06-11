@@ -20,12 +20,12 @@
             </section>
 
             {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
-            {{#get "tags" filter="slug:[hash-resources,coretaxpedia,pph-final-umkm-pp20-2026]" limit="5" include="count.posts"}}
+            {{#get "tags" filter="slug:[hash-resources,coretaxpedia,pph-final-umkm-pp20-2026,subjek-pajak,penghasilan,pph-pasal-23]" limit="20" include="count.posts"}}
             {{#foreach tags}}
             <section class="resource-section tag-{{slug}}">
                 {{#if feature_image}}
                 <a class="resource-section-coverlink" href="{{url}}">
-                    <img src="{{feature_image}}" alt="{{name}}" loading="lazy" />
+                    <img class="gh-tag-head-img" src="{{feature_image}}" alt="{{name}}" loading="lazy" />
                 </a>
                 {{/if}}
                 <div class="resource-list" style="--color-tag: {{accent_color}};">

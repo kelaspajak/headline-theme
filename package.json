@@ -98,6 +98,15 @@
                 ],
                 "default": "featured",
                 "group": "homepage"
+            },
+            "color_palette": {
+                "type": "select",
+                "options": [
+                    "Default",
+                    "Cyberpunk",
+                    "Ollama"
+                ],
+                "default": "Default"
             }
         }
     },

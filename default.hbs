@@ -12,7 +12,7 @@
     {{ghost_head}}
 </head>
 
-<body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}{{#match @custom.header_style "Accent color"}} is-head-brand{{/match}}{{#match @custom.header_style "Dark"}} is-head-dark{{/match}}">
+<body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}{{#match @custom.header_style "Accent color"}} is-head-brand{{/match}}{{#match @custom.header_style "Dark"}} is-head-dark{{/match}}{{#match @custom.color_palette "Cyberpunk"}} palette-cyberpunk{{else match @custom.color_palette "Ollama"}} palette-ollama{{else}} palette-default{{/match}}">
 <div class="gh-site">
 
     <header id="gh-head" class="gh-head gh-outer">
@@ -65,6 +65,7 @@
                         {{/unless}}
                     </div>
                 {{/unless}}
+                {{> "palette-switcher"}}
             </div>
         </div>
     </header>

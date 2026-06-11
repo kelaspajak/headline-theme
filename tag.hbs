@@ -10,41 +10,132 @@
     justify-items: center;
 }
 </style>
-
+{{#contentFor "styles"}}
+<link rel="stylesheet" href="{{asset "built/tailwind.css"}}">
+{{/contentFor}}
 {{/contentFor}}
 
+<main class="gh-main !pt-0">
+{{#match tag.slug "kota-balikpapan"}}
 
-<main class="gh-main">
-
-    {{#tag}}
-    <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{#if accent_color}}{{accent_color}}{{else}}#3eb0ef{{/if}};">
-        <div class="gh-container">
-            <div class="gh-tag-head-content">
-                {{#if feature_image}}
-                <img class="gh-tag-head-img" src="{{feature_image}}" alt="{{name}}" />
-                {{/if}}
-                <div>
-                    <h1>{{name}}</h1>
-                    {{#if description}}
-                    <p>{{description}}</p>
-                    {{/if}}
-                    <span>
-                        <span>{{plural ../pagination.total empty="No posts" singular="% post" plural="% posts"}}</span>
-                        <a href="{{@site.url}}/resources/">{{t "More resources"}} &rarr;</a>
-                    </span>
+    <div class="bg-white p-6 md:p-8 grid grid-cols-1 lg:grid-cols-[1fr_350px] lg:grid-rows-[auto_1fr] gap-8 relative z-10 rounded-b-lg" style="margin-top: -10vmin;">
+        <div class="min-w-0">
+            <div class="flex gap-3 items-center mb-3">
+                <div class="flex items-center gap-3 flex-wrap">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">{{tag.name}}</h2>
                 </div>
             </div>
+            {{#if tag.description}}
+                <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 max-w-[700px]">{{tag.description}}</p>
+            {{/if}}
         </div>
-    </header>
+
+        <div class="lg:row-span-2 contents lg:block">
+            <aside class="shrink-0 order-2 lg:order-0">
+                <div class="sticky top-8 space-y-4">
+                    <!-- Latest Posts -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-sm font-semibold text-gray-900 mb-4">Latest Posts</h3>
+                        {{#get "posts" filter="tag:{{tag.slug}}" limit="5" include="authors"}}
+                            {{#foreach posts}}
+                                <div class="block group cursor-pointer mb-4 last:mb-0">
+                                    <h4 class="text-sm font-medium text-gray-900 group-hover:text-gray-600 transition line-clamp-2 leading-snug">
+                                        <a href="{{url}}">{{title}}</a>
+                                    </h4>
+                                    <p class="text-base text-gray-500 mt-1">
+                                        {{#if primary_author}}
+                                            <span>{{primary_author.name}} · </span>
+                                        {{/if}}
+                                        <span>{{date published_at format="DD MMM YYYY"}}</span>
+                                    </p>
+                                </div>
+                            {{else}}
+                                <p class="text-sm text-gray-500">No posts yet.</p>
+                            {{/foreach}}
+                        {{/get}}
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Contributors -->
+        {{#get "posts" filter="tag:{{tag.slug}}" limit="all" include="authors"}}
+            {{#if posts}}
+                <div class="order-3 lg:order-0 px-5 lg:px-0" id="contributors-list">
+                    <h3 class="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3">Contributors</h3>
+                    <div class="space-y-6">
+                        {{#foreach posts}}
+                            {{#if primary_author}}
+                                <div class="flex gap-4 contributor-item" data-author-slug="{{primary_author.slug}}">
+                                    {{#if primary_author.profile_image}}
+                                        <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="w-16 h-16 rounded-full object-cover shrink-0">
+                                    {{else}}
+                                        <div class="w-16 h-16 rounded-full shrink-0 flex items-center justify-center text-white font-semibold text-lg bg-gray-400">{{primary_author.name}}</div>
+                                    {{/if}}
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                            <h4 class="font-semibold text-gray-900">{{primary_author.name}}</h4>
+                                            {{#if primary_author.website}}
+                                                <div class="flex gap-2">
+                                                    <a href="{{primary_author.website}}" target="_blank" rel="nofollow noopener noreferrer" class="text-gray-400 hover:text-gray-600 transition" aria-label="Website">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                                                    </a>
+                                                </div>
+                                            {{/if}}
+                                        </div>
+                                        {{#if primary_author.bio}}
+                                            <p class="text-sm text-gray-600 line-clamp-3 lg:line-clamp-2 max-w-[600px]">{{primary_author.bio}}</p>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                <script>
+                    (function() {
+                        var seen = {};
+                        document.querySelectorAll('#contributors-list .contributor-item').forEach(function(el) {
+                            var slug = el.getAttribute('data-author-slug');
+                            if (seen[slug]) { el.remove(); }
+                            seen[slug] = true;
+                        });
+                    })();
+                </script>
+            {{/if}}
+        {{/get}}
+    </div>
+
+{{else}}
+    {{#tag}}
+        <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{#if accent_color}}{{accent_color}}{{else}}#3eb0ef{{/if}};">
+            <div class="gh-container">
+                <div class="gh-tag-head-content">
+                    {{#if feature_image}}
+                        <img class="gh-tag-head-img" src="{{feature_image}}" alt="{{name}}" />
+                    {{/if}}
+                    <div>
+                        <h1>{{name}}</h1>
+                        {{#if description}}
+                            <p>{{description}}</p>
+                        {{/if}}
+                        <span>
+                            <span>{{plural ../pagination.total empty="No posts" singular="% post" plural="% posts"}}</span>
+                            <a href="{{@site.url}}/resources/">{{t "More resources"}} &rarr;</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
     {{/tag}}
 
     <div class="gh-page">
         <div class="gh-container">
             {{!-- Featured posts --}}
             <div class="gh-featuredposts">
-                {{#foreach posts  limit="3"}}
+                {{#foreach posts limit="3"}}
                     {{#if featured}}
-                    {{> featured-post }}
+                        {{> featured-post }}
                     {{/if}}
                 {{/foreach}}
             </div>
@@ -53,22 +144,21 @@
             <div class="gh-postfeed">
                 <div class="gh-feed">
                     {{#foreach posts}}
-                    {{#unless featured}}
-                    {{> loop-zebra }}
-                    {{/unless}}
+                        {{#unless featured}}
+                            {{> loop-zebra }}
+                        {{/unless}}
                     {{/foreach}}
                 </div>
             </div>
 
             {{#match pagination.pages ">" 1}}
-            <nav class="pagination" role="navigation" aria-label="Pagination">
-                {{#if next}}
-                <a class="older-posts" href="{{page_url next}}">{{t "Older Posts"}} &rarr;</a>
-                {{/if}}
-            </nav>
+                <nav class="pagination" role="navigation" aria-label="Pagination">
+                    {{#if next}}
+                        <a class="older-posts" href="{{page_url next}}">{{t "Older Posts"}} &rarr;</a>
+                    {{/if}}
+                </nav>
             {{/match}}
-
         </div>
     </div>
-
+{{/match}}
 </main>

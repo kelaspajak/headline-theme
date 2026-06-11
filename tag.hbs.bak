@@ -1,0 +1,189 @@
+{{!< default}}
+
+{{#contentFor "head"}}
+<style>
+.gh-feed {
+    width: 100%;
+    max-width: 720px;
+}
+.gh-postfeed {
+    justify-items: center;
+}
+</style>
+{{#contentFor "styles"}}
+<link rel="stylesheet" href="{{asset "built/tailwind.css"}}">
+{{/contentFor}}
+{{/contentFor}}
+
+<main class="gh-main">
+{{#match tag.slug "kota-balikpapan"}}
+
+    <div class="relative min-h-screen bg-neutral-50 text-white overflow-hidden">
+        <!-- Moody/cinematic background: dark studio desk with forest green surface -->
+        <div class="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-green-950">
+            <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 30% 60%, rgba(34,197,94,0.25) 0%, transparent 50%), radial-gradient(circle at 70% 20%, rgba(30,64,175,0.15) 0%, transparent 40%);"></div>
+        </div>
+
+
+        <div class="relative px-6 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                <!-- Left: Book info -->
+                <div>
+                    <p class="text-blue-500 text-sm font-semibold tracking-widest uppercase mb-2">THAT BOOK™</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 text-blue-500">THAT PORTFOLIO BOOK™</h1>
+                    <p class="text-neutral-400 text-lg mb-8">DANN PETTY & FRIENDS</p>
+
+                    <p class="text-xl md:text-2xl font-semibold text-white mb-3">Create a stronger portfolio today, land more job opportunities tomorrow.</p>
+                    <p class="text-neutral-800 text-base leading-relaxed mb-6 max-w-lg">This online, audio, and video book will help you learn how to create a successful portfolio. You'll learn exactly what the people hiring you are looking for in your portfolio, how to improve it, and the actions you can take right now to land new job opportunities.</p>
+
+                    <a href="#" class="inline-block bg-blue-500 text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-blue-400 transition mb-2 shadow-lg shadow-blue-500/30">Buy Now</a>
+                    <p class="text-neutral-900 text-sm">Payment Plans Available</p>
+                </div>
+
+                <!-- Right: Features list -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <h3 class="text-blue-500 font-semibold text-sm tracking-widest uppercase mb-6">What's Included</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">12 Online Chapters</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">Audiobook + Videobook</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">Exclusive Video Interviews</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">Wordpress Portfolio Template</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">Resources and Links</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">Documentary Premiere</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="text-gray-700">Free Updates for Life</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Professionals involved -->
+            <div class="mt-20">
+                <h3 class="text-blue-500 font-semibold text-sm tracking-widest uppercase mb-8 text-center">Professionals Involved</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Dann Petty -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="text-blue-500 font-bold text-lg">DP</span>
+                        </div>
+                        <h4 class="text-white font-semibold">Dann Petty</h4>
+                        <p class="text-neutral-400 text-sm">Freelance Web Designer</p>
+                    </div>
+                    <!-- Lyft's Design Team (pink) -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                        <div class="w-14 h-14 rounded-full bg-pink-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="text-pink-500 font-bold text-lg">LD</span>
+                        </div>
+                        <h4 class="text-white font-semibold">Lyft's Design Team</h4>
+                        <ul class="text-neutral-400 text-sm space-y-1 mt-1">
+                            <li>Katie Dill</li>
+                            <li>Audrey Liu</li>
+                            <li>Jenny Arden</li>
+                        </ul>
+                    </div>
+                    <!-- Lynn Fisher -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                        <div class="w-14 h-14 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="text-purple-500 font-bold text-lg">LF</span>
+                        </div>
+                        <h4 class="text-white font-semibold">Lynn Fisher</h4>
+                        <p class="text-neutral-400 text-sm">Creative Developer</p>
+                    </div>
+                    <!-- Clay Studios (half black, half white) -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                        <div class="w-14 h-14 rounded-full relative mx-auto mb-3 overflow-hidden">
+                            <div class="absolute inset-0 bg-white"></div>
+                            <div class="absolute inset-0 bg-black" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);"></div>
+                            <span class="relative z-10 font-bold text-lg flex items-center justify-center h-full" style="background: linear-gradient(90deg, white 50%, black 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CS</span>
+                        </div>
+                        <h4 class="text-white font-semibold">Clay Studios</h4>
+                        <p class="text-neutral-400 text-sm">UI/UX Design Studio</p>
+                    </div>
+                    <!-- Basic Agency (black circle, white text) -->
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center">
+                        <div class="w-14 h-14 rounded-full bg-black flex items-center justify-center mx-auto mb-3 border border-white/20">
+                            <span class="text-white font-bold text-lg">BA</span>
+                        </div>
+                        <h4 class="text-white font-semibold">Basic Agency</h4>
+                        <p class="text-neutral-400 text-sm">Brand + Design Agency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{else}}
+    {{#tag}}
+        <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{#if accent_color}}{{accent_color}}{{else}}#3eb0ef{{/if}};">
+            <div class="gh-container">
+                <div class="gh-tag-head-content">
+                    {{#if feature_image}}
+                        <img class="gh-tag-head-img" src="{{feature_image}}" alt="{{name}}" />
+                    {{/if}}
+                    <div>
+                        <h1>{{name}}</h1>
+                        {{#if description}}
+                            <p>{{description}}</p>
+                        {{/if}}
+                        <span>
+                            <span>{{plural ../pagination.total empty="No posts" singular="% post" plural="% posts"}}</span>
+                            <a href="{{@site.url}}/resources/">{{t "More resources"}} &rarr;</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+    {{/tag}}
+
+    <div class="gh-page">
+        <div class="gh-container">
+            {{!-- Featured posts --}}
+            <div class="gh-featuredposts">
+                {{#foreach posts limit="3"}}
+                    {{#if featured}}
+                        {{> featured-post }}
+                    {{/if}}
+                {{/foreach}}
+            </div>
+
+            {{!-- Post feed + infinity scroll --}}
+            <div class="gh-postfeed">
+                <div class="gh-feed">
+                    {{#foreach posts}}
+                        {{#unless featured}}
+                            {{> loop-zebra }}
+                        {{/unless}}
+                    {{/foreach}}
+                </div>
+            </div>
+
+            {{#match pagination.pages ">" 1}}
+                <nav class="pagination" role="navigation" aria-label="Pagination">
+                    {{#if next}}
+                        <a class="older-posts" href="{{page_url next}}">{{t "Older Posts"}} &rarr;</a>
+                    {{/if}}
+                </nav>
+            {{/match}}
+        </div>
+    </div>
+{{/match}}
+</main>

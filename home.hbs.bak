@@ -1,0 +1,91 @@
+{{!-- ── tidak ada menampilkan postingan di halaman ini  ── --}}
+
+{{!< default}}
+
+{{#contentFor "styles"}}
+<link rel="stylesheet" href="{{asset "built/tailwind.css"}}">
+{{/contentFor}}
+
+<main class="gh-main">
+    <div class="gh-container">
+
+        {{!-- ── THE LETTER ── --}}
+        <section class="w-full max-w-[1000px] mx-auto px-6 py-[8vmin]">
+            <h1 class="text-[4rem] max-[480px]:text-[3.2rem] md:text-[5rem] font-extrabold text-center mb-7 leading-[1.15] tracking-[-0.02em] max-[480px]:[&_br]:hidden">{{t "Pajak semudah yang seharusnya."}}<br />{{t "Bukan serumit yang selama ini dibayangkan."}}</h1>
+
+            <div class="mt-16 bg-[#f6f6f6] border border-[#e6e6e6] rounded-lg px-[52px] py-12 max-sm:px-6 max-sm:py-7 -rotate-[0.6deg] max-sm:rotate-0 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+                <p class="font-serif text-[18px] italic text-[#999] mb-6">{{t "Dari Tim Diskusi Pajak"}}</p>
+
+                <p class="font-serif text-[24px] font-extrabold text-[#444] mb-5 leading-[1.2]">{{t "Halo,"}}</p>
+
+                <div class="md:columns-2 md:gap-9 [&_p]:break-inside-avoid [&_p]:font-sans [&_p]:text-[15px] [&_p]:leading-[1.7] [&_p]:text-[#444] [&_p]:mb-[18px] [&_p:last-child]:mb-0">
+                    <p>{{t "Kalau Anda pernah merasa pusing saat membaca aturan pajak, tenang, Anda tidak sendirian."}}</p>
+
+                    <p>{{t "Banyak aturan perpajakan ditulis dengan bahasa yang formal dan cukup teknis. Belum lagi regulasinya yang terus berubah. Kadang kita cuma ingin tahu jawaban sederhana untuk masalah yang sedang dihadapi, tetapi harus membaca puluhan halaman aturan terlebih dahulu."}}</p>
+
+                    <p><strong>{{t "Karena itulah kami membuat Diskusi Pajak."}}</strong></p>
+
+                    <p>{{t "Tempat ini kami bangun untuk membantu menjelaskan berbagai topik perpajakan dengan bahasa yang lebih mudah dipahami. Bukan sekadar mengutip aturan, tetapi mencoba menjelaskan bagaimana aturan tersebut berlaku dalam situasi nyata yang sering ditemui pelaku usaha, karyawan, maupun praktisi pajak."}}</p>
+
+                    <p>{{t "Mulai dari urusan e-Faktur, PPN, PPh, sampai berbagai pertanyaan yang muncul dalam aktivitas sehari-hari, kami berusaha menyajikannya dengan cara yang lebih ringan dan mudah diikuti."}}</p>
+
+                    <p>{{t "Kami tentu tidak punya semua jawaban. Namun kami berharap Diskusi Pajak bisa menjadi tempat untuk belajar, berbagi pengalaman, dan menemukan solusi bersama."}}</p>
+
+                    <p>{{t "Terima kasih sudah berkunjung. Semoga informasi yang Anda temukan di sini bermanfaat."}}</p>
+                </div>
+
+                <div class="mt-7 pt-6 border-t border-[#e6e6e6] flex items-center gap-4 max-[480px]:flex-col max-[480px]:items-start">
+                    {{#get "authors" filter="slug:tim-redaksi"}}
+                    {{#if authors}}
+                    {{#foreach authors}}
+                    <img class="w-12 h-12 rounded-full object-cover shrink-0 border-2 border-[#e6e6e6]" src="{{profile_image}}" alt="{{name}}" loading="lazy" />
+                    {{/foreach}}
+                    {{/if}}
+                    {{/get}}
+                    <div>
+                        <p class="font-serif text-[16px] italic text-[#444] mb-1">{{t "Salam hangat,"}}</p>
+                        <strong class="block font-serif text-[15px] font-bold text-[#444] not-italic mt-3">{{t "Tim {siteTitle}" siteTitle=@site.title}}</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{!-- ── "Tapi kan sudah ada Google/Telegram?" ── --}}
+        <section class="max-w-[1000px] mx-auto px-6 pb-[6vmin]">
+            <div class="bg-[#f6f6f6] border border-[#e6e6e6] rounded-lg px-12 py-10 max-sm:px-6 max-sm:py-7">
+                <h2 class="font-sans text-[30px] font-bold mb-4 leading-[1.25]">{{t "Tapi kan sudah ada Google atau Telegram?"}}</h2>
+                <div class="mt-16 [&_p]:text-[15px] [&_p]:leading-[1.6] [&_p]:text-[#333] [&_p]:mb-[14px] [&_p:last-child]:mb-0">
+                    <p>{{t "Benar. Di Google banyak sekali artikel pajak. Di grup Telegram juga banyak diskusi. Tapi masalahnya: informasi di Google kadang tidak update, sumbernya tidak jelas, atau bahasanya terlalu teknis. Di Telegram? Ribut, tidak terstruktur, dan harus scroll panjang untuk mencari jawaban."}}</p>
+                    <p>{{t "Di Diskusi Pajak, setiap artikel ditulis dengan bahasa yang mudah dipahami, langkah-langkah konkret yang bisa langsung dipraktikkan, dan selalu mengacu pada aturan yang berlaku. Semua terorganisir rapi dalam satu tempat."}}</p>
+                </div>
+            </div>
+        </section>
+
+        {{!-- ── "All these questions have the same answer: Yes!" ── --}}
+        <section class="max-w-[1000px] mx-auto px-6 pb-[6vmin]">
+            <div class="bg-white border border-[#e6e6e6] rounded-lg px-11 py-10 max-sm:px-6 max-sm:py-7">
+                <h2 class="text-[30px] font-semibold mb-5 text-center leading-[1.25]">{{t "Semua pertanyaan ini jawabannya:"}} <strong class="font-extrabold text-[#444] text-[24px]">{{t "Ada!"}}</strong></h2>
+
+                <ul class="pt-20 list-none m-0 p-0 grid grid-cols-2 max-[640px]:grid-cols-1 gap-x-9">
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Ada panduan cara lapor SPT Tahunan di Coretax?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Bisa buat faktur pajak sendiri tanpa bantuan konsultan?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Ada solusi kalau e-Faktur error pas mau upload?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Cara bikin bukti potong PPh 21/26 yang benar?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Bagaimana cara kompensasi lebih bayar PPN?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Update terbaru aturan perpajakan 2026?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Cara daftar NPWP online lewat Coretax?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Panduan pembuatan e-Bupot PPh 23?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Bagaimana cara menghitung PPh 21 karyawan?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Apakah UMKM wajib lapor SPT Tahun lalu?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Bagaimana cara mengkreditkan pajak masukan?"}}</li>
+                    <li class="py-[10px] border-b border-[#f6f6f6] text-[14px] leading-[1.4] text-[#333] relative pr-12 after:content-['Ada!'] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:inline-block after:bg-[#d1fae5] after:text-[#065f46] after:text-[75%] after:font-bold after:tracking-[0.03em] after:leading-none after:px-[0.45em] after:py-[0.25em] after:rounded odd:after:-translate-y-1/2 odd:after:-rotate-2 even:after:-translate-y-1/2 even:after:rotate-1 [&:nth-last-child(-n+2)]:border-b-0 max-[640px]:[&:nth-last-child(-n+1)]:border-b-0">{{t "Ada contoh pengisian SPT PPN?"}}</li>
+                </ul>
+
+                <div class="text-center mt-5 pt-[18px] border-t border-[#e6e6e6]">
+                    <a href="{{@site.url}}/resources/" class="inline-flex items-center gap-[6px] text-[13.5px] font-semibold text-[#444] no-underline hover:gap-[10px] transition-all duration-200">{{t "Lihat daftar lengkap artikel"}} &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>

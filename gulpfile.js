@@ -14,7 +14,6 @@ const zip = require('gulp-zip');
 
 // postcss plugins
 const easyimport = require('postcss-easy-import');
-const tailwindcss = require('@tailwindcss/postcss');
 const cssnano = require('cssnano');
 
 // translations support
@@ -47,25 +46,6 @@ function css(done) {
         src('assets/css/screen.css', {sourcemaps: true}),
         postcss([
             easyimport,
-            tailwindcss(),
-            cssnano()
-        ]),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
-}
-
-function tailwind(done) {
-    // Touch source to bust Tailwind v4 internal compiler cache
-    // (gulp-postcss discards dependency messages, so scanner never
-    //  re-initialises without this — new .hbs classes stay undetected)
-    const now = new Date();
-    fs.utimesSync('assets/css/tailwind.css', now, now);
-
-    pump([
-        src('assets/css/tailwind.css', {sourcemaps: true}),
-        postcss([
-            tailwindcss(),
             cssnano()
         ]),
         dest('assets/built/', {sourcemaps: '.'}),
@@ -121,12 +101,11 @@ function locales(done) {
 }
 
 const localesWatcher = () => watch('./locales-local/**/*.json', locales);
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], parallel(hbs, tailwind));
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/screen.css', css);
-const tailwindWatcher = () => watch('assets/css/tailwind.css', tailwind);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, tailwindWatcher, jsWatcher, localesWatcher);
-const build = series(css, tailwind, js, locales);
+const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher, localesWatcher);
+const build = series(css, js, locales);
 
 exports.build = build;
 exports.zip = series(build, zipper);

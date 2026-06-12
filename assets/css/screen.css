@@ -282,7 +282,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     margin-top: 4px;
     overflow-y: hidden;
     font-size: 1.6rem;
-    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
@@ -1118,7 +1118,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     margin: 0.5rem 0 0;
     opacity: 0.5;
     overflow: hidden;
-    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     transition: all 0.2s ease;
 }
@@ -1142,7 +1142,22 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     transition: 0.05s ease;
 }
 
+.resource-list-item-title {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.resource-list-item-meta {
+    flex-shrink: 0;
+    margin-left: 4vmin;
+    white-space: nowrap;
+}
+
 .resource-list-item svg {
+    display: inline;
     height: 1.2rem;
     margin: 0 0 0 15px;
     width: 1.2rem;
@@ -1190,7 +1205,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
         padding-right: 4vmin;
     }
 
-    .resource-list-item > div > span {
+    .resource-list-item-meta {
         display: none;
     }
 }
@@ -1420,7 +1435,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 .gh-card-content p {
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    line-clamp: 3;
     display: -webkit-box;
     margin: 1rem 0;
     overflow: hidden;
@@ -1440,9 +1455,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 /* ── Resources Page Template (post.hbs) ── */
 /* Layout Foundation */
-.gh-resources-page {
-    --max-width: 1300px;
-}
 
 .gh-resources-hero,
 .gh-resources-body,
@@ -1804,7 +1816,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 .gh-card-content p {
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    line-clamp: 3;
     display: -webkit-box;
     margin: 1rem 0;
     overflow: hidden;

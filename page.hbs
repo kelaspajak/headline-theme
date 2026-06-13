@@ -4,19 +4,17 @@
 
 {{#post}}
 <main class="gh-main gh-outer {{slug}}">
-    <div class="gh-resources-hero">
-    {{> "post-tags"}}
-        <h1>{{title}}</h1>
-        {{#if custom_excerpt}}
-            <p>{{custom_excerpt}}</p>
-        {{/if}}
-    </div>
-
     <div class="gh-content gh-canvas">
-            <aside class="gh-sidebar"><div class="gh-toc"></div></aside>
-            {{content}}
+        <div class="gh-resources-hero">
+        {{> "post-tags"}}
+            <h1>{{title}}</h1>
+            {{#if custom_excerpt}}
+                <p>{{custom_excerpt}}</p>
+            {{/if}}
+        </div>
+        <aside class="gh-sidebar"><div class="gh-toc"></div></aside>
+        {{content}}
     </div>
-
 </main>
 {{/post}}
 

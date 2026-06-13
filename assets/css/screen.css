@@ -1090,9 +1090,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 .resource-list-item-title {
     display: block;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .resource-list-item-meta {
@@ -1152,11 +1149,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
     .resource-list-item-meta {
         display: none;
-    }
-
-    .resource-list-item-title {
-        white-space: normal;
-        overflow: visible;
     }
 }
 

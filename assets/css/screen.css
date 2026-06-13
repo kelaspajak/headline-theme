@@ -1628,6 +1628,42 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     }
 }
 
+.gh-author {
+    margin: 6vmin 0 2vmin;
+    padding: 2vmin 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gh-author h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 1vmin;
+}
+
+.gh-author-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.gh-author-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+    font-size: 1.3rem;
+    color: var(--text-muted);
+}
+
+.gh-author-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    14. Tag Hero
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -1718,6 +1754,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 .hero-post p {
     font-weight: 600;
+    color: var(--text-muted);
     font-size: 2.2rem;
     line-height: 1.3;
 }

@@ -4,10 +4,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
 <script>
+    document.documentElement.style.scrollBehavior = 'auto';
+
     tocbot.init({
         tocSelector: '.gh-toc',
         contentSelector: '.gh-content',
         headingSelector: 'h1, h2, h3, h4',
         hasInnerContainers: true,
+        scrollSmooth: false,
+        headingsOffset: 100,
+        historyDefaultBehavior: false,
     });
 </script>

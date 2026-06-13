@@ -1585,6 +1585,14 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     background-color: var(--ghost-accent-color);
 }
 
+.gh-toc .is-collapsible {
+    transition: max-height 300ms ease-in-out;
+}
+
+.gh-toc .is-active-link {
+    transition: none;
+}
+
 @media (min-width: 1300px) {
     .gh-sidebar {
         position: absolute;

@@ -1,0 +1,13 @@
+{{#contentFor "head"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
+{{/contentFor}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        tocSelector: '.gh-toc',
+        contentSelector: '.gh-content',
+        headingSelector: 'h1, h2, h3, h4',
+        hasInnerContainers: true,
+    });
+</script>

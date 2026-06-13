@@ -31,7 +31,7 @@
     --text-muted: var(--color-secondary-text);
     --accent-color: var(--ghost-accent-color);
     --heading-color: var(--color-darker-gray);
-    --border-color: var(--color-light-gray);
+    --border-color: rgba(var(--color-light-gray), 0.3);
     --code-bg: var(--color-lighter-gray);
 }
 
@@ -1042,6 +1042,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 .resource-section:first-of-type {
     border-top: none;
+    padding: 16vmin 0;
 }
 
 .resource-section img {

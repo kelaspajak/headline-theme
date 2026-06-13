@@ -2,23 +2,12 @@
 
 {{#contentFor "body_class"}}resources-template{{/contentFor}}
 
-{{#contentFor "head"}}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.css">
-{{/contentFor}}
+{{> "tocbot"}}
 
 {{#post}}
 <main class="gh-main gh-outer {{slug}}">
     <div class="gh-resources-hero">
-    <span class="gh-post-meta">
-        {{#if tags.[0]}}
-        <a class="gh-post-meta-tag" href="/" style="--color-tag: {{#if tags.[0].accent_color}}{{tags.[0].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[0].name}}</a>
-        {{/if}}
-        {{#if tags.[1]}}
-        <span class="bull">→</span>
-        <a class="gh-post-meta-tag" href="{{tags.[1].url}}" style="--color-tag: {{#if tags.[1].accent_color}}{{tags.[1].accent_color}}{{else}}{{@site.accent_color}}{{/if}};">{{tags.[1].name}}</a>
-        {{/if}}
-        <span class="bull">•</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
-    </span>
+    {{> "post-tags"}}
         <h1>{{title}}</h1>
         {{#if custom_excerpt}}
             <p>{{custom_excerpt}}</p>
@@ -30,61 +19,5 @@
             {{content}}
     </div>
 
-    {{!-- untuk sementara tidak tau gunanya
-    <div class="gh-resources-body">
-        {{#get "tags" filter="slug:[building,publishing,growth,business]" include="count.posts"}}
-            {{#foreach tags}}
-            <section class="gh-resources-section tag-{{slug}}">
-                <div class="gh-resources-section-header">
-                    {{#if feature_image}}
-                    <div>
-                        <img
-                            srcset="{{img_url feature_image size="s"}} 300w,
-                                    {{img_url feature_image size="m"}} 720w,
-                                    {{img_url feature_image size="l"}} 960w"
-                            sizes="(max-width: 767px) 100vw, 50vw"
-                            src="{{img_url feature_image size="l"}}"
-                            alt="{{name}}"
-                            loading="lazy"
-                        />
-                    </div>
-                    {{/if}}
-                    <div>
-                        <h2>{{name}} - </h2>
-                        {{#if description}}<p>{{description}}</p>{{/if}}
-                    </div>
-                </div>
-
-                {{#get "posts" filter="tag:{{slug}}" limit="5"}}
-                <div class="gh-resources-posts">
-                    {{#foreach posts}}
-                    <article class="gh-resources-post">
-                        <a href="{{url}}">
-                            <span class="gh-resources-post-title">{{title}}</span>
-                            <span class="gh-resources-post-meta">{{reading_time}}</span>
-                        </a>
-                    </article>
-                    {{/foreach}}
-                </div>
-                {{/get}}
-
-                <a class="gh-resources-link" href="{{url}}">
-                    {{t "Explore the full series"}} →
-                </a>
-            </section>
-            {{/foreach}}
-        {{/get}}
-    </div>
-    --}}
 </main>
 {{/post}}
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
-<script>
-    tocbot.init({
-        tocSelector: '.gh-toc',
-        contentSelector: '.gh-content',
-        headingSelector: 'h1, h2, h3, h4',
-        hasInnerContainers: true,
-    });
-</script>

@@ -9,16 +9,6 @@
                 <p class="supersub">{{t "Kumpulan panduan, referensi, dan sumber informasi perpajakan untuk membantu Anda memahami aturan, menyelesaikan permasalahan pajak, dan mengikuti perkembangan terbaru."}}</p>
             </header>
 
-            <section class="search hidden">
-                <form class="search-input">
-                    <label class="hidden" for="search">{{t "Search"}}</label>
-                    <input id="search-input" type="text" placeholder="{{t "Search all resources..."}}" autocomplete="off" name="search" aria-label="{{t "Search"}}" />
-                    <span id="start-search" class="search-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></span>
-                    <button id="reset-search" class="search-remove" style="display: none;"><svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.707 12L23.854.854a.5.5 0 0 0-.707-.707L12 11.293.854.146a.5.5 0 0 0-.707.707L11.293 12 .146 23.146a.5.5 0 0 0 .708.708L12 12.707l11.146 11.146a.5.5 0 1 0 .708-.706L12.707 12z"/></svg></button>
-                </form>
-                <div id="hits"></div>
-            </section>
-
             {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
             {{#get "tags" filter="slug:[hash-resources,coretaxpedia,pph-final-umkm-pp20-2026,pph-pasal-23]" limit="5" include="count.posts"}}
             {{#foreach tags}}

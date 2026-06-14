@@ -82,23 +82,6 @@
             "footer_text": {
                 "type": "text"
             },
-            "enter_tag_slugs_for_primary_sections": {
-                "type": "text",
-                "group": "homepage"
-            },
-            "enter_tag_slugs_for_secondary_sections": {
-                "type": "text",
-                "group": "homepage"
-            },
-            "show_featured_post_class": {
-                "type": "select",
-                "options": [
-                    "featured",
-                    "default"
-                ],
-                "default": "featured",
-                "group": "homepage"
-            },
             "color_palette": {
                 "type": "select",
                 "options": [
@@ -107,6 +90,10 @@
                     "Ollama"
                 ],
                 "default": "Default"
+            },
+            "related_posts_show_excerpt": {
+                "type": "boolean",
+                "default": false
             }
         }
     },

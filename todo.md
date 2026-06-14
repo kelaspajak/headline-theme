@@ -27,3 +27,7 @@
 - [x] **Fix typo: rename `pallette-color.md` → `palette-color.md`** — Juga fix `pallete-default` → `palette-default` di konten file.
 
 - [x] **Build & verify** — CSS & Tailwind build sukses. gscan: 1 error false-positive (`color_palette` tidak terdeteksi di `default.hbs` karena nested `else match`), 2 warnings pre-existing.
+
+- [x] **Affected files:** - partials/related-posts.hbs: Missing Custom Theme Setting: "related_posts_show_excerpt" (L3  - Custom theme settings defined in package.json must be used at least once in the theme templates.
+
+- [x] **Affected files:**  package.json: Found unused variables: @custom.enter_tag_slugs_for_primary_sections, @custom.enter_tag_slugs_for_secondary_sections, @custom.show_featured_post_class

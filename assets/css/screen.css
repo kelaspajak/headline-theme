@@ -1465,6 +1465,34 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   12. Related Posts
+   ═══════════════════════════════════════════════════════════════════════════ */
+.related-posts {
+    margin-top: 80px;
+    padding-top: 32px;
+}
+
+.related-posts__title {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: var(--heading-color);
+}
+
+/*.related-posts__title::after {
+    flex-grow: 1;
+    height: 1px;
+    margin-left: 1.6rem;
+    content: "";
+    background-color: var(--border-color);
+}*/
+
+/*.related-posts__grid .resource-list-item:first-of-type {
+    border-top: 1px solid var(--border-color);
+}*/
+
+/* ═══════════════════════════════════════════════════════════════════════════
    12. Resources Page Template (post.hbs / page.hbs)
    ═══════════════════════════════════════════════════════════════════════════ */
 /* Layout Foundation */

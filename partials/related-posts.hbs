@@ -1,19 +1,114 @@
-{{#is "post"}}
-    {{#get "posts" include="authors" filter="tags:[{{post.tags}}]+id:-{{post.id}}" limit="3" as |next|}}
-        {{#if next}}
-            <div class="gh-read-next gh-canvas">
-                <section class="gh-pagehead">
-                    <h4 class="gh-pagehead-title">{{t "Read next"}}</h4>
-                </section>
+{{!-- Related Posts - Populated by JavaScript --}}
+<div id="related-posts-container"
+    data-show-excerpt="{{#match @custom.related_posts_show_excerpt}}true{{else}}false{{/match}}"></div>
 
-                <div class="gh-topic gh-topic-grid">
-                    <div class="gh-topic-content">
-                        {{#foreach next}}
-                            {{> "loop-grid" has_large_post=false}}
-                        {{/foreach}}
-                    </div>
-                </div>
-            </div>
-        {{/if}}
-    {{/get}}
-{{/is}}
+<script>
+    (function () {
+        var API_URL = '{{@site.url}}';
+        var API_KEY = '{{content_api_key}}';
+        var HEADING_TEXT = '{{t "Check more related posts"}}';
+        var container = document.getElementById('related-posts-container');
+        var SHOW_EXCERPT = container.getAttribute('data-show-excerpt') === 'true';
+        var postId = '{{id}}';
+        var tags = [
+            '{{tags.[0].slug}}',
+            '{{tags.[1].slug}}',
+            '{{tags.[2].slug}}',
+            '{{tags.[3].slug}}',
+            '{{tags.[4].slug}}',
+            '{{tags.[5].slug}}',
+            '{{tags.[6].slug}}'
+        ].filter(function (t) { return t && t.trim() !== ''; });
+
+        function escapeHTML(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderRelatedPosts(posts) {
+            var container = document.getElementById('related-posts-container');
+            if (!container) return;
+
+            var postsHTML = posts.map(function (post) {
+                var safeTitle = escapeHTML(post.title);
+                var readingTime = post.reading_time || 1;
+                return '<a class="resource-list-item" href="' + post.url + '">' +
+                    '<span class="resource-list-item-title">' + safeTitle + '</span>' +
+                    '<div class="resource-list-item-meta"><span>' + readingTime + ' min read' +
+                    '<svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg">' +
+                    '<path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>' +
+                    '</svg></span></div></a>';
+            }).join('');
+
+            container.innerHTML =
+                '<section class="related-posts">' +
+                '<h3 class="related-posts__title">' + HEADING_TEXT + '</h3>' +
+                '<div class="related-posts__grid">' + postsHTML + '</div>' +
+                '</section>';
+        }
+
+        function getRecentPosts() {
+            fetch(API_URL + '/ghost/api/content/posts/?key=' + API_KEY + '&filter=id:-[' + postId + ']&limit=3&include=tags,authors')
+                .then(function (r) { if (r.ok) return r.json(); })
+                .then(function (data) {
+                    if (data && data.posts && data.posts.length > 0) {
+                        renderRelatedPosts(data.posts);
+                    }
+                })
+                .catch(function (e) { console.error('Error loading recent posts:', e); });
+        }
+
+        function loadRelatedPosts() {
+            var taglist = tags.filter(function (t) { return t && t.charAt(0) !== '#'; });
+            if (taglist.length === 0) {
+                getRecentPosts();
+                return;
+            }
+
+            fetch(API_URL + '/ghost/api/content/tags/?key=' + API_KEY + '&filter=slug:[' + taglist.join(',') + ']&include=count.posts&order=count.posts%20ASC')
+                .then(function (r) { if (r.ok) return r.json(); })
+                .then(function (tagsData) {
+                    if (!tagsData || !tagsData.tags || tagsData.tags.length === 0) {
+                        getRecentPosts();
+                        return;
+                    }
+                    var tagSlugs = tagsData.tags.map(function (t) { return t.slug; });
+                    return fetch(API_URL + '/ghost/api/content/posts/?key=' + API_KEY + '&filter=id:-[' + postId + ']%2Btags:[' + tagSlugs.join(',') + ']&limit=3&include=tags,authors')
+                        .then(function (r) { if (r.ok) return r.json(); })
+                        .then(function (postsData) {
+                            var threePosts = [];
+                            var seenIds = {};
+                            if (postsData && postsData.posts) {
+                                var tagRarity = {};
+                                tagsData.tags.forEach(function (t, i) { tagRarity[t.slug] = i; });
+                                var scored = postsData.posts.map(function (post) {
+                                    var postTagSlugs = (post.tags || []).map(function (t) { return t.slug; });
+                                    var bestScore = Infinity;
+                                    postTagSlugs.forEach(function (s) {
+                                        if (tagRarity.hasOwnProperty(s) && tagRarity[s] < bestScore) {
+                                            bestScore = tagRarity[s];
+                                        }
+                                    });
+                                    return { post: post, score: bestScore };
+                                });
+                                scored.sort(function (a, b) { return a.score - b.score; });
+                                scored.forEach(function (item) {
+                                    if (threePosts.length >= 3) return;
+                                    if (!seenIds[item.post.id]) {
+                                        seenIds[item.post.id] = true;
+                                        threePosts.push(item.post);
+                                    }
+                                });
+                            }
+                            if (threePosts.length > 0) {
+                                renderRelatedPosts(threePosts);
+                            }
+                        });
+                })
+                .catch(function (e) { console.error('Error loading related posts:', e); });
+        }
+
+        loadRelatedPosts();
+    })();
+</script>

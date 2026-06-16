@@ -46,6 +46,19 @@
     --mauve-10: #84828e;
     --mauve-11: #65636d;
     --mauve-12: #211f26;
+
+    --white-a1: rgba(255, 255, 255, 0.05);
+    --white-a2: rgba(255, 255, 255, 0.1);
+    --white-a3: rgba(255, 255, 255, 0.15);
+    --white-a4: rgba(255, 255, 255, 0.2);
+    --white-a5: rgba(255, 255, 255, 0.3);
+    --white-a6: rgba(255, 255, 255, 0.4);
+    --white-a7: rgba(255, 255, 255, 0.5);
+    --white-a8: rgba(255, 255, 255, 0.6);
+    --white-a9: rgba(255, 255, 255, 0.7);
+    --white-a10: rgba(255, 255, 255, 0.8);
+    --white-a11: rgba(255, 255, 255, 0.9);
+    --white-a12: rgba(255, 255, 255, 0.95);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1812,7 +1825,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 .gh-tag-head-content > div > span > span,
 .gh-tag-head-content > div > span > a {
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 2rem;
     display: inline-block;
     font-weight: 500;
@@ -1822,14 +1835,14 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     text-decoration: none;
 }
 .gh-tag-head-content > div > span > span:first-of-type {
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.6);
     color: contrast-color(var(--color-tag));
 }
 .gh-tag-head-content > div > span > a {
     color: contrast-color(var(--color-tag));
 }
 .gh-tag-head-content > div > span > a:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
 }
 .gh-tag-head-img {
     box-shadow: 0 10px 100px -50px rgba(0, 0, 0, 0.6);

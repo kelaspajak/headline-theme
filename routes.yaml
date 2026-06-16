@@ -11,16 +11,6 @@ collections:
         # Hide internal collection tags from homepage
         filter: tag:-[hash-wilayah,hash-tentang-pic,hash-resources,hash-ppn-ptll]
 
-    /resources/:
-        permalink: /resources/{slug}/
-        template: resources
-        filter: tag:[hash-resources]
-
-    /kota/:
-        permalink: /kota/{slug}/
-        template: kota
-        filter: tag:[hash-wilayah]
-
 taxonomies:
     tag: "/{slug}/"
     author: "/{slug}/"

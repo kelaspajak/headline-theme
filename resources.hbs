@@ -1,16 +1,16 @@
 {{!< default}}
 
-<main class="gh-main gh-outer">
+<main class="gh-main">
     <div class="gh-page">
         <div class="gh-container">
 
-            <header class="super">
+            <header class="superxx">
                 <h1 class="superhero">{{t "Mulai Disini"}}</h1>
                 <p class="supersub">{{t "Kumpulan panduan, referensi, dan sumber informasi perpajakan untuk membantu Anda memahami aturan, menyelesaikan permasalahan pajak, dan mengikuti perkembangan terbaru."}}</p>
             </header>
 
             {{!-- Dynamic sections: loop tags, nested get posts per tag --}}
-            {{#get "tags" filter="slug:[hash-resources,coretaxpedia,pph-final-umkm-pp20-2026,pph-pasal-23]" limit="5" include="count.posts"}}
+            {{#get "tags" filter="slug:[hash-resources,coretaxpedia,pph-final,subjek-pajak,penghasilan,pph-pasal-23]" limit="20" include="count.posts"}}
             {{#foreach tags}}
             <section class="resource-section tag-{{slug}}">
                 {{#if feature_image}}

@@ -1936,7 +1936,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 
 .hero-author-meta {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.6rem;
     font-size: 1.3rem;

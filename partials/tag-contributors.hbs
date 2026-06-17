@@ -7,7 +7,7 @@
                     {{#if primary_author}}
                         <div class="flex gap-4 contributor-item" data-author-slug="{{primary_author.slug}}">
                             {{#if primary_author.profile_image}}
-                                <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="w-16 h-16 rounded-full object-cover shrink-0">
+                                <img src="{{img_url primary_author.profile_image size="xs"}}" alt="{{primary_author.name}}" class="w-16 h-16 rounded-full object-cover shrink-0">
                             {{else}}
                                 <div class="w-16 h-16 rounded-full shrink-0 flex items-center justify-center text-white font-semibold text-lg bg-gray-400">{{primary_author.name}}</div>
                             {{/if}}

@@ -14,9 +14,9 @@
     margin-top: 4rem;
 }
 .wilayah-section-title {
-    font-family: var(--font-serif);
+    font-family: var(--serif);
     font-size: 2.4rem;
-    border-bottom: 2px solid var(--color-darkgrey);
+    margin-top: 4rem;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
 }
@@ -52,10 +52,11 @@
                         {{#if custom_excerpt}}
                         <p>{{custom_excerpt}}</p>
                         {{/if}}
-
+    {{#has tag="#wilayah"}}
                         <div id="wilayah-authors-container" class="gh-author-grid">
                           <div class="wilayah-loading">Memuat praktisi...</div>
                         </div>
+                        {{/has}}
                     </div>
 
 
@@ -67,7 +68,7 @@
             <div class="gh-page">
                 <div class="gh-container">
                     <section class="wilayah-section gh-postfeed" aria-labelledby="wilayah-posts-title">
-                        <h2 id="wilayah-posts-title" class="wilayah-section-title">Layanan di {{title}}</h2>
+                        <h2 id="wilayah-posts-title" class="wilayah-section-title">Layanan Perpajakan di {{title}}</h2>
                         <div id="wilayah-posts-container" class="gh-feed">
                             <div class="wilayah-loading">Memuat layanan...</div>
                         </div>
@@ -174,27 +175,13 @@
 
         {{else}}
 
-            <div class="gh-page">
-                <div class="gh-container">
-                    <div class="gh-featuredposts">
-                        {{#foreach posts limit="3"}}
-                            {{#if featured}}
-                                {{> featured-post }}
-                            {{/if}}
-                        {{/foreach}}
-                    </div>
+            <div class="gh-content gh-canvas">
 
-                    {{#get "posts" limit="5" include="tags,authors"}}
-                        <div class="gh-postfeed">
-                            <div class="gh-feed">
-                                {{#foreach posts}}
-                                    {{> loop-zebra }}
-                                {{/foreach}}
-                            </div>
-                        </div>
-                    {{/get}}
-                </div>
-            </div>
+        <aside class="gh-sidebar"><div class="gh-toc"></div></aside>
+        {{content}}
+
+        {{> "related-posts"}}
+    </div>
 
         {{/has}}
     {{/post}}

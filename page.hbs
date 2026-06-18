@@ -9,10 +9,28 @@
 .gh-postfeed {
     justify-items: center;
 }
+.wilayah-section {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+.wilayah-section-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    border-bottom: 2px solid var(--color-darkgrey);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.gh-author-grid {
+    padding-top: 4rem;
+}
+.wilayah-loading { text-align: center; padding: 2rem; color: var(--color-secondary-text); }
+.wilayah-error { text-align: center; padding: 2rem; color: #dc2626; }
+.wilayah-empty { grid-column: 1 / -1; text-align: center; color: var(--color-secondary-text); }
 </style>
 {{/contentFor}}
 
 <main class="gh-main">
+
     {{#post}}
         <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{#if accent_color}}{{accent_color}}{{else}}#f2eff3{{/if}}; --accent-soft: {{color_to_rgba accent_color}};">
             <div class="gh-container">
@@ -32,35 +50,153 @@
                     <div>
                         <h1>{{title}}</h1>
                         {{#if custom_excerpt}}
-                            <p>{{custom_excerpt}}</p>
+                        <p>{{custom_excerpt}}</p>
                         {{/if}}
+
+                        <div id="wilayah-authors-container" class="gh-author-grid">
+                          <div class="wilayah-loading">Memuat praktisi...</div>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </header>
-    {{/post}}
 
-    <div class="gh-page">
-        <div class="gh-container">
-            {{!-- Featured posts --}}
-            <div class="gh-featuredposts">
-                {{#foreach posts limit="3"}}
-                    {{#if featured}}
-                        {{> featured-post }}
-                    {{/if}}
-                {{/foreach}}
+        {{#has tag="#wilayah"}}
+            <div class="gh-page">
+                <div class="gh-container">
+                    <section class="wilayah-section gh-postfeed" aria-labelledby="wilayah-posts-title">
+                        <h2 id="wilayah-posts-title" class="wilayah-section-title">Layanan di {{title}}</h2>
+                        <div id="wilayah-posts-container" class="gh-feed">
+                            <div class="wilayah-loading">Memuat layanan...</div>
+                        </div>
+                    </section>
+
+                </div>
             </div>
 
-            {{#get "posts" limit="5" include="tags,authors"}}
-                <div class="gh-postfeed">
-                    <div class="gh-feed">
-                        {{#foreach posts}}
-                            {{> loop-zebra }}
+            <span id="wilayah-data"
+                data-page-slug="{{slug}}"
+                data-page-title="{{title}}"
+                style="display:none"></span>
+
+            <script>
+            (function() {
+                var dataEl = document.getElementById('wilayah-data');
+                if (!dataEl) return;
+
+                var pageSlug = dataEl.dataset.pageSlug;
+                var pageTitle = dataEl.dataset.pageTitle;
+                var authorsContainer = document.getElementById('wilayah-authors-container');
+                var postsContainer = document.getElementById('wilayah-posts-container');
+                var apiKey = '{{content_api_key}}';
+                var origin = window.location.origin;
+
+                if (!pageSlug || !pageTitle) {
+                    authorsContainer.innerHTML = '<div class="wilayah-error">Wilayah tidak dikonfigurasi.</div>';
+                    return;
+                }
+
+                // Step 1: Fetch authors, filter by location === pageSlug
+                fetch(origin + '/ghost/api/content/authors/?key=' + apiKey + '&limit=50&include=count.posts&order=name%20asc')
+                    .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
+                    .then(function(data) {
+                        var authors = (data.authors || []).filter(function(a) {
+                            return a.location && a.location.trim().toLowerCase() === pageSlug.toLowerCase();
+                        });
+
+                        if (authors.length === 0) {
+                            authorsContainer.innerHTML = '<p class="wilayah-empty">Belum ada praktisi terdaftar untuk wilayah ini.</p>';
+                            return [];
+                        }
+
+                        authorsContainer.innerHTML = authors.map(function(author) {
+                            var avatar = author.profile_image
+                                ? '<img class="hero-author-image" src="' + author.profile_image + '" alt="' + author.name + '" loading="lazy">'
+                                : '';
+                            var location = author.location
+                                ? '<span class="hero-author-location">' + author.location + '</span>'
+                                : '';
+                            var websiteSep = author.location && author.website ? '&sol;' : '';
+                            var website = author.website
+                                ? websiteSep + '<a href="' + author.website + '" target="_blank" rel="noopener noreferrer" class="hero-author-website">' +
+                                    '<svg class="gh-author-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">' +
+                                    '<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg></a>'
+                                : '';
+                            return '<div class="hero-author-item">' +
+                                avatar +
+                                '<div class="hero-author-info">' +
+                                '<span class="hero-author-name">' + author.name + '</span>' +
+                                '<div class="hero-author-meta">' +
+                                location +
+                                website +
+                                '</div></div></div>';
+                        }).join('');
+
+                        return authors;
+                    })
+                    .then(function(authors) {
+                        if (authors.length === 0) {
+                            postsContainer.innerHTML = '<p class="wilayah-empty">Belum ada layanan untuk wilayah ini.</p>';
+                            return;
+                        }
+
+                        var slugs = authors.map(function(a) { return a.slug; });
+                        var filter = 'tag:hash-layanan+author:[' + slugs.join(',') + ']';
+
+                        return fetch(origin + '/ghost/api/content/posts/?key=' + apiKey + '&filter=' + encodeURIComponent(filter) + '&limit=20&include=tags,authors')
+                            .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
+                            .then(function(data) {
+                                var posts = data.posts || [];
+                                if (posts.length === 0) {
+                                    postsContainer.innerHTML = '<p class="wilayah-empty">Belum ada layanan untuk wilayah ini.</p>';
+                                    return;
+                                }
+                                postsContainer.innerHTML = posts.map(function(post) {
+                                    var readingTime = post.reading_time || 1;
+                                    return '<a class="resource-list-item" href="' + post.url + '">' +
+                                        '<span class="resource-list-item-title">' + post.title + '</span>' +
+                                        '<div class="resource-list-item-meta"><span>' + readingTime +
+                                        ' min read<svg viewBox="0 0 18 27" xmlns="http://www.w3.org/2000/svg">' +
+                                        '<path d="M2.397 25.426l13.143-11.5-13.143-11.5" stroke-width="3" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>' +
+                                        '</svg></span></div></a>';
+                                }).join('');
+                            });
+                    })
+                    .catch(function(err) {
+                        console.error('Wilayah fetch failed:', err);
+                        authorsContainer.innerHTML = '<div class="wilayah-error">Gagal memuat data.</div>';
+                        postsContainer.innerHTML = '';
+                    });
+            })();
+            </script>
+
+        {{else}}
+
+            <div class="gh-page">
+                <div class="gh-container">
+                    <div class="gh-featuredposts">
+                        {{#foreach posts limit="3"}}
+                            {{#if featured}}
+                                {{> featured-post }}
+                            {{/if}}
                         {{/foreach}}
                     </div>
+
+                    {{#get "posts" limit="5" include="tags,authors"}}
+                        <div class="gh-postfeed">
+                            <div class="gh-feed">
+                                {{#foreach posts}}
+                                    {{> loop-zebra }}
+                                {{/foreach}}
+                            </div>
+                        </div>
+                    {{/get}}
                 </div>
-            {{/get}}
-        </div>
-    </div>
+            </div>
+
+        {{/has}}
+    {{/post}}
 
 </main>

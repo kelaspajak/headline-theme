@@ -13,52 +13,7 @@
 {{/contentFor}}
 
 <main class="gh-main">
-{{#match tag.slug "kota-dunia"}}
 
-    <div class="bg-white p-6 md:p-8 grid grid-cols-1 lg:grid-cols-[1fr_350px] lg:grid-rows-[auto_1fr] gap-8 relative z-10 rounded-b-lg" style="margin-top: -10vmin;">
-        <div class="min-w-0">
-            <div class="flex gap-3 items-center mb-3">
-                <div class="flex items-center gap-3 flex-wrap">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">{{tag.name}}</h2>
-                </div>
-            </div>
-            {{#if tag.description}}
-                <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6 max-w-[700px]">{{tag.description}}</p>
-            {{/if}}
-        </div>
-
-        <div class="lg:row-span-2 contents lg:block">
-            <aside class="shrink-0 order-2 lg:order-0">
-                <div class="sticky top-8 space-y-4">
-                    <!-- Latest Posts -->
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-sm font-semibold text-gray-900 mb-4">Latest Posts</h3>
-                        {{#get "posts" filter="tag:{{tag.slug}}" limit="5" include="authors"}}
-                            {{#foreach posts}}
-                                <div class="block group cursor-pointer mb-4 last:mb-0">
-                                    <h4 class="text-sm font-medium text-gray-900 group-hover:text-gray-600 transition line-clamp-2 leading-snug">
-                                        <a href="{{url}}">{{title}}</a>
-                                    </h4>
-                                    <p class="text-base text-gray-500 mt-1">
-                                        {{#if primary_author}}
-                                            <span>{{primary_author.name}} · </span>
-                                        {{/if}}
-                                        <span>{{date published_at format="DD MMM YYYY"}}</span>
-                                    </p>
-                                </div>
-                            {{else}}
-                                <p class="text-sm text-gray-500">No posts yet.</p>
-                            {{/foreach}}
-                        {{/get}}
-                    </div>
-                </div>
-            </aside>
-        </div>
-
-        {{> "tag-contributors"}}
-    </div>
-
-{{else}}
     {{#tag}}
         <header class="gh-tag-head tag-{{slug}}" style="--color-tag: {{#if accent_color}}{{accent_color}}{{else}}#f2eff3{{/if}}; --accent-soft: {{color_to_rgba accent_color}};">
             <div class="gh-container">
@@ -121,5 +76,5 @@
             {{/match}}
         </div>
     </div>
-{{/match}}
+
 </main>

@@ -6,11 +6,9 @@ routes:
 
 collections:
     /:
-        permalink: "/{slug}/"
+        permalink: "/p/{slug}/"
         template: index
-        # Hide internal collection tags from homepage
-        filter: tag:-[hash-wilayah,hash-tentang-pic,hash-resources,hash-ppn-ptll]
 
 taxonomies:
-    tag: "/{slug}/"
-    author: "/{slug}/"
+    tag: /{slug}/
+    author: /@{slug}/
